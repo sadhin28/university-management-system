@@ -23,7 +23,8 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Dashboard/>
+        element:<Dashboard/>,
+        loader:()=>fetch('/DashboardData.json')
       },
      {
        path: "/students",
