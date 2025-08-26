@@ -4,15 +4,14 @@ import Sidebar from "../layout/Sidebar";
 
 const Root = () => {
     return (
-        <div className="flex">
-            <div className="">
-                <Sidebar/>
-            </div>
-            <div className="min-h-screen w-full border">
-                 <Navbar/>
-                <Outlet></Outlet>
-            </div>
-        </div>
+            <div className="flex">
+      <Sidebar />
+      <main className="flex-1  overflow-y-auto h-screen">
+        <Navbar/>
+        <Outlet />
+      </main>
+    </div>
+
     );
 };
 

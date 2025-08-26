@@ -2,12 +2,13 @@ import { FaBell } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between items-center shadow px-6 py-3">
+    <div className="sticky bg-white-xx  top-0 backdrop-blur z-50">
+      <div className="flex justify-between items-center shadow px-6 py-3">
       {/* Search bar */}
       <input
         type="text"
         placeholder="Search students, courses, faculty..."
-        className="w-1/2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-1/2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#159799]"
       />
 
       {/* Right side */}
@@ -20,6 +21,7 @@ const Navbar = () => {
           AD
         </div>
       </div>
+    </div>
     </div>
   );
 };
