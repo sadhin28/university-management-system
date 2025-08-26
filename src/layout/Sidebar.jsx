@@ -26,17 +26,17 @@ const Sidebar = () => {
   return (
     <div
       className={`
-        h-screen bg-gradient-to-b from-blue-600 to-blue-400 text-white flex flex-col transition-all duration-300
+        h-screen bg-gradient-to-b from-green-400 to-red-400 to-gray-400 text-white flex flex-col transition-all duration-300
         ${isOpen ? "w-64" : "w-16"}
       `}
     >
       {/* Top Bar with toggle button */}
-      <div className="flex items-center justify-between px-4 py-4 border-b border-blue-500">
-        <div className="flex items-center gap-3 text-xl font-bold">
+      <div className="flex items-center justify-between px-4 py-4">
+        <div className="flex items-center gap-3 text-xl  text-black font-bold">
           <FaBook size={24} />
-          {isOpen && <span className="whitespace-nowrap">City University</span>}
+          {isOpen && <span className="whitespace-nowrap text-black">City University</span>}
         </div>
-        <button onClick={() => setIsOpen(!isOpen)} className="text-white text-lg">
+        <button onClick={() => setIsOpen(!isOpen)} className="text-black text-lg">
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
@@ -50,8 +50,8 @@ const Sidebar = () => {
                 to={menu.path}
                 title={menu.name}
                 className={({ isActive }) =>
-                  `flex items-center gap-3 px-4 py-2 rounded-md cursor-pointer transition-colors 
-                  ${isActive ? "bg-blue-500 font-semibold" : "hover:bg-blue-500"}`
+                  `flex items-center text-black gap-3 px-4 py-2 rounded-md cursor-pointer transition-colors 
+                  ${isActive ? "bg-green-800/50  font-semibold" : "hover:bg-green-800/50"}`
                 }
               >
                 <span className="text-lg">{menu.icon}</span>
