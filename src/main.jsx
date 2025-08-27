@@ -15,6 +15,9 @@ import Schedule from './Pages/Schedule.jsx';
 import Settings from './Pages/Settings.jsx';
 import Errorpage from './Pages/Errorpage.jsx';
 import AddStudent from './Pages/AddStudent.jsx';
+import Addcourse from './Pages/Addcourse.jsx';
+import Viewdetails from './Pages/Viewdetails.jsx';
+import Manage from './Pages/Manage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +53,18 @@ const router = createBrowserRouter([
      {
       path:'/addStudent',
       element:<AddStudent/>
+     },
+     {
+      path:'/addCourse',
+      element:<Addcourse/>
+     },
+     {
+      path:'/viewdetails',
+      element:<Viewdetails/>
+     },
+     {
+      path:'/manage',
+      element:<Manage/>
      }
       
     ]
