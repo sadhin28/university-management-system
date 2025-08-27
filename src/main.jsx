@@ -14,6 +14,7 @@ import Faculty from './Pages/Faculty.jsx';
 import Schedule from './Pages/Schedule.jsx';
 import Settings from './Pages/Settings.jsx';
 import Errorpage from './Pages/Errorpage.jsx';
+import AddStudent from './Pages/AddStudent.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
      {
       path: "/settings",
       element:<Settings/>
+     },
+     {
+      path:'/addStudent',
+      element:<AddStudent/>
      }
       
     ]

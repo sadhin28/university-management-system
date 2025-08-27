@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "program": "Computer Science",
+    "year": "3rd Year",
+    "gpa": 3.8,
+    "studentId": "S12345"
+  },
+  {
+    "id": 2,
+    "name": "Bob Smith",
+    "program": "Mechanical Engineering",
+    "year": "2nd Year",
+    "gpa": 3.5,
+    "studentId": "S12346"
+  },
+  {
+    "id": 3,
+    "name": "Charlie Brown",
+    "program": "Mathematics",
+    "year": "1st Year",
+    "gpa": 3.9,
+    "studentId": "S12347"
+  },
+  {
+    "id": 4,
+    "name": "Diana Prince",
+    "program": "Physics",
+    "year": "4th Year",
+    "gpa": 4.0,
+    "studentId": "S12348"
+  }
+]

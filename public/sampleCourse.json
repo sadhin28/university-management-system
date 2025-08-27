@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Introduction to Algorithms",
+    "code": "CS101",
+    "instructor": "Dr. Alan Turing",
+    "enrolled": 45,
+    "capacity": 50
+  },
+  {
+    "id": 2,
+    "name": "Thermodynamics",
+    "code": "ME201",
+    "instructor": "Dr. Isaac Newton",
+    "enrolled": 38,
+    "capacity": 40
+  },
+  {
+    "id": 3,
+    "name": "Linear Algebra",
+    "code": "MA102",
+    "instructor": "Dr. Emmy Noether",
+    "enrolled": 60,
+    "capacity": 60
+  },
+  {
+    "id": 4,
+    "name": "Quantum Mechanics",
+    "code": "PH301",
+    "instructor": "Dr. Richard Feynman",
+    "enrolled": 30,
+    "capacity": 35
+  }
+]

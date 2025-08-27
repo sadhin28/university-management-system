@@ -1,6 +1,7 @@
 import { useLoaderData } from 'react-router-dom';
 import DashboardCard from '../components/DashboardCard';
 import WelcomeCard from '../components/WelcomeCard';
+import DashboardCards from '../components/DashboardCards';
 
 const Dashboard = () => {
     const data = useLoaderData()
@@ -19,6 +20,9 @@ const Dashboard = () => {
                     />
                 ))}
             </div>
+           <div className='px-4'>
+               <DashboardCards/>
+           </div>
         </div>
     );
 };
