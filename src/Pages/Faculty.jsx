@@ -25,7 +25,7 @@ export default function Faculty() {
                 <div className="flex justify-between items-center mb-6 text-xs md:text-xl">
                     <div>
                         <h1 className="text-3xl font-bold">Faculty</h1>
-                        <p className="text-gray-500">
+                        <p className="text-gray-500 ">
                             Manage faculty members and their assignments
                         </p>
                     </div>
@@ -63,16 +63,16 @@ export default function Faculty() {
                                 <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
                                     <img
                                         src={
-                                            faculty.image ||
+                                            faculty?.image && faculty?.image ||
                                             `https://api.dicebear.com/7.x/avataaars/svg?seed=${faculty.name}`
                                         }
-                                        alt={faculty.name}
+                                        alt={faculty?.name}
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
-                                <h2 className="text-xl font-semibold">{faculty.name}</h2>
+                                <h2 className="text-xl font-semibold">{faculty?.name}</h2>
                                 <span className="inline-block mt-1 px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-600">
-                                    {faculty.title}
+                                    {faculty?.title}
                                 </span>
                             </div>
 

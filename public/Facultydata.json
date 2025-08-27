@@ -1,14 +1,14 @@
 [
   {
     "id": "1",
-    "name": "Dr. James Wilson",
-    "email": "j.wilson@university.edu",
+    "name": "Taosif Bin Sadhin",
+    "email": "taosifsadhin113@gmail.com",
     "department": "Computer Science",
     "title": "Professor",
     "office": "CS Building 301",
     "courses": ["CS401", "CS301"],
     "researchArea": "Algorithms & Data Structures",
-    "image": "https://randomuser.me/api/portraits/men/32.jpg"
+    "image": "https://avatars.githubusercontent.com/u/170426911?v=4"
   },
   {
     "id": "2",

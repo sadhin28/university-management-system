@@ -18,6 +18,7 @@ import AddStudent from './Pages/AddStudent.jsx';
 import Addcourse from './Pages/Addcourse.jsx';
 import Viewdetails from './Pages/Viewdetails.jsx';
 import Manage from './Pages/Manage.jsx';
+import Addfaculty from './Pages/Addfaculty.jsx';
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
      {
       path:'/manage',
       element:<Manage/>
+     },
+     {
+      path:'/addfaculty',
+      element:<Addfaculty/>
      }
       
     ]
