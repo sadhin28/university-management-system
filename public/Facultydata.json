@@ -1,0 +1,46 @@
+[
+  {
+    "id": "1",
+    "name": "Dr. James Wilson",
+    "email": "j.wilson@university.edu",
+    "department": "Computer Science",
+    "title": "Professor",
+    "office": "CS Building 301",
+    "courses": ["CS401", "CS301"],
+    "researchArea": "Algorithms & Data Structures",
+    "image": "https://randomuser.me/api/portraits/men/32.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Dr. Lisa Zhang",
+    "email": "l.zhang@university.edu",
+    "department": "Computer Science",
+    "title": "Associate Professor",
+    "office": "CS Building 205",
+    "courses": ["CS402", "CS302"],
+    "researchArea": "Machine Learning & AI",
+    "image": "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Dr. Robert Brown",
+    "email": "r.brown@university.edu",
+    "department": "Engineering",
+    "title": "Professor",
+    "office": "ENG Building 401",
+    "courses": ["ENG301", "ENG401"],
+    "researchArea": "Structural Engineering",
+    "image": "https://randomuser.me/api/portraits/men/65.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Dr. Anna Taylor",
+    "email": "a.taylor@university.edu",
+    "department": "Business",
+    "title": "Assistant Professor",
+    "office": "BUS Building 102",
+    "courses": ["BUS201", "BUS301"],
+    "researchArea": "Financial Analysis",
+    "image": "https://randomuser.me/api/portraits/women/55.jpg"
+  }
+]

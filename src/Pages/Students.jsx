@@ -94,7 +94,7 @@ const Students = () => {
             {/* Student Cards */}
             <div className="space-y-4">
                 {filteredStudents.map((student) => (
-                    <div key={student.id} className="flex justify-between items-center p-4 border rounded-lg bg-white shadow-sm">
+                    <div key={student.id} className="flex justify-between hover:shadow-lg items-center p-4 border rounded-lg bg-white shadow-sm">
                         <div className="flex items-center gap-4">
                             <FaUserGraduate className="text-4xl text-blue-500" />
                             <div>
