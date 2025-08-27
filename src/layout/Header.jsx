@@ -3,12 +3,12 @@ import { FaBell } from "react-icons/fa";
 const Navbar = () => {
   return (
     <div className="sticky bg-white-xx  top-0 backdrop-blur z-50">
-      <div className="flex border border-[3px] border-b-[#159799] justify-between items-center hover:shadow px-6 py-3 text-gray-200">
+      <div className="flex border border-[3px] border-b-[#159799] justify-between items-center hover:shadow px-6 py-3 text-black">
       {/* Search bar */}
       <input
         type="text"
         placeholder="Search text-white students, courses, faculty..."
-        className="w-1/2 px-4 py-2 border rounded-lg bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
+        className="w-1/2 px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
       />
 
       {/* Right side */}

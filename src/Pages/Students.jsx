@@ -36,7 +36,7 @@ const Students = () => {
                     <h1 className="text-3xl font-bold">Students</h1>
                     <p className="text-gray-500">Manage student enrollments and records</p>
                 </div>
-                <Link to='/addStudent' className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs">
+                <Link to='/addStudent' className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-6 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs">
                     <FaPlus />
                     Add Student
                 </Link>
