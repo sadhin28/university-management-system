@@ -19,7 +19,7 @@ export default function Faculty() {
     );
 
     return (
-        <div className="min-h-screen bg-gray-50 p-6">
+        <div className="min-h-screen  p-6">
             <div className="max-w-8xl mx-auto space-y-6">
                 {/* Header */}
                 <div className="flex justify-between items-center mb-6 text-xs md:text-xl">
@@ -36,7 +36,7 @@ export default function Faculty() {
                 </div>
 
                 {/* Filters */}
-                <div className="bg-white rounded-xl shadow p-4">
+                <div className=" rounded-xl shadow p-4">
                     <div className="flex items-center gap-4">
                         <div className="flex-1 relative">
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
@@ -45,7 +45,7 @@ export default function Faculty() {
                                 placeholder="Search faculty..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                                className=" bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]  w-full pl-10 pr-3 py-2 border rounded-lg"
                             />
                         </div>
                     </div>

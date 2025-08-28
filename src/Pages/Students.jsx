@@ -49,7 +49,7 @@ const Students = () => {
                     placeholder="Search students..."
                     value={search}
                     onChange={handleSearch}
-                    className="flex-1 w-full px-4 py-2 border rounded-lg" 
+                    className="bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]  w-full pl-10 pr-3 py-2 border rounded-lg" 
                 />
             </div>
 

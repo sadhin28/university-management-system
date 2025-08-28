@@ -14,7 +14,7 @@ const ViewProfile = () => {
     );
   }
     return (
-      <div className="flex justify-center items-start min-h-screen bg-gradient-to-br from-indigo-50 to-blue-100 px-4 py-10">
+      <div className="flex justify-center items-start min-h-screen  px-4 py-10">
       <div className="w-full max-w-8xl bg-white rounded-2xl shadow-xl overflow-hidden relative">
         
         {/* Back Button */}
