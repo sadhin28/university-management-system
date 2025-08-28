@@ -7,7 +7,7 @@ const Navbar = () => {
   console.log(user)
   return (
     <div className=" sticky  top-0 backdrop-blur z-50">
-      <div className="flex  bg-gradient-to-r from-[#8BB9B9FF]/80 to-[#031226FF]/70 to-[#839096FF]/80  justify-between items-center  shadow px-6 py-3 text-black">
+      <div className="flex  bg-gradient-to-r from-[#8BB9B9FF]/80 to-[#031226FF]/70 to-[#839096FF]/80  justify-between items-center  shadow-lg px-6 py-3 text-black">
         {/* Search bar */}
         <input
           type="text"

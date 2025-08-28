@@ -34,7 +34,7 @@ const Sidebar = () => {
   return (
     <div
       className={`
-         min-h-full bg-gradient-to-b from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white flex flex-col transition-all duration-300
+         shadow-lg min-h-full bg-gradient-to-b from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white flex flex-col transition-all duration-300
         ${isOpen ? "w-64" : "w-16"}
       `}
     >
