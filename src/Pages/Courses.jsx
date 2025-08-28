@@ -19,7 +19,7 @@ export default function Courses() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="min-h-screen  p-6">
       <div className="max-w-8xl mx-auto space-y-6">
         {/* Header */}
         <div className="flex justify-between items-center mb-6 text-xs md:text-xl">
