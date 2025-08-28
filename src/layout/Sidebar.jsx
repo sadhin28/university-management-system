@@ -7,20 +7,28 @@ import {
   FaCog,
   FaTimes,
   FaBars,
+  FaSignInAlt,
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Provider/Authprovider";
+import { TbLogin,  TbLogout, } from "react-icons/tb";
+
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true); // toggle sidebar open/closed
-
+  const {user,Logout}=useContext(AuthContext)
+  console.log(user)
   const menus = [
     { name: "Dashboard", icon: <FaTachometerAlt />, path: "/" },
-    { name: "Students", icon: <FaUserGraduate />, path: "/students" },
+    ...(user?[
+   { name: "Students", icon: <FaUserGraduate />, path: "/students" },
     { name: "Courses", icon: <FaBook />, path: "/courses" },
     { name: "Faculty", icon: <FaChalkboardTeacher />, path: "/faculty" },
     { name: "Schedule", icon: <FaCalendarAlt />, path: "/schedule" },
     { name: "Settings", icon: <FaCog />, path: "/settings" },
+    ]:[])
+   
   ];
 
   return (
@@ -63,6 +71,58 @@ const Sidebar = () => {
               </NavLink>
             </li>
           ))}
+          {
+            user?<NavLink 
+            className={({ isActive }) =>
+                  `flex items-center gap-3 px-4 py-2 rounded-md cursor-pointer transition-colors 
+                  ${isActive ? "hover:bg-green-800/50" : "hover:bg-green-800/50"}`
+                }
+            onClick={Logout}
+           
+            >
+              <span className="text-lg"><TbLogout/></span>
+                {isOpen && (
+                  <span className="whitespace-nowrap transition-opacity duration-300">
+                     Logout
+                  </span>
+                )}
+            </NavLink>
+            :
+            <NavLink 
+             to='/login'
+            className={({ isActive }) =>
+                  `flex items-center gap-3 px-4 py-2 rounded-md cursor-pointer transition-colors 
+                  ${isActive ? "bg-gray-800/50  font-semibold" : "hover:bg-green-800/50"}`
+                }
+            
+           
+            >
+              <span className="text-lg"><TbLogin/></span>
+               
+                {isOpen && (
+                  <span className="whitespace-nowrap transition-opacity duration-300">
+                     Login
+                  </span>
+                )}
+            </NavLink>
+          }
+          <NavLink 
+             to='/register'
+            className={({ isActive }) =>
+                  `flex items-center gap-3 px-4 py-2 rounded-md cursor-pointer transition-colors 
+                  ${isActive ? "bg-gray-800/50  font-semibold" : "hover:bg-green-800/50"}`
+                }
+            
+           
+            >
+              <span className="text-lg"><FaSignInAlt /></span>
+               
+                {isOpen && (
+                  <span className="whitespace-nowrap transition-opacity duration-300">
+                     Register
+                  </span>
+                )}
+            </NavLink>
         </ul>
       </nav>
     </div>

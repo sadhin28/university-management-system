@@ -19,6 +19,14 @@ import Addcourse from './Pages/Addcourse.jsx';
 import Viewdetails from './Pages/Viewdetails.jsx';
 import Manage from './Pages/Manage.jsx';
 import Addfaculty from './Pages/Addfaculty.jsx';
+import Contact from './Pages/Contact.jsx';
+import ViewProfile from './Pages/ViewProfile.jsx';
+import Authprovider from './Provider/Authprovider.jsx';
+import Login from './Pages/Login.jsx';
+import Register from './Pages/Register.jsx';
+import Privateroute from './Rout/Privateroute.jsx';
+import { ToastContainer } from 'react-toastify';
+
 
 const router = createBrowserRouter([
   {
@@ -33,43 +41,62 @@ const router = createBrowserRouter([
       },
      {
        path: "/students",
-       element:<Students/>
+       element:<Privateroute><Students/></Privateroute>
      },
      {
       path: "/courses",
-      element:<Courses/>
+      element:<Privateroute><Courses/></Privateroute>
      },
      {
         path: "/faculty",
-        element:<Faculty/>
+        element:<Privateroute><Faculty/></Privateroute>,
+        loader:()=>fetch('/public/Facultydata.json')
      },
      {
        path: "/schedule",
-       element:<Schedule/>
+       element:<Privateroute><Schedule/></Privateroute>
      },
      {
       path: "/settings",
-      element:<Settings/>
+      element:<Privateroute><Settings/></Privateroute>
      },
      {
       path:'/addStudent',
-      element:<AddStudent/>
+      element:<Privateroute><AddStudent/></Privateroute>
      },
      {
       path:'/addCourse',
-      element:<Addcourse/>
+      element:<Privateroute><Addcourse/></Privateroute>
      },
      {
       path:'/viewdetails',
-      element:<Viewdetails/>
+      element:<Privateroute><Viewdetails/></Privateroute>
      },
      {
       path:'/manage',
-      element:<Manage/>
+      element:<Privateroute><Manage/></Privateroute>
      },
      {
       path:'/addfaculty',
-      element:<Addfaculty/>
+      element:<Privateroute><Addfaculty/></Privateroute>
+     },
+     {
+      path:'/contact/:id',
+      element:<Privateroute><Contact/></Privateroute>,
+      loader:()=>fetch('/public/Facultydata.json')
+     },
+     {
+      path:'/ViewProfile/:id',
+      element:<Privateroute><ViewProfile/></Privateroute>,
+      loader:()=>fetch('/public/Facultydata.json')
+     },
+     {
+      path:'/login',
+      element:<Login/>
+     },
+     {
+      path:'register',
+      element:<Register/>
      }
       
     ]
@@ -78,6 +105,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <Authprovider>
+        <RouterProvider router={router}/>
+    </Authprovider>
+    <ToastContainer/>
   </StrictMode>,
 )

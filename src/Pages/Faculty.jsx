@@ -119,10 +119,10 @@ export default function Faculty() {
 
                                 {/* Actions */}
                                 <div className="flex gap-2 pt-2">
-                                    <Link to='/Contact' className="flex-1 px-3 text-center py-2 border rounded-lg text-sm hover:bg-gray-100 transition">
+                                    <Link to={`/contact/${faculty.id}`} className="flex-1 px-3 text-center py-2 border rounded-lg text-sm hover:bg-gray-100 transition">
                                         Contact
                                     </Link>
-                                    <Link to='/ViewProfile' className="flex-1 text-center px-3 py-2 bg-indigo-500 text-white rounded-lg text-sm hover:bg-indigo-600 transition">
+                                    <Link to={`/ViewProfile/${faculty.id}`} className="flex-1 text-center px-3 py-2 bg-indigo-500 text-white rounded-lg text-sm hover:bg-indigo-600 transition">
                                         View Profile
                                     </Link>
                                 </div>

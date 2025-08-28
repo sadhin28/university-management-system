@@ -8,7 +8,8 @@
     "office": "CS Building 301",
     "courses": ["CS401", "CS301"],
     "researchArea": "Algorithms & Data Structures",
-    "image": "https://avatars.githubusercontent.com/u/170426911?v=4"
+    "image": "https://avatars.githubusercontent.com/u/170426911?v=4",
+    "bio": "Prof. Taosif is a passionate educator and researcher with a focus on algorithms and efficient data structures. He has over 10 years of teaching experience and has published widely in computer science journals."
   },
   {
     "id": "2",
@@ -19,7 +20,8 @@
     "office": "CS Building 205",
     "courses": ["CS402", "CS302"],
     "researchArea": "Machine Learning & AI",
-    "image": "https://randomuser.me/api/portraits/women/44.jpg"
+    "image": "https://randomuser.me/api/portraits/women/44.jpg",
+    "bio": "Dr. Zhang specializes in machine learning and artificial intelligence. Her current research explores ethical AI, natural language processing, and neural network optimization."
   },
   {
     "id": "3",
@@ -30,7 +32,8 @@
     "office": "ENG Building 401",
     "courses": ["ENG301", "ENG401"],
     "researchArea": "Structural Engineering",
-    "image": "https://randomuser.me/api/portraits/men/65.jpg"
+    "image": "https://randomuser.me/api/portraits/men/65.jpg",
+    "bio": "Dr. Brown has over 20 years of experience in structural engineering. His research includes sustainable building materials and earthquake-resistant structures."
   },
   {
     "id": "4",
@@ -41,6 +44,199 @@
     "office": "BUS Building 102",
     "courses": ["BUS201", "BUS301"],
     "researchArea": "Financial Analysis",
-    "image": "https://randomuser.me/api/portraits/women/55.jpg"
+    "image": "https://randomuser.me/api/portraits/women/55.jpg",
+    "bio": "Dr. Taylor’s work focuses on financial modeling and business analytics. She is dedicated to bridging the gap between academic finance and real-world industry applications."
+  },
+  {
+    "id": "5",
+    "name": "Dr. Michael Johnson",
+    "email": "m.johnson@university.edu",
+    "department": "Mathematics",
+    "title": "Professor",
+    "office": "MATH Building 210",
+    "courses": ["MATH401", "MATH202"],
+    "researchArea": "Applied Mathematics",
+    "image": "https://randomuser.me/api/portraits/men/12.jpg",
+    "bio": "Prof. Johnson is known for his work in applied mathematics and numerical analysis, helping students connect theory with practical problem-solving."
+  },
+  {
+    "id": "6",
+    "name": "Dr. Emily Carter",
+    "email": "e.carter@university.edu",
+    "department": "Physics",
+    "title": "Associate Professor",
+    "office": "PHY Building 301",
+    "courses": ["PHY101", "PHY305"],
+    "researchArea": "Quantum Mechanics",
+    "image": "https://randomuser.me/api/portraits/women/68.jpg",
+    "bio": "Dr. Carter’s research lies in quantum theory and particle physics. She is also passionate about science outreach and mentoring young physicists."
+  },
+  {
+    "id": "7",
+    "name": "Dr. David Wilson",
+    "email": "d.wilson@university.edu",
+    "department": "Chemistry",
+    "title": "Professor",
+    "office": "CHEM Building 405",
+    "courses": ["CHEM101", "CHEM401"],
+    "researchArea": "Organic Chemistry",
+    "image": "https://randomuser.me/api/portraits/men/33.jpg",
+    "bio": "Dr. Wilson is a leading researcher in organic chemistry, focusing on pharmaceutical compounds and drug discovery."
+  },
+  {
+    "id": "8",
+    "name": "Dr. Sophia Lee",
+    "email": "s.lee@university.edu",
+    "department": "Biology",
+    "title": "Assistant Professor",
+    "office": "BIO Building 120",
+    "courses": ["BIO201", "BIO401"],
+    "researchArea": "Genetics",
+    "image": "https://randomuser.me/api/portraits/women/71.jpg",
+    "bio": "Dr. Lee’s research explores genetic mutations and molecular biology, with publications in leading international journals."
+  },
+  {
+    "id": "9",
+    "name": "Dr. Richard Davis",
+    "email": "r.davis@university.edu",
+    "department": "History",
+    "title": "Professor",
+    "office": "HIS Building 202",
+    "courses": ["HIS101", "HIS303"],
+    "researchArea": "World History",
+    "image": "https://randomuser.me/api/portraits/men/76.jpg",
+    "bio": "Dr. Davis specializes in ancient civilizations and cultural studies. He has authored several books on European history."
+  },
+  {
+    "id": "10",
+    "name": "Dr. Olivia Martinez",
+    "email": "o.martinez@university.edu",
+    "department": "Psychology",
+    "title": "Associate Professor",
+    "office": "PSY Building 305",
+    "courses": ["PSY201", "PSY405"],
+    "researchArea": "Cognitive Psychology",
+    "image": "https://randomuser.me/api/portraits/women/22.jpg",
+    "bio": "Dr. Martinez studies cognitive behavior and human decision-making, helping bridge psychology with neuroscience."
+  },
+  {
+    "id": "11",
+    "name": "Dr. Ethan White",
+    "email": "e.white@university.edu",
+    "department": "Economics",
+    "title": "Professor",
+    "office": "ECO Building 207",
+    "courses": ["ECO301", "ECO401"],
+    "researchArea": "Macroeconomics",
+    "image": "https://randomuser.me/api/portraits/men/40.jpg",
+    "bio": "Dr. White is an expert in global markets and macroeconomic policies, consulting for both governments and corporations."
+  },
+  {
+    "id": "12",
+    "name": "Dr. Grace Kim",
+    "email": "g.kim@university.edu",
+    "department": "Computer Science",
+    "title": "Assistant Professor",
+    "office": "CS Building 210",
+    "courses": ["CS101", "CS305"],
+    "researchArea": "Human-Computer Interaction",
+    "image": "https://randomuser.me/api/portraits/women/25.jpg",
+    "bio": "Dr. Kim focuses on improving user experience through innovative interfaces, working at the intersection of design and computing."
+  },
+  {
+    "id": "13",
+    "name": "Dr. William Scott",
+    "email": "w.scott@university.edu",
+    "department": "Law",
+    "title": "Professor",
+    "office": "LAW Building 105",
+    "courses": ["LAW201", "LAW305"],
+    "researchArea": "Constitutional Law",
+    "image": "https://randomuser.me/api/portraits/men/11.jpg",
+    "bio": "Prof. Scott is widely respected for his contributions to constitutional law and civil rights advocacy."
+  },
+  {
+    "id": "14",
+    "name": "Dr. Isabella Hernandez",
+    "email": "i.hernandez@university.edu",
+    "department": "Sociology",
+    "title": "Associate Professor",
+    "office": "SOC Building 201",
+    "courses": ["SOC101", "SOC301"],
+    "researchArea": "Urban Sociology",
+    "image": "https://randomuser.me/api/portraits/women/77.jpg",
+    "bio": "Dr. Hernandez researches urban development and social inequality, mentoring students in community engagement projects."
+  },
+  {
+    "id": "15",
+    "name": "Dr. James Anderson",
+    "email": "j.anderson@university.edu",
+    "department": "Political Science",
+    "title": "Professor",
+    "office": "POL Building 309",
+    "courses": ["POL201", "POL405"],
+    "researchArea": "International Relations",
+    "image": "https://randomuser.me/api/portraits/men/23.jpg",
+    "bio": "Dr. Anderson specializes in diplomacy and global politics, with extensive experience in UN advisory roles."
+  },
+  {
+    "id": "16",
+    "name": "Dr. Chloe Nguyen",
+    "email": "c.nguyen@university.edu",
+    "department": "Education",
+    "title": "Assistant Professor",
+    "office": "EDU Building 112",
+    "courses": ["EDU101", "EDU401"],
+    "researchArea": "Curriculum Development",
+    "image": "https://randomuser.me/api/portraits/women/66.jpg",
+    "bio": "Dr. Nguyen works on innovative teaching methodologies and educational technology for modern classrooms."
+  },
+  {
+    "id": "17",
+    "name": "Dr. Benjamin Clark",
+    "email": "b.clark@university.edu",
+    "department": "Philosophy",
+    "title": "Professor",
+    "office": "PHIL Building 207",
+    "courses": ["PHIL101", "PHIL301"],
+    "researchArea": "Ethics & Logic",
+    "image": "https://randomuser.me/api/portraits/men/52.jpg",
+    "bio": "Prof. Clark teaches courses in philosophy of mind, logic, and moral philosophy, encouraging critical thought in students."
+  },
+  {
+    "id": "18",
+    "name": "Dr. Natalie Cooper",
+    "email": "n.cooper@university.edu",
+    "department": "Linguistics",
+    "title": "Associate Professor",
+    "office": "LING Building 215",
+    "courses": ["LING201", "LING305"],
+    "researchArea": "Syntax & Semantics",
+    "image": "https://randomuser.me/api/portraits/women/42.jpg",
+    "bio": "Dr. Cooper studies language structures and bilingualism, contributing to advancements in linguistics research."
+  },
+  {
+    "id": "19",
+    "name": "Dr. Daniel Moore",
+    "email": "d.moore@university.edu",
+    "department": "Environmental Science",
+    "title": "Professor",
+    "office": "ENV Building 310",
+    "courses": ["ENV101", "ENV401"],
+    "researchArea": "Climate Change",
+    "image": "https://randomuser.me/api/portraits/men/90.jpg",
+    "bio": "Dr. Moore’s work focuses on climate change, sustainability, and conservation practices across the globe."
+  },
+  {
+    "id": "20",
+    "name": "Dr. Ava Patel",
+    "email": "a.patel@university.edu",
+    "department": "Medicine",
+    "title": "Assistant Professor",
+    "office": "MED Building 101",
+    "courses": ["MED201", "MED305"],
+    "researchArea": "Public Health",
+    "image": "https://randomuser.me/api/portraits/women/21.jpg",
+    "bio": "Dr. Patel is a public health specialist dedicated to community health, disease prevention, and medical education."
   }
 ]
