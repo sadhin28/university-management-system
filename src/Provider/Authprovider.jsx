@@ -50,9 +50,10 @@ const Authprovider = ({children}) => {
         setloading(true)
         return signOut(auth)
     }
-    //Forgot password
-    const forgotPassword =(auths,email)=>{
-        return sendPasswordResetEmail(auths,email)
+      //password reset email
+
+    const passReset = (email) => {
+        return sendPasswordResetEmail(auth, email)
     }
    
    const authInfo={
@@ -61,7 +62,7 @@ const Authprovider = ({children}) => {
     loading,
     setloading,
     updateUserProfile,
-    forgotPassword,
+    passReset,
     login,
     CreateNewUser,
     Logout

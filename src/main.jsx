@@ -102,8 +102,8 @@ const router = createBrowserRouter([
       element:<Privateroute><UpdateProfile/></Privateroute>
     },
     {
-      path:"/resetpassword",
-      element:<Privateroute><ForgetPassword/></Privateroute>
+      path:"/forgotPassword",
+      element:<ForgetPassword/>
     },
      {
       path:'/login',

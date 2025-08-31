@@ -1,5 +1,5 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
@@ -13,6 +13,10 @@ import { AuthContext } from '../Provider/Authprovider';
 const Login = () => {
     const location = useLocation()
     const navigate = useNavigate()
+     const [takeemail, setTakeemail] = useState("");
+    const handleChange = (event) => {
+        setTakeemail(event.target.value);
+    }
 
     const from = location.state || '/'
     const { setuser, login, forgotPassword } = useContext(AuthContext)
@@ -47,21 +51,21 @@ const Login = () => {
             })
     }
     //forgot password
-    const handelForgatePassword = () => {
-        const email = document.getElementsByName('email')[0].value
-        if (!email) {
-            toast.error("Please Provide A valid Email Address")
-        }
-        else {
-            forgotPassword(auth, email)
-                .then(res => {
-                    toast.success('Forgot Password,Please Check email')
-                })
-                .catch(error => {
-                    toast.error(error.message)
-                })
-        }
-    }
+    // const handelForgatePassword = () => {
+    //     const email = document.getElementsByName('email')[0].value
+    //     if (!email) {
+    //         toast.error("Please Provide A valid Email Address")
+    //     }
+    //     else {
+    //         forgotPassword(auth, email)
+    //             .then(res => {
+    //                 toast.success('Forgot Password,Please Check email')
+    //             })
+    //             .catch(error => {
+    //                 toast.error(error.message)
+    //             })
+    //     }
+    // }
     return (
         <div className='min-h-screen  bg-gradient-to-r from-[#8BB9B9FF]/80 to-[#031226FF]/70 to-[#839096FF]/80   grid md:grid-cols-2 px-5 '>
             <div className='md:mt-20 lg:mt-0 '>
@@ -83,7 +87,7 @@ const Login = () => {
                             <input
                                 type="email"
                                 id="email"
-
+                                onChange={handleChange}
                                 name='email'
                                 className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                 placeholder="Enter your Email"
@@ -113,7 +117,9 @@ const Login = () => {
                         >
                             Login now
                         </button>
-                        <div className='mt-2 text-white hover:underline'><Link onClick={handelForgatePassword}>Forgot password?</Link></div>
+                        <div className='mt-2 text-white hover:underline'><Link to="/forgotPassword"
+                        state={{ email: takeemail }}
+                        >Forgot password?</Link></div>
                         <div className='text-center text-white mt-2'><span>You have no Acount? </span>  <Link to='/register'><span className="text-red-300 hover:underline">Register Now</span></Link></div>
                         <div className="text-center text-white mt-2 mb-2">--------------- or ---------------</div>
                         <button onClick={handelLoginWithGoogle} className="btn w-full bg-white flex justify-center items-center gap-2   text-black border p-2 rounded-xl ">
