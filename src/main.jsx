@@ -26,6 +26,7 @@ import Login from './Pages/Login.jsx';
 import Register from './Pages/Register.jsx';
 import Privateroute from './Rout/Privateroute.jsx';
 import { ToastContainer } from 'react-toastify';
+import Profile from './Pages/Profile.jsx';
 
 
 const router = createBrowserRouter([
@@ -90,6 +91,10 @@ const router = createBrowserRouter([
       element:<Privateroute><ViewProfile/></Privateroute>,
       loader:()=>fetch('/public/Facultydata.json')
      },
+    {
+      path:"/profile",
+      element:<Privateroute><Profile/></Privateroute>
+    },
      {
       path:'/login',
       element:<Login/>
