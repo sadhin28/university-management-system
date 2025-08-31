@@ -27,6 +27,7 @@ import Register from './Pages/Register.jsx';
 import Privateroute from './Rout/Privateroute.jsx';
 import { ToastContainer } from 'react-toastify';
 import Profile from './Pages/Profile.jsx';
+import UpdateProfile from './Pages/Updateprofile.jsx';
 
 
 const router = createBrowserRouter([
@@ -94,6 +95,10 @@ const router = createBrowserRouter([
     {
       path:"/profile",
       element:<Privateroute><Profile/></Privateroute>
+    },
+    {
+      path:"/update-profile",
+      element:<Privateroute><UpdateProfile/></Privateroute>
     },
      {
       path:'/login',

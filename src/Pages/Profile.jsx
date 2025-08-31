@@ -31,7 +31,7 @@ const Profile = () => {
                         <p className="text-gray-500 mt-2">{user?.email}</p>
                     </div>
                     <div className="flex justify-center pb-6">
-                        <Link to='/update-profile' className="btn bg-gradient-to-r from-[#44cab0] to-[#19BC9B]  text-white">Update Your Profile</Link>
+                        <Link  to='/update-profile' className="btn bg-gradient-to-r from-[#44cab0] to-[#19BC9B] p-2 rounded-xl text-white">Update Your Profile</Link>
                     </div>
                 </div>
 

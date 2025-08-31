@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { FaBell } from "react-icons/fa";
 import { AuthContext } from "../Provider/Authprovider";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { user } = useContext(AuthContext)
@@ -22,10 +23,12 @@ const Navbar = () => {
             <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-3 h-3 flex items-center justify-center"></span>
           </div>
 
-          {
+          <Link to= '/profile'>
+           {
             user ? <img className="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold cursor-pointer" src={user.photoURL} alt="" /> : <h1 className="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold cursor-pointer">User</h1>
 
           }
+          </Link>
 
         </div>
       </div>
