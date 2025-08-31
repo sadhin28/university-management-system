@@ -24,7 +24,7 @@ const UpdateProfile = () => {
     return (
          <div className="w-11/12 mx-auto min-h-screen  flex justify-center items-center">
            
-            <div className="border-4 hover:shadow-lg p-10 rounded-xl shadow-lg w-full max-w-lg">
+            <div className="border-4 border-[#2C3D4D] hover:shadow-lg p-10 rounded-xl shadow-lg w-full max-w-lg">
                 <h2 className="text-center text-2xl font-bold mb-4">Update Profile</h2>
                 <form onSubmit={handleUpdate} className="space-y-4">
                     <div className="form-control">
