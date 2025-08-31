@@ -29,7 +29,7 @@ export default function Faculty() {
                             Manage faculty members and their assignments
                         </p>
                     </div>
-                    <Link to="/addfaculty" className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-6 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs">
+                    <Link to="/addfaculty" className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-4 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs">
                         <Plus className="w-4 h-4" />
                         Add Faculty
                     </Link>
