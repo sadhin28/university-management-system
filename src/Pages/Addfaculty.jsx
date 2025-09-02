@@ -16,6 +16,7 @@ export default function Addfaculty() {
         bio: "",
         image: null,
         imagePreview: "",
+        phone:""
     });
     const coursesArray = form.courses
         ? form.courses.split(",").map((c) => c.trim())
@@ -54,10 +55,10 @@ export default function Addfaculty() {
             researchArea: form.researchArea,
             bio: form.bio,
             image: form.imagePreview,
-
+            phone:form.phone
         }
         //post now
-        fetch(`${import.meta.env.VITE_FACULTY}/faculty`, {
+        fetch(`${import.meta.env.VITE_API}/faculty`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -92,9 +93,9 @@ export default function Addfaculty() {
             <div className="w-full max-w-6xl bg-white/20 backdrop-blur-md rounded-2xl shadow-2xl p-8">
                 <h2 className="text-3xl font-bold text-center mb-6">Add Professor</h2>
 
-                <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-6">
+                <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-6 items-center">
                     {/* ID */}
-                    <div className="flex flex-col">
+                    <div className="flex flex-col  ">
                         <label>ID</label>
                         <input
                             type="text"
@@ -191,7 +192,17 @@ export default function Addfaculty() {
                             className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                         />
                     </div>
-
+                    {/* Phone */}
+                    <div className="col-span-2 flex flex-col">
+                        <label>Phone</label>
+                         <input
+                            type="tel"
+                            name="phone"
+                            value={form.phone}
+                            onChange={handleChange}
+                            className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
+                        />
+                    </div>  
                     {/* Bio */}
                     <div className="col-span-2 flex flex-col">
                         <label>Bio</label>
@@ -203,7 +214,7 @@ export default function Addfaculty() {
                             className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                         />
                     </div>
-
+                   
                     {/* Image Upload */}
                     <div className="col-span-2 flex flex-col">
                         <label>Profile Image</label>
@@ -214,7 +225,7 @@ export default function Addfaculty() {
                             className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                         />
                     </div>
-
+                    
                     {/* Image Preview */}
                     {form.imagePreview && (
                         <div className="col-span-2 flex justify-center">

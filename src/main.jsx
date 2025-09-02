@@ -53,7 +53,7 @@ const router = createBrowserRouter([
      {
         path: "/faculty",
         element:<Privateroute><Faculty/></Privateroute>,
-        loader:()=>fetch(`${import.meta.env.VITE_FACULTY}/faculty`)
+        loader:()=>fetch(`${import.meta.env.VITE_API}/faculty`)
      },
      {
        path: "/schedule",
@@ -91,8 +91,8 @@ const router = createBrowserRouter([
      {
       path:'/ViewProfile/:id',
       element:<Privateroute><ViewProfile/></Privateroute>,
-      loader:()=>fetch('/public/Facultydata.json')
-     },
+      loader:({params})=>fetch(`${import.meta.env.VITE_API}/faculty/${params.id}`) 
+    },
     {
       path:"/profile",
       element:<Privateroute><Profile/></Privateroute>
