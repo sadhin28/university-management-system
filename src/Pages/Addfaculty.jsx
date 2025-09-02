@@ -171,7 +171,7 @@ export default function Addfaculty() {
 
                     {/* Courses */}
                     <div className="flex flex-col">
-                        <label>Courses (comma separated)</label>
+                        <label>Courses (Used ,)</label>
                         <input
                             type="text"
                             name="courses"
