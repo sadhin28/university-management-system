@@ -53,7 +53,7 @@ const router = createBrowserRouter([
      {
         path: "/faculty",
         element:<Privateroute><Faculty/></Privateroute>,
-        loader:()=>fetch('/public/Facultydata.json')
+        loader:()=>fetch(`${import.meta.env.VITE_FACULTY}/faculty`)
      },
      {
        path: "/schedule",
