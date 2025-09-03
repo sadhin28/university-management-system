@@ -16,7 +16,6 @@ import Settings from './Pages/Settings.jsx';
 import Errorpage from './Pages/Errorpage.jsx';
 import AddStudent from './Pages/AddStudent.jsx';
 import Addcourse from './Pages/Addcourse.jsx';
-import Viewdetails from './Pages/Viewdetails.jsx';
 import Manage from './Pages/Manage.jsx';
 import Addfaculty from './Pages/Addfaculty.jsx';
 import Contact from './Pages/Contact.jsx';
@@ -29,6 +28,7 @@ import { ToastContainer } from 'react-toastify';
 import Profile from './Pages/Profile.jsx';
 import UpdateProfile from './Pages/Updateprofile.jsx';
 import ForgetPassword from './Pages/ForgetPassword.jsx';
+import Enrollment from './Pages/Enrollment.jsx';
 
 
 const router = createBrowserRouter([
@@ -49,7 +49,8 @@ const router = createBrowserRouter([
      },
      {
       path: "/courses",
-      element:<Privateroute><Courses/></Privateroute>
+      element:<Privateroute><Courses/></Privateroute>,
+      loader:()=>fetch(`${import.meta.env.VITE_API}/course`)
      },
      {
         path: "/faculty",
@@ -73,8 +74,9 @@ const router = createBrowserRouter([
       element:<Privateroute><Addcourse/></Privateroute>
      },
      {
-      path:'/viewdetails',
-      element:<Privateroute><Viewdetails/></Privateroute>
+      path:'/EnrolleCourse/:id',
+      element:<Privateroute><Enrollment/></Privateroute>,
+      
      },
      {
       path:'/manage',

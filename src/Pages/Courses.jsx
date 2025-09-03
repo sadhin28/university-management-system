@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { Search, Plus, Filter, Clock, Users } from "lucide-react";
-import { Link } from "react-router-dom";
-import sampleCourse from '../../public/sampleCourse.json'
+import { Link, useLoaderData } from "react-router-dom";
 export default function Courses() {
   const [searchQuery, setSearchQuery] = useState("");
-  
+  const sampleCourse = useLoaderData()
   const filteredCourses = sampleCourse.filter(
     (course) =>
       course.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -62,7 +61,7 @@ export default function Courses() {
                       {course.code}
                     </span>
                     <span className="px-2 py-1 text-xs bg-gray-100 rounded-lg">
-                      {course.credits} credits
+                      {course.credits}
                     </span>
                   </div>
                 </div>
@@ -121,8 +120,8 @@ export default function Courses() {
 
                 {/* Actions */}
                 <div className="flex gap-2 pt-2">
-                  <Link to='/viewdetails' className="flex-1 text-center px-3 py-2 border rounded-lg text-sm hover:bg-gray-100 transition">
-                    View Details
+                  <Link to={`/EnrolleCourse/${course._id}`} className="flex-1 text-center px-3 py-2 border rounded-lg text-sm hover:bg-gray-100 transition">
+                   Enrolle Course
                   </Link>
                   <Link to='/manage' className="flex-1 text-center px-3 py-2 bg-indigo-500 text-white rounded-lg text-sm hover:bg-indigo-600 transition">
                     Manage
