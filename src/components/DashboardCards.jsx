@@ -36,7 +36,7 @@ const DashboardCards = ({resentStudent}) => {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {resentStudent?.slice(0, 4).map((student) => (
+          {resentStudent?.map((student) => (
             <div
               key={student.id}
               className="flex items-center justify-between hover:shadow-lg p-3 rounded-lg bg-muted/50 bg-gray-100"

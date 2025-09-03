@@ -4,9 +4,10 @@ import Swal from "sweetalert2";
 
 export default function AddStudent() {
     const navigate = useNavigate()
+
     const [form, setForm] = useState({
         name: "",
-        email:"",
+        email: "",
         program: "",
         year: "",
         gpa: '',
@@ -37,9 +38,9 @@ export default function AddStudent() {
         e.preventDefault();
         const StudentData = {
             name: form.name,
-            email:form.email,
+            email: form.email,
             program: form.program,
-            year: `${form.year} Year`,
+            year: `${form.year}`,
             gpa: form.gpa,
             studentId: form.studentId,
             imagePreview: form.imagePreview
@@ -86,6 +87,7 @@ export default function AddStudent() {
                     <div className="flex flex-col  ">
                         <label>Stuendt ID</label>
                         <input
+                            
                             type="text"
                             name="studentId"
                             value={form.studentId}
@@ -124,31 +126,45 @@ export default function AddStudent() {
                     {/* Program */}
                     <div className="flex flex-col">
                         <label>Program</label>
-                        <input
-                            type="text"
-                            name="program"
+                        <select
+                             required
                             value={form.program}
+                            name="program"
                             onChange={handleChange}
                             className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
-                        />
+                        >
+                            <option value="">Select Program</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="Physics">Physics</option>
+                           
+                        </select>
                     </div>
 
                     {/* year */}
                     <div className="flex flex-col">
                         <label>Year</label>
-                        <input
-                            type="text"
-                            name="year"
+                        <select
+                            required
                             value={form.year}
+                            name="year"
                             onChange={handleChange}
                             className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
-                        />
+                        >
+                            <option value="">Select Years</option>
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year">3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                        </select>
                     </div>
 
                     {/* GPA */}
                     <div className="flex flex-col">
                         <label>GPA</label>
                         <input
+                            required
                             type="text"
                             name="gpa"
                             value={form.gpa}
@@ -161,6 +177,7 @@ export default function AddStudent() {
                     <div className="col-span-2 flex flex-col">
                         <label>Profile Image</label>
                         <input
+                            required
                             type="file"
                             accept="image/*"
                             onChange={handleFileChange}

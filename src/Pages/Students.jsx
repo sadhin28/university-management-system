@@ -60,7 +60,7 @@ const Students = () => {
                     onChange={(e) => setFilters({ ...filters, program: e.target.value })}
                     className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                 >
-                    <option value="">All Programs</option>
+                    <option value="">All Program</option>
                     <option value="Computer Science">Computer Science</option>
                     <option value="Mechanical Engineering">Mechanical Engineering</option>
                     <option value="Mathematics">Mathematics</option>
