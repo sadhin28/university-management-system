@@ -50,7 +50,7 @@ export default function Courses() {
           {filteredCourses.map((course) => (
             <div
               key={course.id}
-              className="bg-gray-100/20 rounded-xl shadow hover:shadow-lg transition duration-300"
+              className="border-2 border-[#097C7DFF] bg-gray-100/20 rounded-xl shadow hover:shadow-lg transition duration-300"
             >
               {/* Card Header */}
               <div className="flex items-start justify-between p-4 border-b">

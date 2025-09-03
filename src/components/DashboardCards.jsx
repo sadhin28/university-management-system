@@ -14,9 +14,9 @@ const CardContent = ({ children, className = '' }) => (
 // Main Component
 const DashboardCards = ({resentStudent,popularcourse}) => {
     return (
-    <div className="grid mb-10 grid-cols-1 lg:grid-cols-2 gap-6">
+    <div className=" grid mb-10 grid-cols-1 lg:grid-cols-2 gap-6 ">
       {/* Recent Students */}
-      <Card className="shadow-card border hover:border-[#097C7DFF] hover:shadow-lg">
+      <Card className=" border-2 border-[#097C7DFF] hover:shadow-lg bg-gray-100/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Users className="w-5 h-5 text-primary" />
@@ -27,7 +27,7 @@ const DashboardCards = ({resentStudent,popularcourse}) => {
           {resentStudent?.map((student) => (
             <div
               key={student.id}
-              className="flex items-center justify-between hover:shadow-lg p-3 rounded-lg bg-muted/50 bg-gray-100"
+              className="flex items-center justify-between hover:shadow-lg p-3 rounded-lg bg-muted/50 bg-gray-100/20"
             >
               <div className="space-y-1">
                 <p className="font-medium">{student.name}</p>
@@ -45,7 +45,7 @@ const DashboardCards = ({resentStudent,popularcourse}) => {
       </Card>
 
       {/* Popular Courses */}
-      <Card className="shadow-card border hover:border-[#097C7DFF] hover:shadow-lg">
+      <Card className="border-2 border-[#097C7DFF] hover:shadow-lg bg-gray-100/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <BookOpen className="w-5 h-5 text-primary" />
@@ -56,7 +56,7 @@ const DashboardCards = ({resentStudent,popularcourse}) => {
           {popularcourse.map((course) => (
             <div
               key={course.id}
-              className="flex items-center hover:shadow-lg justify-between p-3 rounded-lg bg-muted/50 bg-gray-100"
+              className="flex items-center hover:shadow-lg justify-between p-3 rounded-lg bg-muted/50 bg-gray-100/20"
             >
               <div className="space-y-1">
                 <p className="font-medium">{course.name}</p>

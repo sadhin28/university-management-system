@@ -36,7 +36,7 @@ const Students = () => {
                     <h1 className="text-3xl font-bold">Students</h1>
                     <p className="text-gray-500">Manage student enrollments and records</p>
                 </div>
-                <Link to='/addStudent' className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-6 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs">
+                <Link to='/addStudent' className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-2 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs">
                     <FaPlus />
                     Add Student
                 </Link>
@@ -94,7 +94,7 @@ const Students = () => {
             {/* Student Cards */}
             <div className="space-y-4">
                 {filteredStudents?.map((student) => (
-                    <div key={student._id} className="md:flex justify-between hover:shadow-lg items-center p-4 border rounded-lg bg-white shadow-sm">
+                    <div key={student._id} className="md:flex justify-between hover:shadow-lg items-center p-4 border-2 border-[#097C7DFF] rounded-lg bg-gray-100/20 shadow-sm">
                         <div className="md:flex items-center  gap-4">
                             <div className='w-20 h-20 rounded-full'>
                                 <img className='rounded-full h-20 w-20' src={student.imagePreview} alt="" />

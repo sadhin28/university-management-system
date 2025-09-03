@@ -7,7 +7,7 @@ const DashboardCard = ({ title, value, change, icon }) => {
   const changeColor = isZero ? 'text-gray-500' : isPositive ? 'text-green-600' : 'text-red-600';
 
   return (
-    <div className="hover:border-[#097C7DFF] flex mx-auto  items-center justify-between p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 w-full border">
+    <div className="border-2 border-[#097C7DFF] flex mx-auto  items-center justify-between p-4 bg-gray-100/20 rounded-xl shadow-xl hover:shadow-md transition-shadow duration-200 w-full">
       <div>
         <p className="text-sm text-gray-600">{title}</p>
         <p className="text-2xl font-bold text-gray-900">
