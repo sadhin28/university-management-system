@@ -44,7 +44,8 @@ const router = createBrowserRouter([
       },
      {
        path: "/students",
-       element:<Privateroute><Students/></Privateroute>
+       element:<Privateroute><Students/></Privateroute>,
+       loader:()=>fetch(`${import.meta.env.VITE_API}/student`)
      },
      {
       path: "/courses",
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
      {
         path: "/faculty",
         element:<Privateroute><Faculty/></Privateroute>,
-        loader:()=>fetch(`https://university-management-server-topaz.vercel.app/faculty`)
+        loader:()=>fetch(`${import.meta.env.VITE_API}/faculty`)
      },
      {
        path: "/schedule",
@@ -91,7 +92,7 @@ const router = createBrowserRouter([
      {
       path:'/ViewProfile/:id',
       element:<Privateroute><ViewProfile/></Privateroute>,
-      loader:({params})=>fetch(`https://university-management-server-topaz.vercel.app/faculty/${params.id}`) 
+      loader:({params})=>fetch(`${import.meta.env.VITE_API}/faculty/${params.id}`) 
     },
     {
       path:"/profile",

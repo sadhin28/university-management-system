@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import studentsData from '.././../public/sampleStudent.json'; // Adjust if path is different
 import { FaUserGraduate, FaPlus, FaFilter } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Students = () => {
+    const studentsData = useLoaderData()
     const [students, setStudents] = useState([]);
     const [search, setSearch] = useState('');
     const [filters, setFilters] = useState({
@@ -58,7 +58,7 @@ const Students = () => {
                 <select
                     value={filters.program}
                     onChange={(e) => setFilters({ ...filters, program: e.target.value })}
-                    className="border px-4 py-2 rounded-lg"
+                    className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                 >
                     <option value="">All Programs</option>
                     <option value="Computer Science">Computer Science</option>
@@ -69,7 +69,7 @@ const Students = () => {
                 <select
                     value={filters.year}
                     onChange={(e) => setFilters({ ...filters, year: e.target.value })}
-                    className="border px-4 py-2 rounded-lg"
+                    className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                 >
                     <option value="">All Years</option>
                     <option value="1st Year">1st Year</option>
@@ -80,7 +80,7 @@ const Students = () => {
                 <select
                     value={filters.gpa}
                     onChange={(e) => setFilters({ ...filters, gpa: e.target.value })}
-                    className="border px-4 py-2 rounded-lg md:w-40 w-full "
+                    className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799] "
                 >
                     <option value="">Min GPA</option>
                     <option value="3.5">3.5+</option>
@@ -93,22 +93,24 @@ const Students = () => {
 
             {/* Student Cards */}
             <div className="space-y-4">
-                {filteredStudents.map((student) => (
-                    <div key={student.id} className="flex justify-between hover:shadow-lg items-center p-4 border rounded-lg bg-white shadow-sm">
-                        <div className="flex items-center gap-4">
-                            <FaUserGraduate className="text-4xl text-blue-500" />
+                {filteredStudents?.map((student) => (
+                    <div key={student._id} className="md:flex justify-between hover:shadow-lg items-center p-4 border rounded-lg bg-white shadow-sm">
+                        <div className="md:flex items-center  gap-4">
+                            <div className='w-20 h-20 rounded-full'>
+                                <img className='rounded-full h-20 w-20' src={student.imagePreview} alt="" />
+                            </div>
                             <div>
                                 <h2 className="text-lg font-semibold">{student.name}</h2>
                                 <p className="text-sm text-gray-500">{student.email}</p>
-                                <div className="flex items-center gap-2 text-sm text-gray-600 mt-1">
+                                <div className="md:flex grid items-center gap-2 text-sm text-gray-600 mt-1">
                                     <span className="bg-gray-200 px-2 py-0.5 rounded-full text-xs">{student.studentId}</span>
                                     <span>{student.program}</span>
-                                    <span>•</span>
+                                    <span className='invisible md:visible'>•</span>
                                     <span>{student.year}</span>
                                 </div>
                             </div>
                         </div>
-                        <div className="text-right">
+                        <div className="md:text-right">
                             <p className="font-semibold">GPA: {student.gpa}</p>
                             <p className="text-sm text-gray-500">{student.courses} courses enrolled</p>
                         </div>

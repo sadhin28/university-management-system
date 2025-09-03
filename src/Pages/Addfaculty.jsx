@@ -58,7 +58,7 @@ export default function Addfaculty() {
             phone:form.phone
         }
         //post now
-        fetch(`https://university-management-server-topaz.vercel.app/faculty`, {
+        fetch(`${import.meta.env.VITE_API}/faculty`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

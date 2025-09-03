@@ -1,17 +1,11 @@
 import { useEffect, useState } from "react";
 import { Search, Plus, Filter, Clock, Users } from "lucide-react";
-import  sampleCourses  from ".././../public/sampleCourse.json"; // keep your sample data
 import { Link } from "react-router-dom";
-
+import sampleCourse from '../../public/sampleCourse.json'
 export default function Courses() {
   const [searchQuery, setSearchQuery] = useState("");
-  useEffect(()=>{
-    fetch('/sampleCourses')
-    .then(res=>res.json()
-    .then(data=>setSearchQuery(data))
-)
-  },[])
-  const filteredCourses = sampleCourses.filter(
+  
+  const filteredCourses = sampleCourse.filter(
     (course) =>
       course.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       course.code.toLowerCase().includes(searchQuery.toLowerCase()) ||

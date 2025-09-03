@@ -2,10 +2,17 @@ import { useLoaderData } from 'react-router-dom';
 import DashboardCard from '../components/DashboardCard';
 import WelcomeCard from '../components/WelcomeCard';
 import DashboardCards from '../components/DashboardCards';
+import { useEffect, useState } from 'react';
 
 const Dashboard = () => {
     const data = useLoaderData()
-
+    const [resentStudent,setresentStudent]=useState([])
+    useEffect(()=>{
+        fetch(`${import.meta.env.VITE_API}/resent-student`)
+        .then(res=>res.json()
+        .then(data=>setresentStudent(data))
+    )
+    },[])
     return (
         <div>
             <WelcomeCard />
@@ -21,7 +28,7 @@ const Dashboard = () => {
                 ))}
             </div>
            <div className='px-4'>
-               <DashboardCards/>
+               <DashboardCards resentStudent={resentStudent} key={resentStudent._id}/>
            </div>
         </div>
     );

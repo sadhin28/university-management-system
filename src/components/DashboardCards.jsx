@@ -15,19 +15,16 @@ const CardContent = ({ children, className = '' }) => (
 );
 
 // Main Component
-const DashboardCards = () => {
+const DashboardCards = ({resentStudent}) => {
+  
   const [sampleCourses, setsampleCourse] = useState([])
-  const [sampleStudents, setsampleStudent] = useState([])
+
   useEffect(() => {
     fetch('/sampleCourse.json')
       .then(res => res.json())
       .then(data => setsampleCourse(data))
   }, [])
-  useEffect(() => {
-    fetch('/sampleStudent.json')
-      .then(res => res.json())
-      .then(data => setsampleStudent(data))
-  }, [])
+
   return (
     <div className="grid mb-10 grid-cols-1 lg:grid-cols-2 gap-6">
       {/* Recent Students */}
@@ -39,7 +36,7 @@ const DashboardCards = () => {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {sampleStudents.slice(0, 4).map((student) => (
+          {resentStudent?.slice(0, 4).map((student) => (
             <div
               key={student.id}
               className="flex items-center justify-between hover:shadow-lg p-3 rounded-lg bg-muted/50 bg-gray-100"
