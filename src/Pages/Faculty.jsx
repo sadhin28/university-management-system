@@ -53,9 +53,10 @@ export default function Faculty() {
                     {filteredFaculty?.map((faculty) => (
                         <div
                             key={faculty._id}
-                            className="bg-white rounded-xl shadow hover:shadow-lg transition duration-300"
+                            className="bg-gray-100/20 rounded-xl shadow shadow-xl hover:shadow-lg transition duration-300"
                         >
-                            {/* Card Header */}
+                           <div className=" rounded-xl bg-">
+                              {/* Card Header */}
                             <div className="text-center p-6 border-b">
                                 <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
                                     <img
@@ -119,11 +120,12 @@ export default function Faculty() {
                                     <Link to={`/contact/${faculty._id}`} className="flex-1 px-3 text-center py-2 border rounded-lg text-sm hover:bg-gray-100 transition">
                                         Contact
                                     </Link>
-                                    <Link to={`/ViewProfile/${faculty._id}`} className="flex-1 text-center px-3 py-2 bg-indigo-500 text-white rounded-lg text-sm hover:bg-indigo-600 transition">
+                                    <Link to={`/ViewProfile/${faculty._id}`} className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-6 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs">
                                         View Profile
                                     </Link>
                                 </div>
                             </div>
+                           </div>
                         </div>
                     ))}
                 </div>

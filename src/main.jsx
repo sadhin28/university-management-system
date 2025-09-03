@@ -29,6 +29,8 @@ import Profile from './Pages/Profile.jsx';
 import UpdateProfile from './Pages/Updateprofile.jsx';
 import ForgetPassword from './Pages/ForgetPassword.jsx';
 import Enrollment from './Pages/Enrollment.jsx';
+import MyEnrolled from './Pages/MyEnrolled.jsx';
+import ViewCourse from './Pages/ViewCourse.jsx';
 
 
 const router = createBrowserRouter([
@@ -103,6 +105,14 @@ const router = createBrowserRouter([
     {
       path:"/update-profile",
       element:<Privateroute><UpdateProfile/></Privateroute>
+    },
+    {
+      path:"/my-enrolled",
+      element:<Privateroute><MyEnrolled/></Privateroute>
+    },
+    {
+      path:"/viewCourse/:id",
+      element:<Privateroute><ViewCourse/></Privateroute>
     },
     {
       path:"/forgotPassword",

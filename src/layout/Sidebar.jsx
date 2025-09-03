@@ -4,15 +4,16 @@ import {
   FaBook,
   FaChalkboardTeacher,
   FaCalendarAlt,
-  FaCog,
   FaTimes,
   FaBars,
   FaSignInAlt,
+  
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/Authprovider";
 import { TbLogin, TbLogout, } from "react-icons/tb";
+import { SiCoursera } from "react-icons/si";
 
 
 const Sidebar = () => {
@@ -26,7 +27,7 @@ const Sidebar = () => {
       { name: "Courses", icon: <FaBook />, path: "/courses" },
       { name: "Faculty", icon: <FaChalkboardTeacher />, path: "/faculty" },
       { name: "Schedule", icon: <FaCalendarAlt />, path: "/schedule" },
-      { name: "Settings", icon: <FaCog />, path: "/settings" },
+      { name: "My Enrolled Course", icon: <SiCoursera />, path: "/my-enrolled" },
     ] : [])
 
   ];

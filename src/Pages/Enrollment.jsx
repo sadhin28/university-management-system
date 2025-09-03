@@ -12,7 +12,7 @@ export default function EnrollPage() {
   const studentEmail = user?.email
 
   const handleEnroll = () => {
-    fetch(`${import.meta.env.VITE_API}/course/enrolled/${id}`, {
+    fetch(`${import.meta.env.VITE_API}/course/my-enrolled/${id}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ studentId, studentName,studentEmail }),
@@ -20,7 +20,7 @@ export default function EnrollPage() {
       .then((res) => res.json())
       .then((data) => {
         toast.success(data.message); // or use SweetAlert
-        navigate("/courses"); // go back to course list
+        navigate("/my-enrolled"); // go back to course list
       })
       .catch((err) => console.error(err));
   };

@@ -13,8 +13,8 @@ const ViewProfile = () => {
     );
   }
     return (
-      <div className="flex justify-center items-start min-h-screen  px-4 py-10">
-      <div className="w-full max-w-8xl bg-white rounded-2xl shadow-xl overflow-hidden relative">
+      <div className="flex justify-center items-start min-h-screen  px-4 py-10 shadow-xl hover:shadow-lg">
+      <div className="hover:shadow-lg w-full max-w-8xl bg-gray-100/20 rounded-2xl shadow-xl overflow-hidden relative">
         
         {/* Back Button */}
         <Link

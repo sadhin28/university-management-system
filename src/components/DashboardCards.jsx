@@ -1,7 +1,4 @@
-
 import { Users, BookOpen } from 'lucide-react'; // For icons
-import { useEffect, useState } from 'react';
-
 // Card components (simplified for this example)
 const Card = ({ children, className = '' }) => (
   <div className={`bg-white rounded-lg p-4 ${className}`}>{children}</div>
@@ -15,17 +12,8 @@ const CardContent = ({ children, className = '' }) => (
 );
 
 // Main Component
-const DashboardCards = ({resentStudent}) => {
-  
-  const [sampleCourses, setsampleCourse] = useState([])
-
-  useEffect(() => {
-    fetch('/sampleCourse.json')
-      .then(res => res.json())
-      .then(data => setsampleCourse(data))
-  }, [])
-
-  return (
+const DashboardCards = ({resentStudent,popularcourse}) => {
+    return (
     <div className="grid mb-10 grid-cols-1 lg:grid-cols-2 gap-6">
       {/* Recent Students */}
       <Card className="shadow-card border hover:border-[#097C7DFF] hover:shadow-lg">
@@ -65,7 +53,7 @@ const DashboardCards = ({resentStudent}) => {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {sampleCourses.map((course) => (
+          {popularcourse.map((course) => (
             <div
               key={course.id}
               className="flex items-center hover:shadow-lg justify-between p-3 rounded-lg bg-muted/50 bg-gray-100"

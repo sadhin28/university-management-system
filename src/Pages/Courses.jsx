@@ -22,7 +22,7 @@ export default function Courses() {
               Manage course catalog and schedules
             </p>
           </div>
-          <Link to='/addCourse' className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-6 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs">
+          <Link to='/addCourse' className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-2 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs">
             <Plus className="w-4 h-4" />
             Add Course
           </Link>
@@ -50,7 +50,7 @@ export default function Courses() {
           {filteredCourses.map((course) => (
             <div
               key={course.id}
-              className="bg-white rounded-xl shadow hover:shadow-lg transition duration-300"
+              className="bg-gray-100/20 rounded-xl shadow hover:shadow-lg transition duration-300"
             >
               {/* Card Header */}
               <div className="flex items-start justify-between p-4 border-b">
@@ -120,10 +120,10 @@ export default function Courses() {
 
                 {/* Actions */}
                 <div className="flex gap-2 pt-2">
-                  <Link to={`/EnrolleCourse/${course._id}`} className="flex-1 text-center px-3 py-2 border rounded-lg text-sm hover:bg-gray-100 transition">
+                  <Link to={`/EnrolleCourse/${course._id}`} className="border-2  hover:bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] hover:text-white flex-1 px-6 py-2 rounded-lg text-center items-center gap-2 md:text-xl text-xs">
                    Enrolle Course
                   </Link>
-                  <Link to='/manage' className="flex-1 text-center px-3 py-2 bg-indigo-500 text-white rounded-lg text-sm hover:bg-indigo-600 transition">
+                  <Link to='/manage' className="border-2 bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white flex-1 px-6 py-2 rounded-lg text-center items-center gap-2 md:text-xl text-xs">
                     Manage
                   </Link>
                 </div>

@@ -7,10 +7,17 @@ import { useEffect, useState } from 'react';
 const Dashboard = () => {
     const data = useLoaderData()
     const [resentStudent,setresentStudent]=useState([])
+    const [popularcourse,setpopularcourse]=useState([])
     useEffect(()=>{
         fetch(`${import.meta.env.VITE_API}/resent-student`)
         .then(res=>res.json()
         .then(data=>setresentStudent(data))
+    )
+    },[])
+    useEffect(()=>{
+        fetch(`${import.meta.env.VITE_API}/popular-course`)
+        .then(res=>res.json()
+        .then(data=>setpopularcourse(data))
     )
     },[])
     return (
@@ -28,7 +35,7 @@ const Dashboard = () => {
                 ))}
             </div>
            <div className='px-4'>
-               <DashboardCards resentStudent={resentStudent} key={resentStudent._id}/>
+               <DashboardCards popularcourse={popularcourse} resentStudent={resentStudent} key={resentStudent._id}/>
            </div>
         </div>
     );
