@@ -77,8 +77,8 @@ export default function AuthForm() {
             })
     }
   return (
-    <div className="flex items-center justify-center min-h-screen px-4 hover:shadow-xl shadow-lg">
-      <div className="bg-gray-100/20 p-8 rounded-lg shadow-lg w-full max-w-lg">
+    <div className=" flex items-center justify-center min-h-screen px-4 ">
+      <div className="border-2  border-[#097C7DFF] hover:shadow-xl shadow-lg bg-gray-100/20 p-8 rounded-lg shadow-lg w-full max-w-lg">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800 uppercase">
           {isRegister ? "Register" : "Login"}
         </h2>
@@ -124,7 +124,7 @@ export default function AuthForm() {
         {!isRegister && (
           <div
            
-            className="text-sm text-[#097C7DFF] hover:text-red-500 cursor-pointer hover:underline mb-4"
+            className="w-25 text-sm text-[#097C7DFF] hover:text-red-500 cursor-pointer hover:underline mb-4"
           >
             <NavLink 
             state={{ email: email }}
@@ -148,7 +148,7 @@ export default function AuthForm() {
         {/* Submit */}
         <button
           onClick={handleSubmit}
-          className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-2 rounded-lg  items-center gap-2 md:text-xl  w-full"
+          className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-2 rounded-lg  items-center gap-2 md:text-xl  w-full font-bold"
         >
           {isRegister ? "Register" : "Login"}
         </button>

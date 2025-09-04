@@ -10,10 +10,11 @@ const Privateroute = ({children}) => {
         return <LoadingSpiner/>
     }
     if(user && user?.email){
-        if(role && role === "admin"){
-            return children
-        }
-        
+       
+      return children
+    }
+    else if(role && role === "admin"){
+      return children
     }
     return (
         <div>
