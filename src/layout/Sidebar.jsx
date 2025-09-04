@@ -15,11 +15,12 @@ import { Profiler, useContext, useState } from "react";
 import { AuthContext } from "../Provider/Authprovider";
 import { TbLogin, TbLogout, } from "react-icons/tb";
 import { SiCoursera } from "react-icons/si";
+import { GrUserAdmin } from "react-icons/gr";
 
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true); // toggle sidebar open/closed
-  const { user, Logout } = useContext(AuthContext)
+  const { user, Logout,role } = useContext(AuthContext)
 
   const menus = [
     { name: "Dashboard", icon: <FaTachometerAlt />, path: "/" },
@@ -73,6 +74,23 @@ const Sidebar = () => {
               </NavLink>
             </li>
           ))}
+         {role === 'admin' && <NavLink
+            to='/admin'
+            className={({ isActive }) =>
+              `flex items-center gap-3 px-4 py-2 rounded-md cursor-pointer transition-colors 
+                  ${isActive ? "bg-gray-800/50  font-semibold" : "hover:bg-green-800/50"}`
+            }
+
+
+          >
+            <span className="text-lg"><GrUserAdmin /></span>
+
+            {isOpen && (
+              <span className="whitespace-nowrap transition-opacity duration-300">
+                Admin
+              </span>
+            )}
+          </NavLink>}
           {
             user ? <NavLink
               className={({ isActive }) =>
@@ -108,23 +126,7 @@ const Sidebar = () => {
                 )}
               </NavLink>
           }
-         {user && <NavLink
-            to='/profile'
-            className={({ isActive }) =>
-              `flex items-center gap-3 px-4 py-2 rounded-md cursor-pointer transition-colors 
-                  ${isActive ? "bg-gray-800/50  font-semibold" : "hover:bg-green-800/50"}`
-            }
-
-
-          >
-            <span className="text-lg"><FaUser /></span>
-
-            {isOpen && (
-              <span className="whitespace-nowrap transition-opacity duration-300">
-                Profile
-              </span>
-            )}
-          </NavLink>}
+      
         </ul>
       </nav>
     </div>

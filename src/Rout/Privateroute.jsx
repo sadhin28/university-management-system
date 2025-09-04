@@ -4,13 +4,16 @@ import { Navigate, useLocation } from "react-router-dom";
 import LoadingSpiner from "../components/LoadingSpiner";
 
 const Privateroute = ({children}) => {
-    const {user,loading}=useContext(AuthContext)
+    const {user,loading,role}=useContext(AuthContext)
     const location = useLocation();
     if(loading){
         return <LoadingSpiner/>
     }
     if(user && user?.email){
-        return children
+        if(role && role === "admin"){
+            return children
+        }
+        
     }
     return (
         <div>

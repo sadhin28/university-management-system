@@ -30,6 +30,7 @@ import Enrollment from './Pages/Enrollment.jsx';
 import MyEnrolled from './Pages/MyEnrolled.jsx';
 import ViewCourse from './Pages/ViewCourse.jsx';
 import AuthForm from './Pages/AuthForm.jsx';
+import Admin from './Pages/Admin.jsx';
 
 
 const router = createBrowserRouter([
@@ -112,6 +113,10 @@ const router = createBrowserRouter([
     {
       path:"/viewCourse/:id",
       element:<Privateroute><ViewCourse/></Privateroute>
+    },
+    {
+      path:"/admin",
+      element:<Privateroute><Admin/></Privateroute>
     },
     {
       path:"/forgotPassword",

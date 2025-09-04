@@ -69,14 +69,15 @@ export default function AuthForm() {
             .then(res => {
                 setuser(res.user)
                 res.user && navigate(from)
+                res.user  && toast.success(`Google login successful`);
             })
             .catch(error => {
                 toast.error(error.message)
             })
     }
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-cyan-700 to-blue-700 px-4">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <div className="flex items-center justify-center min-h-screen px-4">
+      <div className="bg-gray-100/20 p-8 rounded-lg shadow-lg w-full max-w-lg">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800 uppercase">
           {isRegister ? "Register" : "Login"}
         </h2>
@@ -166,12 +167,12 @@ export default function AuthForm() {
 
         {/* Switch login/register */}
         <p
-          className="mt-4 text-center text-sm text-blue-600 cursor-pointer hover:underline"
+          className="mt-4 text-center text-sm text-blue-600 cursor-pointer "
           onClick={() => setIsRegister(!isRegister)}
         >
           {isRegister
-            ? "Already have an account? Login now"
-            : "Don't have an account? Register"}
+            ? <p>Already have an account?  <span className="hover:underline hover:text-red-500">Login now</span></p>
+            : <p>Don't have an account? <span className="hover:underline hover:text-red-500">Register</span></p>}
         </p>
       </div>
     </div>
