@@ -1,15 +1,4 @@
 import { Users, BookOpen } from 'lucide-react'; // For icons
-// Card components (simplified for this example)
-const Card = ({ children, className = '' }) => (
-  <div className={`bg-white rounded-lg p-4 ${className}`}>{children}</div>
-);
-const CardHeader = ({ children }) => <div className="mb-4">{children}</div>;
-const CardTitle = ({ children, className = '' }) => (
-  <h2 className={`text-lg font-semibold ${className}`}>{children}</h2>
-);
-const CardContent = ({ children, className = '' }) => (
-  <div className={className}>{children}</div>
-);
 
 // Main Component
 const DashboardCards = ({resentStudent,popularcourse}) => {
@@ -17,13 +6,13 @@ const DashboardCards = ({resentStudent,popularcourse}) => {
     <div className="mx-2  grid mb-10 grid-cols-1 lg:grid-cols-2 gap-6 ">
       {/* Recent Students */}
       <div className="p-6 rounded-xl border-2 border-[#097C7DFF] hover:shadow-lg bg-gray-200/20">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+        <div>
+          <div className="flex items-center gap-2">
             <Users className="w-5 h-5 text-primary" />
             Recent Students
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
+          </div>
+        </div>
+        <div className="space-y-4">
           {resentStudent?.map((student) => (
             <div
               key={student.id}
@@ -41,18 +30,18 @@ const DashboardCards = ({resentStudent,popularcourse}) => {
               </div>
             </div>
           ))}
-        </CardContent>
+        </div>
       </div>
 
       {/* Popular Courses */}
       <div className="p-6 rounded-xl border-2 border-[#097C7DFF] hover:shadow-lg bg-gray-200/20">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+        <div>
+          <div className="flex items-center gap-2">
             <BookOpen className="w-5 h-5 text-primary" />
             Popular Courses
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
+          </div>
+        </div>
+        <div className="space-y-4">
           {popularcourse.map((course) => (
             <div
               key={course.id}
@@ -72,7 +61,7 @@ const DashboardCards = ({resentStudent,popularcourse}) => {
               </div>
             </div>
           ))}
-        </CardContent>
+        </div>
       </div>
     </div>
   );
