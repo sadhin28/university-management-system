@@ -19,17 +19,14 @@ export default function Faculty() {
         <div className="min-h-screen  p-6">
             <div className="max-w-8xl mx-auto space-y-6">
                 {/* Header */}
-                <div className="flex justify-between items-center mb-6 text-xs md:text-xl">
+                <div className="text-center mb-6  md:text-xl">
                     <div>
                         <h1 className="text-3xl font-bold">Faculty</h1>
-                        <p className="text-gray-500 ">
-                            Manage faculty members and their assignments
+                        <p className="text-gray-500">
+                            All faculty members In Our University
                         </p>
                     </div>
-                    <Link to="/addfaculty" className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-2  rounded-lg flex items-center gap-2 md:text-xl text-xs">
-                        <Plus className="w-4 h-4" />
-                        Add Faculty
-                    </Link>
+
                 </div>
 
                 {/* Filters */}

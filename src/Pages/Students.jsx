@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaUserGraduate, FaPlus, FaFilter } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../Provider/Authprovider';
 
 const Students = () => {
+    const {role}=useContext(AuthContext)
     const studentsData = useLoaderData()
     const [students, setStudents] = useState([]);
     const [search, setSearch] = useState('');
@@ -62,15 +64,11 @@ const Students = () => {
 
     return (
         <div className="p-6 max-w-8xl mx-auto">
-            <div className="flex justify-between items-center mb-6 text-xs md:text-xl">
+            <div className="text-center mb-6  md:text-xl">
                 <div>
                     <h1 className="text-3xl font-bold">Students</h1>
-                    <p className="text-gray-500">Manage student enrollments and records</p>
+                    <p className="text-gray-500">Manage All student enrollments and records</p>
                 </div>
-                <Link to='/addStudent' className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-2 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs">
-                    <FaPlus />
-                    Add Student
-                </Link>
             </div>
 
             <div className='md:flex md:justify-between '>
@@ -145,9 +143,9 @@ const Students = () => {
                             <p className="font-semibold">GPA: {student.gpa}</p>
                             <p className="text-sm text-gray-500 ">{student.courses} courses enrolled</p>
                         </div>
-                        <button onClick={() => onDelete(student._id)} className="my-2 border-2 font-bold hover:bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] hover:text-white  px-2 py-2 rounded-lg text-center items-center gap-2  text-xs">
+                        {role === 'admin'&& <button onClick={() => onDelete(student._id)} className="my-2 border-2 font-bold hover:bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] hover:text-white  px-2 py-2 rounded-lg text-center items-center gap-2  text-xs">
                             Delete Student
-                        </button>
+                        </button>}
                     </div>
                 ))}
             </div>
