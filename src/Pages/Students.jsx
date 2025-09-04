@@ -71,19 +71,20 @@ const Students = () => {
                 </div>
             </div>
 
-            <div className='md:flex md:justify-between '>
-                <div className="mb-6 ">
+            <div className='md:flex md:gap-4 md:justify-between '>
+                <div className="mb-6 w-full">
                     <input
+                        
                         type="text"
                         placeholder="Search students..."
                         value={search}
                         onChange={handleSearch}
-                        className="bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]  w-full pl-10 pr-3 py-2 border rounded-lg"
+                        className="w-full bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]  w-full pl-10 pr-3 py-2 border rounded-lg"
                     />
                 </div>
 
                 {/* Filters */}
-                <div className="grid md:flex gap-4 mb-6">
+                <div className="grid md:flex gap-5 mb-6">
                     <select
                         value={filters.program}
                         onChange={(e) => setFilters({ ...filters, program: e.target.value })}

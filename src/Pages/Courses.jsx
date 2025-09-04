@@ -1,7 +1,9 @@
-import {  useState } from "react";
-import { Search, Plus, Filter, Clock, Users } from "lucide-react";
+import {  useContext, useState } from "react";
+import { Search, Clock, Users } from "lucide-react";
 import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../Provider/Authprovider";
 export default function Courses() {
+  const {role}=useContext(AuthContext)
   const [searchQuery, setSearchQuery] = useState("");
   const sampleCourse = useLoaderData()
   const filteredCourses = sampleCourse.filter(
@@ -15,17 +17,13 @@ export default function Courses() {
     <div className="min-h-screen  p-6">
       <div className="max-w-8xl mx-auto space-y-6">
         {/* Header */}
-        <div className="flex justify-between items-center mb-6 text-xs md:text-xl">
+        <div className="text-center mb-6  md:text-xl">
           <div>
             <h1 className="text-3xl font-bold">Courses</h1>
             <p className="text-gray-500">
-              Manage course catalog and schedules
+               Students Can Enrolle The Course And Admin Manage the Course
             </p>
           </div>
-          <Link to='/addCourse' className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-2 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs">
-            <Plus className="w-4 h-4" />
-            Add Course
-          </Link>
         </div>
 
         {/* Filters */}
@@ -50,7 +48,7 @@ export default function Courses() {
           {filteredCourses.map((course) => (
             <div
               key={course.id}
-              className="border-2 border-[#097C7DFF] bg-gray-100/20 rounded-xl shadow hover:shadow-lg transition duration-300"
+              className="border-2 border-[#097C7DFF] bg-gray-100/20 rounded-xl shadow hover:shadow-2xl transition duration-300"
             >
               {/* Card Header */}
               <div className="flex items-start justify-between p-4 border-b">
@@ -119,13 +117,14 @@ export default function Courses() {
                 </div>
 
                 {/* Actions */}
-                <div className="flex gap-2 pt-2">
-                  <Link to={`/EnrolleCourse/${course._id}`} className="border-2  hover:bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] hover:text-white flex-1 px-6 py-2 rounded-lg text-center items-center gap-2 md:text-xl text-xs">
+                <div className=" flex gap-10 justify-between  ">
+                 { <Link to={`/EnrolleCourse/${course._id}`}
+                   className="font-bold border-2  p-3 bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white   rounded-lg text-center flex-1  items-center   text-xs">
                    Enrolle Course
-                  </Link>
-                  <Link to='/manage' className="border-2 bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white flex-1 px-6 py-2 rounded-lg text-center items-center gap-2 md:text-xl text-xs">
-                    Manage
-                  </Link>
+                  </Link>}
+                  {role === 'admin'&& <button className="font-bold border-2 p-3 bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white   rounded-lg text-center flex-1  items-center   text-xs">
+                    Delete Course
+                  </button>}
                 </div>
               </div>
             </div>
