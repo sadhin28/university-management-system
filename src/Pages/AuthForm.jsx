@@ -4,6 +4,7 @@ import { AuthContext } from "../Provider/Authprovider";
 import app from "../firebase/firebase.init";
 import { toast } from "react-toastify";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { FaGoogle } from "react-icons/fa";
 export default function AuthForm() {
   const { login, CreateNewUser ,user,setuser,updateUserProfile} = useContext(AuthContext);
   const [isRegister, setIsRegister] = useState(false);
@@ -76,7 +77,7 @@ export default function AuthForm() {
             })
     }
   return (
-    <div className="flex items-center justify-center min-h-screen px-4">
+    <div className="flex items-center justify-center min-h-screen px-4 hover:shadow-xl shadow-lg">
       <div className="bg-gray-100/20 p-8 rounded-lg shadow-lg w-full max-w-lg">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800 uppercase">
           {isRegister ? "Register" : "Login"}
@@ -87,7 +88,7 @@ export default function AuthForm() {
         <select
           value={role}
           onChange={(e) => setRole(e.target.value)}
-          className="w-full p-2 mb-4 border rounded-lg focus:ring-2 focus:ring-blue-500"
+          className="w-full p-2 mb-4 px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
         >
           <option value="student">Student</option>
           <option value="admin">Admin</option>
@@ -99,7 +100,7 @@ export default function AuthForm() {
           placeholder="Enter your Name"
           value={name}
           onChange={(e) =>setname(e.target.value)}
-          className="w-full p-2 border rounded-lg mb-4 focus:ring-2 focus:ring-blue-500"
+          className="w-full p-2 mb-4 px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
         />}
         {/* Email */}
         <input
@@ -107,7 +108,7 @@ export default function AuthForm() {
           placeholder="Enter your Email"
           value={email}
           onChange={(e) =>setEmail(e.target.value)}
-          className="w-full p-2 border rounded-lg mb-4 focus:ring-2 focus:ring-blue-500"
+          className="w-full p-2 mb-4 px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
         />
 
         {/* Password */}
@@ -116,14 +117,14 @@ export default function AuthForm() {
           placeholder="Enter your Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full p-2 border rounded-lg mb-2 focus:ring-2 focus:ring-blue-500"
+          className="w-full p-2 mb-4 px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
         />
 
         {/* Forgot password */}
         {!isRegister && (
           <div
            
-            className="text-sm text-blue-600 cursor-pointer hover:underline mb-4"
+            className="text-sm text-[#097C7DFF] hover:text-red-500 cursor-pointer hover:underline mb-4"
           >
             <NavLink 
             state={{ email: email }}
@@ -140,34 +141,34 @@ export default function AuthForm() {
             placeholder="Enter photo URL"
             value={photoURL}
             onChange={(e) => setPhotoURL(e.target.value)}
-            className="w-full p-2 border rounded-lg mb-4 focus:ring-2 focus:ring-blue-500"
+            className="w-full p-2 mb-4 px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
           />
         )}
 
         {/* Submit */}
         <button
           onClick={handleSubmit}
-          className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
+          className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-2 rounded-lg  items-center gap-2 md:text-xl  w-full"
         >
           {isRegister ? "Register" : "Login"}
         </button>
 
         {/* Google login */}
-        <div className="my-4 flex items-center">
-          <hr className="flex-grow border-gray-300" />
-          <span className="mx-2 text-gray-500 text-sm">or</span>
-          <hr className="flex-grow border-gray-300" />
+        <div className="my-4  flex items-center">
+          <hr className="flex-grow border-[#097C7DFF]" />
+          <span className="mx-2 font-bold text-[#097C7DFF] text-sm">or</span>
+          <hr className=" flex-grow  border-[#097C7DFF]" />
         </div>
         <button
           onClick={handleGoogleLogin}
-          className="w-full bg-red-500 text-white py-2 rounded-lg font-semibold hover:bg-red-600 transition flex items-center justify-center"
+          className="bg-gradient-to-r font-bold from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-2 rounded-lg  items-center flex justify-center gap-2 md:text-xl  w-full"
         >
-          <span className="mr-2">🔴</span> Login with Google
+        <FaGoogle className="mr-1 "/> Login with Google
         </button>
 
         {/* Switch login/register */}
         <p
-          className="mt-4 text-center text-sm text-blue-600 cursor-pointer "
+          className="mt-4 text-center text-sm text-[#097C7DFF] cursor-pointer "
           onClick={() => setIsRegister(!isRegister)}
         >
           {isRegister
