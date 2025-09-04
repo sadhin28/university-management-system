@@ -26,15 +26,16 @@ export default function EnrollPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 space-y-4">
-      <h2 className="text-2xl font-bold mb-2">Confirm Enrollment</h2>
+    <div className="p-2 flex  items-center justify-center min-h-screen">
+      <div className="border-2 hover:shadow-2xl shadow-lg p-10 rounded-xl  space-y-10  lg:w-5/12 md:w-full w-full px-5  mx-auto flex    flex-col gap-3">
+        <h2 className="md:text-2xl text-center font-bold mb-2">Confirm Enrollment</h2>
 
       <input
         type="text"
         placeholder="Student ID"
         value={studentId}
         onChange={(e) => setStudentId(e.target.value)}
-        className="px-4 py-2 border rounded-lg"
+        className="w-full px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
       />
 
       <input
@@ -42,16 +43,17 @@ export default function EnrollPage() {
         placeholder="Student Name"
         value={studentName}
         onChange={(e) => setStudentName(e.target.value)}
-        className="px-4 py-2 border rounded-lg"
+        className="w-full px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
       />
      
 
       <button
         onClick={handleEnroll}
-        className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700"
+        className="border-2 bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white   rounded-lg text-center p-2   items-center   text-xs"
       >
         Enroll Now
       </button>
+      </div>
     </div>
   );
 }
