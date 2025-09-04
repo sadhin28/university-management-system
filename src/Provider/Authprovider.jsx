@@ -8,6 +8,7 @@ const auth = getAuth(app)
 const Authprovider = ({children}) => {
    const [user,setuser]=useState(null)
    const [loading,setloading]=useState(true)
+     const [role, setRole] = useState("student");
    
     //Create user
     const CreateNewUser=(email,password)=>{
@@ -31,13 +32,21 @@ const Authprovider = ({children}) => {
         });
     };
       useEffect(()=>{
-     const  unsubscribe =  onAuthStateChanged(auth,currentUser=>{
-            setuser(currentUser)
-            setloading(false);
+     const  unsubscribe =  onAuthStateChanged(auth,async (currentUser)=>{
+        if(currentUser){
+           setuser(currentUser)
+           const tokenResult=await currentUser.getIdTokenResult(true)
+           setRole(tokenResult.claims.role || "student")
+        }else{
+            setuser(null)
+            setRole(null)
+        }   
+       
+         setloading(false);
         })
         return()=>{
             unsubscribe();
-            setuser(null)
+            
         }
     },[])
     //LogIn
@@ -57,6 +66,7 @@ const Authprovider = ({children}) => {
     }
    
    const authInfo={
+    role,
     user,
     setuser,
     loading,

@@ -16,11 +16,11 @@ const ForgetPassword = () => {
         event.preventDefault();
 
         passReset(email)
-            .then(() => {
-                toast.success('Password reset email sent successfully');
+            .then((res) => {
+               res && toast.success('Password reset email sent successfully');
                 window.open("https://mail.google.com/", "_blank");
                 event.target.reset();
-                LogOut();
+                res && LogOut();
                 navigate('/login');
             })
             .catch((error) => {

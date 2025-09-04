@@ -7,10 +7,11 @@ import {
   FaTimes,
   FaBars,
   FaSignInAlt,
+  FaUser,
   
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { useContext, useState } from "react";
+import { Profiler, useContext, useState } from "react";
 import { AuthContext } from "../Provider/Authprovider";
 import { TbLogin, TbLogout, } from "react-icons/tb";
 import { SiCoursera } from "react-icons/si";
@@ -107,8 +108,8 @@ const Sidebar = () => {
                 )}
               </NavLink>
           }
-          <NavLink
-            to='/register'
+         {user && <NavLink
+            to='/profile'
             className={({ isActive }) =>
               `flex items-center gap-3 px-4 py-2 rounded-md cursor-pointer transition-colors 
                   ${isActive ? "bg-gray-800/50  font-semibold" : "hover:bg-green-800/50"}`
@@ -116,14 +117,14 @@ const Sidebar = () => {
 
 
           >
-            <span className="text-lg"><FaSignInAlt /></span>
+            <span className="text-lg"><FaUser /></span>
 
             {isOpen && (
               <span className="whitespace-nowrap transition-opacity duration-300">
-                Register
+                Profile
               </span>
             )}
-          </NavLink>
+          </NavLink>}
         </ul>
       </nav>
     </div>

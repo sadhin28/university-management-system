@@ -19,7 +19,7 @@ const Login = () => {
     }
 
     const from = location.state || '/'
-    const { setuser, login, forgotPassword } = useContext(AuthContext)
+    const { setuser, login,  } = useContext(AuthContext)
 
     const handleSubmit = (e) => {
 

@@ -21,8 +21,6 @@ import Addfaculty from './Pages/Addfaculty.jsx';
 import Contact from './Pages/Contact.jsx';
 import ViewProfile from './Pages/ViewProfile.jsx';
 import Authprovider from './Provider/Authprovider.jsx';
-import Login from './Pages/Login.jsx';
-import Register from './Pages/Register.jsx';
 import Privateroute from './Rout/Privateroute.jsx';
 import { ToastContainer } from 'react-toastify';
 import Profile from './Pages/Profile.jsx';
@@ -31,6 +29,7 @@ import ForgetPassword from './Pages/ForgetPassword.jsx';
 import Enrollment from './Pages/Enrollment.jsx';
 import MyEnrolled from './Pages/MyEnrolled.jsx';
 import ViewCourse from './Pages/ViewCourse.jsx';
+import AuthForm from './Pages/AuthForm.jsx';
 
 
 const router = createBrowserRouter([
@@ -120,13 +119,8 @@ const router = createBrowserRouter([
     },
      {
       path:'/login',
-      element:<Login/>
-     },
-     {
-      path:'register',
-      element:<Register/>
-     }
-      
+      element:<AuthForm/>
+     },  
     ]
   },
 ]);

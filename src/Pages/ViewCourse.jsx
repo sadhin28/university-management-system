@@ -7,7 +7,7 @@ const ViewCourse = () => {
     const [course,setviewCourse]=useState()
   
     useEffect(()=>{
-        fetch(`http://localhost:5000/course/${id}`)
+        fetch(`${import.meta.env.VITE_API}/course/${id}`)
         .then(res=>res.json())
         .then(data=>setviewCourse(data))
     },[])
