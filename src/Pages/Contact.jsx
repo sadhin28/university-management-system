@@ -4,7 +4,7 @@ const Contact = () => {
     const FacultyData = useLoaderData()
     const {id}= useParams()
     const faculty=FacultyData.find((F)=> F.id === id) 
-    console.log(faculty)
+    
     return (
         <div>
             <h1>Contact</h1>

@@ -39,7 +39,7 @@ export default function Addcourse() {
             credits: form.credits,
             schedule: formatTo12Hour(form.schedule)
         }
-        console.log(CoursetData)
+       
         //post now
         fetch(`${import.meta.env.VITE_API}/course`, {
             method: 'POST',

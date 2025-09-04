@@ -3,7 +3,7 @@ import { Link, useLoaderData, } from "react-router-dom";
 
 const ViewProfile = () => {
      const faculty = useLoaderData()
-     console.log(faculty)
+    
   
   if (!faculty) {
     return (

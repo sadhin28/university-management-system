@@ -6,7 +6,7 @@ import { Link, useLoaderData } from "react-router-dom";
 export default function Faculty() {
     const sampleFaculty  = useLoaderData()
     const [searchQuery, setSearchQuery] = useState("");
-    console.log(sampleFaculty)
+    
     
     const filteredFaculty = sampleFaculty.filter(
         (faculty) =>

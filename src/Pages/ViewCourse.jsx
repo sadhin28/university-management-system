@@ -5,7 +5,7 @@ import {  useParams } from 'react-router-dom';
 const ViewCourse = () => {
     const {id}= useParams()
     const [course,setviewCourse]=useState()
-    console.log(course)
+  
     useEffect(()=>{
         fetch(`http://localhost:5000/course/${id}`)
         .then(res=>res.json())

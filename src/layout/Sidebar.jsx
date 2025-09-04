@@ -19,7 +19,7 @@ import { SiCoursera } from "react-icons/si";
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true); // toggle sidebar open/closed
   const { user, Logout } = useContext(AuthContext)
-  console.log(user)
+
   const menus = [
     { name: "Dashboard", icon: <FaTachometerAlt />, path: "/" },
     ...(user ? [
