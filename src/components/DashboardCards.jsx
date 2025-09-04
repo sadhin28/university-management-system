@@ -14,9 +14,9 @@ const CardContent = ({ children, className = '' }) => (
 // Main Component
 const DashboardCards = ({resentStudent,popularcourse}) => {
     return (
-    <div className=" grid mb-10 grid-cols-1 lg:grid-cols-2 gap-6 ">
+    <div className="mx-2  grid mb-10 grid-cols-1 lg:grid-cols-2 gap-6 ">
       {/* Recent Students */}
-      <Card className=" border-2 border-[#097C7DFF] hover:shadow-lg bg-gray-200/20">
+      <div className="p-6 rounded-xl border-2 border-[#097C7DFF] hover:shadow-lg bg-gray-200/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Users className="w-5 h-5 text-primary" />
@@ -42,10 +42,10 @@ const DashboardCards = ({resentStudent,popularcourse}) => {
             </div>
           ))}
         </CardContent>
-      </Card>
+      </div>
 
       {/* Popular Courses */}
-      <Card className="border-2 border-[#097C7DFF] hover:shadow-lg bg-gray-200/20">
+      <div className="p-6 rounded-xl border-2 border-[#097C7DFF] hover:shadow-lg bg-gray-200/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <BookOpen className="w-5 h-5 text-primary" />
@@ -73,7 +73,7 @@ const DashboardCards = ({resentStudent,popularcourse}) => {
             </div>
           ))}
         </CardContent>
-      </Card>
+      </div>
     </div>
   );
 };
