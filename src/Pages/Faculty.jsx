@@ -1,14 +1,15 @@
-import {  useState } from "react";
+import {  useContext, useState } from "react";
 import { Search, Plus, Filter, Mail, MapPin, BookOpen } from "lucide-react";
 
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../Provider/Authprovider";
 
 export default function Faculty() {
     const Faculty  = useLoaderData()
     const [searchQuery, setSearchQuery] = useState("");
     const [sampleFaculty,setsampleFaculty]=useState(Faculty)
-    
+    const {role}=useContext(AuthContext)
     const filteredFaculty = sampleFaculty.filter(
         (faculty) =>
             faculty.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -143,9 +144,9 @@ export default function Faculty() {
 
                                 {/* Actions */}
                                 <div className="flex gap-2 pt-2">
-                                    <Link onClick={()=>DeleteFacultyMember(faculty._id)} className="font-bold flex-1 px-3 text-center py-2 border-2 rounded-lg text-sm hover:bg-gray-100 transition">
-                                        Delete
-                                    </Link>
+                                    {role  === 'admin'&& <Link onClick={()=>DeleteFacultyMember(faculty._id)} className="font-bold flex-1 px-3 text-center py-2 border-2 rounded-lg text-sm hover:bg-gray-100 transition">
+                                        Delete 
+                                    </Link>}
                                     <Link to={`/ViewProfile/${faculty._id}`} className="font-bold bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-6 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs">
                                         View Profile
                                     </Link>
