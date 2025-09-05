@@ -28,18 +28,17 @@ export default function Addfaculty() {
     };
 
     const handleFileChange = (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
+       const file = e.target.files[0];
+    if (!file) return;
 
-        const reader = new FileReader();
-        reader.onloadend = () => {
-            setForm((prev) => ({
-                ...prev,
-                image: file,
-                imagePreview: reader.result,
-            }));
-        };
-        reader.readAsDataURL(file);
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setForm((prev) => ({
+        ...prev,
+        imagePreview:reader.result,
+      }));
+    };
+    reader.readAsDataURL(file);
     };
 
     const handleSubmit = async (e) => {
@@ -219,6 +218,7 @@ export default function Addfaculty() {
                     <div className="col-span-2 flex flex-col">
                         <label>Profile Image</label>
                         <input
+                            name="image"
                             type="file"
                             accept="image/*"
                             onChange={handleFileChange}
