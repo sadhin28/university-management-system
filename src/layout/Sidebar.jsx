@@ -45,7 +45,7 @@ const Sidebar = () => {
       <div className="flex items-center justify-between px-4 py-4">
         <div className="flex  items-center gap-3 text-xl   font-bold">
           <FaBook className="" size={24} />
-          {isOpen && <span className="whitespace-nowrap">World University</span>}
+          {isOpen && <span className="whitespace-nowrap">City University</span>}
         </div>
         <button onClick={() => setIsOpen(!isOpen)} className="text-lg">
           {isOpen ? <FaTimes /> : <FaBars />}
