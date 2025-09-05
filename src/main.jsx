@@ -32,6 +32,8 @@ import ViewCourse from './Pages/ViewCourse.jsx';
 import AuthForm from './Pages/AuthForm.jsx';
 import Admin from './Pages/Admin.jsx';
 import Privateadmin from './Rout/Privateadmin.jsx';
+import StudentDashboard from './student/StudentDashboard.jsx';
+import Studentenrollmentpage from './student/Studentenrollmentpage.jsx';
 
 
 const router = createBrowserRouter([
