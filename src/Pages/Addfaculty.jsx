@@ -12,11 +12,11 @@ export default function Addfaculty() {
         title: "",
         office: "",
         courses: "",
-        researchArea: "",
+        researchArea: null,
         bio: "",
         image: null,
         imagePreview: "",
-        phone:""
+        phone: null
     });
     const coursesArray = form.courses
         ? form.courses.split(",").map((c) => c.trim())
