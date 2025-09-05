@@ -13,7 +13,7 @@ export default function Admin() {
       return;
     }
     try {
-      const res = await fetch(`http://localhost:5000/make-admin/${uid}`, {
+      const res = await fetch(`${import.meta.env.VITE_API}/make-admin/${uid}`, {
         method: "POST",
       });
       const data = await res.json();

@@ -2,6 +2,7 @@ import {  useContext, useState } from "react";
 import { Search, Clock, Users } from "lucide-react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/Authprovider";
+import Swal from "sweetalert2";
 export default function Courses() {
   const {role}=useContext(AuthContext)
   const [searchQuery, setSearchQuery] = useState("");
@@ -12,6 +13,36 @@ export default function Courses() {
       course.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
       course.instructor.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+ const  DeleteCourse=(id)=>{
+    Swal.fire({
+                title: "Are you sure you want to Delete it?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Confirm Calcel"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    fetch(`${import.meta.env.VITE_API}/course/${id}`, {
+                        method: 'DELETE'
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.deletedCount > 0) {
+                                setSearchQuery(apply => apply.filter(apply => apply._id !== id));
+                                Swal.fire({
+                                    title: "Successfully Deleted!",
+                                    text: "Course has been deleted.",
+                                    icon: "success"
+                                });
+                            }
+                        })
+    
+                }
+            });
+ }
 
   return (
     <div className="min-h-screen  p-6">
@@ -122,7 +153,7 @@ export default function Courses() {
                    className="font-bold border-2  p-3 bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white   rounded-lg text-center flex-1  items-center   text-xs">
                    Enrolle Course
                   </Link>}
-                  {role === 'admin'&& <button className="font-bold border-2 p-3 bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white   rounded-lg text-center flex-1  items-center   text-xs">
+                  {role === 'admin'&& <button onClick={()=>DeleteCourse(course._id)} className="font-bold border-2 p-3 bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white   rounded-lg text-center flex-1  items-center   text-xs">
                     Delete Course
                   </button>}
                 </div>

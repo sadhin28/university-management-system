@@ -1,11 +1,11 @@
 import  { useEffect, useState } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
-import {  useParams } from 'react-router-dom';
+import {  useNavigate, useParams } from 'react-router-dom';
 
 const ViewCourse = () => {
     const {id}= useParams()
     const [course,setviewCourse]=useState()
-  
+    const navigate =useNavigate()
     useEffect(()=>{
         fetch(`${import.meta.env.VITE_API}/course/${id}`)
         .then(res=>res.json())
@@ -19,9 +19,12 @@ const ViewCourse = () => {
       </div>
     );
   }
+  const backtoMyenrolledcourse=()=>{
+      navigate('/my-enrolled')
+  }
     return (
-    <div className="mx-3 mx-auto md:w-full min-h-screen flex items-center justify-center ">
-      <div className="max-w-lg w-full p-10 bg-gray-100/20 hover:shadow-xl shadow-lg rounded-2xl border">
+    <div className="mx-4 mx-auto md:w-full min-h-screen flex items-center justify-center ">
+      <div className="max-w-lg w-full p-5 bg-gray-100/20 hover:shadow-xl shadow-lg rounded-2xl border">
         {/* Header */}
         <div className="flex justify-between items-center mb-3">
           <h2 className="text-lg font-semibold">{course.name}</h2>
@@ -48,7 +51,7 @@ const ViewCourse = () => {
         <div className="flex gap-3 mt-4 justify-center w-full">
           <button
             className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-6 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs"
-           
+           onClick={backtoMyenrolledcourse}
           >
             <FaArrowLeft /> Back
           </button>

@@ -1,16 +1,18 @@
-import { useContext, useEffect, useState } from "react";
+import {  useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
 import EnrollCard from "./EnrolledCard";
 import { AuthContext } from "../Provider/Authprovider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const MyEnrolled  = () => {
        const [courseEnrolled,setenrolled]=useState([]);
+       console.log(courseEnrolled)
        const navigate= useNavigate() 
        const {user}=useContext(AuthContext)
-        useEffect(()=>{
-            axios.get(`${import.meta.env.VITE_API}/course/my-enrolled?studenEmail=${user.email}`)
+   
+       useEffect(()=>{
+            axios.get(`${import.meta.env.VITE_API}/course/my-enrolled?studentEmail=${user.email}`)
             .then(res=>setenrolled(res.data))
         },[])
         const onDelete=(id)=>{
@@ -48,29 +50,22 @@ const MyEnrolled  = () => {
         }
         
     return (
-       <div className="min-h-screen px-4 ">
+        <>
+        {  <div className="min-h-screen px-4 ">
           <h1 className="md:text-3xl font-bold pt-6 text-center ">My Enrolled Course</h1>
-          {
-            courseEnrolled.length>0?(
-                <div className="py-10 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                      {
-                 courseEnrolled.map(enrolled=><EnrollCard key={enrolled._id} viewcourse={viewcourse}  onDelete={onDelete}  enroll ={enrolled}></EnrollCard>)
-               }
-                </div>
-            ):(<div>
-                <div className="min-h-screen flex justify-center items-center w-11/12 mx-auto">
-                    <h1 className="lg:text-2xl md:text-3xl text-xl font-bold text-center text-white">Empy Enroll!Place enrolle Course</h1>
-                </div>
+          {courseEnrolled?.find(data=>data?.studentEmail === user.email)?(<div className="py-10 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {
+                courseEnrolled.map(enrolled=><EnrollCard user={user} key={enrolled._id} courseEnrolled={courseEnrolled} viewcourse={viewcourse}  onDelete={onDelete}  enroll ={enrolled}></EnrollCard>)
+              }
+            </div>):(<div className="space-y-5 min-h-screen flex-col  flex items-center justify-center ">
+                <h1 className="text-center md:text-2xl font-bold">You are not Enrolled in any of these courses.</h1>
+                <Link to="/courses" className="hover:shadow-2xl border-2  hover:bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] hover:text-white  px-2 py-2 rounded-lg text-center items-center gap-2 font-bold text-xs">Enroll Now</Link>
             </div>)
           }
           
-            
-             
-             
-          
-          
-          
-       </div>
+       </div>}
+        </>
+      
     );
 };
 
