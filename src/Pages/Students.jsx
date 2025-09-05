@@ -40,7 +40,7 @@ const Students = () => {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Confirm Calcel"
+            confirmButtonText: "Confirm Delete"
         }).then((result) => {
             if (result.isConfirmed) {
                 fetch(`${import.meta.env.VITE_API}/student/${id}`, {
