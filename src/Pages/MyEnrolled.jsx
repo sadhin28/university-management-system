@@ -7,7 +7,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 const MyEnrolled  = () => {
        const [courseEnrolled,setenrolled]=useState([]);
-       console.log(courseEnrolled)
        const navigate= useNavigate() 
        const {user}=useContext(AuthContext)
    

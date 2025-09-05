@@ -13,9 +13,7 @@ const Privateroute = ({children}) => {
        
       return children
     }
-    else if(role && role === "admin"){
-      return children
-    }
+   
     return (
         <div>
             <Navigate to="/login" state={location?.pathname}/>

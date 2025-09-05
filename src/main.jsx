@@ -31,6 +31,7 @@ import MyEnrolled from './Pages/MyEnrolled.jsx';
 import ViewCourse from './Pages/ViewCourse.jsx';
 import AuthForm from './Pages/AuthForm.jsx';
 import Admin from './Pages/Admin.jsx';
+import Privateadmin from './Rout/Privateadmin.jsx';
 
 
 const router = createBrowserRouter([
@@ -69,11 +70,11 @@ const router = createBrowserRouter([
      },
      {
       path:'/addStudent',
-      element:<Privateroute><AddStudent/></Privateroute>
+      element:<Privateadmin><AddStudent/></Privateadmin>
      },
      {
       path:'/addCourse',
-      element:<Privateroute><Addcourse/></Privateroute>
+      element:<Privateadmin><Addcourse/></Privateadmin>
      },
      {
       path:'/EnrolleCourse/:id',
@@ -86,7 +87,7 @@ const router = createBrowserRouter([
      },
      {
       path:'/addfaculty',
-      element:<Privateroute><Addfaculty/></Privateroute>
+      element:<Privateadmin><Addfaculty/></Privateadmin>
      },
      {
       path:'/contact/:id',
@@ -116,7 +117,7 @@ const router = createBrowserRouter([
     },
     {
       path:"/admin",
-      element:<Privateroute><Admin/></Privateroute>
+      element:<Privateadmin><Admin/></Privateadmin>
     },
     {
       path:"/forgotPassword",

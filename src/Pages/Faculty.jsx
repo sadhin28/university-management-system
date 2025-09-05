@@ -147,7 +147,7 @@ export default function Faculty() {
                                     {role  === 'admin'&& <Link onClick={()=>DeleteFacultyMember(faculty._id)} className="font-bold flex-1 px-3 text-center py-2 border-2 rounded-lg text-sm hover:bg-gray-100 transition">
                                         Delete 
                                     </Link>}
-                                    <Link to={`/ViewProfile/${faculty._id}`} className="font-bold bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-6 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs">
+                                    <Link to={`/ViewProfile/${faculty._id}`} className="font-bold flex-1 px-3 text-center py-2 border-2 rounded-lg bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-6 py-2 rounded-lg flex-1 text-center gap-2 md:text-xl text-xs">
                                         View Profile
                                     </Link>
                                 </div>
