@@ -2,11 +2,12 @@ import {  useState } from "react";
 import { Search, Plus, Filter, Mail, MapPin, BookOpen } from "lucide-react";
 
 import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function Faculty() {
-    const sampleFaculty  = useLoaderData()
+    const Faculty  = useLoaderData()
     const [searchQuery, setSearchQuery] = useState("");
-    
+    const [sampleFaculty,setsampleFaculty]=useState(Faculty)
     
     const filteredFaculty = sampleFaculty.filter(
         (faculty) =>
@@ -14,7 +15,35 @@ export default function Faculty() {
             faculty.department.toLowerCase().includes(searchQuery.toLowerCase()) ||
             faculty.researchArea.toLowerCase().includes(searchQuery.toLowerCase())
     );
-
+    const DeleteFacultyMember=(id)=>{
+          Swal.fire({
+                         title: "Are you sure you want to Delete it?",
+                         text: "You won't be able to revert this!",
+                         icon: "warning",
+                         showCancelButton: true,
+                         confirmButtonColor: "#3085d6",
+                         cancelButtonColor: "#d33",
+                         confirmButtonText: "Delete"
+                     }).then((result) => {
+                         if (result.isConfirmed) {
+                             fetch(`${import.meta.env.VITE_API}/faculty/${id}`, {
+                                 method: 'DELETE'
+                             })
+                                 .then(res => res.json())
+                                 .then(data => {
+                                     if (data.deletedCount > 0) {
+                                         setsampleFaculty(apply => apply.filter(apply => apply._id !== id));
+                                         Swal.fire({
+                                             title: "Successfully Deleted!",
+                                             text: "Faculty Member has been deleted.",
+                                             icon: "success"
+                                         });
+                                     }
+                                 })
+             
+                         }
+                     });
+    }
     return (
         <div className="min-h-screen  p-6">
             <div className="max-w-8xl mx-auto space-y-6">
@@ -114,8 +143,8 @@ export default function Faculty() {
 
                                 {/* Actions */}
                                 <div className="flex gap-2 pt-2">
-                                    <Link to={`/contact/${faculty._id}`} className="font-bold flex-1 px-3 text-center py-2 border-2 rounded-lg text-sm hover:bg-gray-100 transition">
-                                        Contact
+                                    <Link onClick={()=>DeleteFacultyMember(faculty._id)} className="font-bold flex-1 px-3 text-center py-2 border-2 rounded-lg text-sm hover:bg-gray-100 transition">
+                                        Delete
                                     </Link>
                                     <Link to={`/ViewProfile/${faculty._id}`} className="font-bold bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-6 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs">
                                         View Profile
