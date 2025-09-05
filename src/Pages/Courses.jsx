@@ -6,7 +6,9 @@ import Swal from "sweetalert2";
 export default function Courses() {
   const {role}=useContext(AuthContext)
   const [searchQuery, setSearchQuery] = useState("");
-  const sampleCourse = useLoaderData()
+    const Course = useLoaderData()
+  const [sampleCourse,setsampleCourse]=useState(Course)
+
   const filteredCourses = sampleCourse.filter(
     (course) =>
       course.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -22,7 +24,7 @@ export default function Courses() {
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
-                confirmButtonText: "Confirm Calcel"
+                confirmButtonText: "Delete"
             }).then((result) => {
                 if (result.isConfirmed) {
                     fetch(`${import.meta.env.VITE_API}/course/${id}`, {
@@ -31,7 +33,7 @@ export default function Courses() {
                         .then(res => res.json())
                         .then(data => {
                             if (data.deletedCount > 0) {
-                                setSearchQuery(apply => apply.filter(apply => apply._id !== id));
+                                setsampleCourse(apply => apply.filter(apply => apply._id !== id));
                                 Swal.fire({
                                     title: "Successfully Deleted!",
                                     text: "Course has been deleted.",
