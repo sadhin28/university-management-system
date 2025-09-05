@@ -28,17 +28,17 @@ export default function Addfaculty() {
     };
 
     const handleFileChange = (e) => {
-       const file = e.target.files[0];
-    if (!file) return;
+        const file = e.target.files[0];
+        if (!file) return;
 
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setForm((prev) => ({
-        ...prev,
-        imagePreview:reader.result,
-      }));
-    };
-    reader.readAsDataURL(file);
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            setForm((prev) => ({
+                ...prev,
+                imagePreview: reader.result,
+            }));
+        };
+        reader.readAsDataURL(file);
     };
 
     const handleSubmit = async (e) => {
@@ -54,7 +54,7 @@ export default function Addfaculty() {
             researchArea: form.researchArea,
             bio: form.bio,
             image: form.imagePreview,
-            phone:form.phone
+            phone: form.phone
         }
         //post now
         fetch(`${import.meta.env.VITE_API}/faculty`, {
@@ -194,14 +194,14 @@ export default function Addfaculty() {
                     {/* Phone */}
                     <div className="col-span-2 flex flex-col">
                         <label>Phone</label>
-                         <input
+                        <input
                             type="tel"
                             name="phone"
                             value={form.phone}
                             onChange={handleChange}
                             className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                         />
-                    </div>  
+                    </div>
                     {/* Bio */}
                     <div className="col-span-2 flex flex-col">
                         <label>Bio</label>
@@ -213,19 +213,19 @@ export default function Addfaculty() {
                             className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                         />
                     </div>
-                   
+
                     {/* Image Upload */}
                     <div className="col-span-2 flex flex-col">
                         <label>Profile Image</label>
                         <input
-                            name="image"
                             type="file"
+                            name="image"
                             accept="image/*"
                             onChange={handleFileChange}
                             className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                         />
                     </div>
-                    
+
                     {/* Image Preview */}
                     {form.imagePreview && (
                         <div className="col-span-2 flex justify-center">
