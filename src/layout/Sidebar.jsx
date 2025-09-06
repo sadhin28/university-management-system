@@ -1,38 +1,22 @@
 import {
-  FaTachometerAlt,
-  FaUserGraduate,
   FaBook,
-  FaChalkboardTeacher,
-  FaCalendarAlt,
   FaTimes,
   FaBars,
-  FaSignInAlt,
-  FaUser,
-  
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { Profiler, useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/Authprovider";
 import { TbLogin, TbLogout, } from "react-icons/tb";
-import { SiCoursera } from "react-icons/si";
 import { GrUserAdmin } from "react-icons/gr";
+import { getMenus } from "./Menue";
+
 
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true); // toggle sidebar open/closed
   const { user, Logout,role } = useContext(AuthContext)
 
-  const menus = [
-    { name: "Dashboard", icon: <FaTachometerAlt />, path: "/" },
-    ...(user ? [
-      { name: "Students", icon: <FaUserGraduate />, path: "/students" },
-      { name: "Courses", icon: <FaBook />, path: "/courses" },
-      { name: "Faculty", icon: <FaChalkboardTeacher />, path: "/faculty" },
-      { name: "Schedule", icon: <FaCalendarAlt />, path: "/schedule" },
-      { name: "My Enrolled Course", icon: <SiCoursera />, path: "/my-enrolled" },
-    ] : [])
-
-  ];
+  const menus =getMenus(user,role,Logout)
 
   return (
     <div
@@ -92,7 +76,7 @@ const Sidebar = () => {
             )}
           </NavLink>}
           {
-            user ? <NavLink
+          user && <NavLink
               className={({ isActive }) =>
                 `flex items-center gap-3 px-4 py-2 rounded-md cursor-pointer transition-colors 
                   ${isActive ? "hover:bg-green-800/50" : "hover:bg-green-800/50"}`
@@ -107,24 +91,7 @@ const Sidebar = () => {
                 </span>
               )}
             </NavLink>
-              :
-              <NavLink
-                to='/login'
-                className={({ isActive }) =>
-                  `flex items-center gap-3 px-4 py-2 rounded-md cursor-pointer transition-colors 
-                  ${isActive ? "bg-gray-800/50  font-semibold" : "hover:bg-green-800/50"}`
-                }
-
-
-              >
-                <span className="text-lg"><TbLogin /></span>
-
-                {isOpen && (
-                  <span className="whitespace-nowrap transition-opacity duration-300">
-                    Login
-                  </span>
-                )}
-              </NavLink>
+         
           }
       
         </ul>
