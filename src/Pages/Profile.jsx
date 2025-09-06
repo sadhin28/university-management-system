@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/Authprovider";
 const Profile = () => {
     const { user,role } = useContext(AuthContext)
+    
     return (
         <div className="min-h-screen  pb-20">
            
             <div className="rounded-bl-[80px] rounded-br-[80px] bg-gradient-to-l from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] pb-7  text-white h-60 flex items-center justify-center">
                 <div className="text-center">
-                   <div className="md:text-5xl text-xl font-bold py-4"> {role === 'admin' ?<p>Admin Profile</p>:<p>Student Profile</p>}</div>
+                   <div className="md:text-5xl uppercase text-xl font-bold py-4"> {role && role}</div>
                     <h1 className="md:text-4xl text-xl font-bold">Welcome, {user?.
                         displayName
                     }!</h1>
