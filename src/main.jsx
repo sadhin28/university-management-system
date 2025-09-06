@@ -32,6 +32,13 @@ import ViewCourse from './Pages/ViewCourse.jsx';
 import AuthForm from './Pages/AuthForm.jsx';
 import Admin from './Pages/Admin.jsx';
 import Privateadmin from './Rout/Privateadmin.jsx';
+import StudentResult from './student/StudentResult.jsx';
+import StudentFees from './student/StudentFees.jsx';
+import Notices from './Pages/Notices.jsx';
+import Payment from './Admin/Payment.jsx';
+import ManageStudent from './Admin/ManageStudent.jsx';
+import ManageFaculty from './Admin/ManageFaculty.jsx';
+import ManageCourses from './Admin/ManageCourses.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -117,6 +124,7 @@ const router = createBrowserRouter([
       path:"/admin",
       element:<Privateadmin><Admin/></Privateadmin>
     },
+    
     {
       path:"/forgotPassword",
       element:<ForgetPassword/>
@@ -125,6 +133,38 @@ const router = createBrowserRouter([
       path:'/login',
       element:<AuthForm/>
      },  
+     {
+      path:'/results',
+      element:<Privateroute><StudentResult/></Privateroute>
+     },
+     {
+      path:'/fees',
+      element:<Privateroute><StudentFees/></Privateroute>
+     },
+     {
+      path:'/notices',
+      element:<Privateroute><Notices/></Privateroute>
+     },
+     {
+      path:'/admin-notices',
+      element:<Privateadmin><Notices/></Privateadmin>
+     },
+     {
+      path:'/admin-payments',
+      element:<Privateadmin><Payment/></Privateadmin>
+     },
+     {
+      path:'/admin-students',
+      element:<Privateadmin><ManageStudent/></Privateadmin>
+     },
+     {
+      path:'/admin-faculty',
+      element:<Privateadmin><ManageFaculty/></Privateadmin>
+     },
+     {
+      path:'/admin-courses',
+      element:<Privateadmin><ManageCourses/></Privateadmin>
+     },
     ]
   },
 ]);

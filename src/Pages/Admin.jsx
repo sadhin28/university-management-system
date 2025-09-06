@@ -5,7 +5,8 @@ import { UserPlus, BookOpen, Users, UserCog } from "lucide-react";
 
 export default function Admin() {
   const [uid, setUid] = useState("");
-
+  const [role,setRole]=useState('')
+  console.log(role)
   // Create Admin API Call
   const makeAdmin = async () => {
     if (!uid) {
@@ -13,7 +14,7 @@ export default function Admin() {
       return;
     }
     try {
-      const res = await fetch(`${import.meta.env.VITE_API}/make-admin/${uid}`, {
+      const res = await fetch(`${import.meta.env.VITE_API}/make-${role}/${uid}`, {
         method: "POST",
       });
       const data = await res.json();
@@ -35,9 +36,9 @@ export default function Admin() {
         {/* Create Admin Form */}
         <div className="mb-10">
           <h2 className="text-lg font-semibold text-gray-700 mb-2 flex items-center">
-            <UserCog className="w-5 h-5 mr-2 text-blue-600" /> Create New Admin
+            <UserCog className="w-5 h-5 mr-2 text-blue-600" /> Create New Admin & Teacher
           </h2>
-          <div className="flex gap-2">
+          <div className="grid md:flex gap-3">
             <input
               type="text"
               placeholder="Enter UID or Email"
@@ -45,9 +46,18 @@ export default function Admin() {
               onChange={(e) => setUid(e.target.value)}
               className="w-full p-2  border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
             />
+            
+        <select
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
+          className="w-full p-2  border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
+        >
+          <option value="teacher">Teacher</option>
+          <option value="admin">Admin</option>
+        </select>
             <button
               onClick={makeAdmin}
-              className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-3 rounded-lg  items-center gap-2 md:text-xl "
+              className="w-full bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-3 rounded-lg  items-center gap-2 md:text-xl "
             >
               Create
             </button>

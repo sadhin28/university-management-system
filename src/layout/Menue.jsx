@@ -37,12 +37,12 @@ export const getMenus = (user, role) => {
       { name: "Notices", icon: <FaBell />, path: "/notices" },
     ],
     admin: [
-      { name: "Manage Students", icon: <FaUserGraduate />, path: "/admin/students" },
-      { name: "Manage Faculty", icon: <FaChalkboardTeacher />, path: "/admin/faculty" },
-      { name: "Manage Courses", icon: <FaBook />, path: "/admin/courses" },
-      { name: "Schedule", icon: <FaCalendarAlt />, path: "/admin/schedule" },
-      { name: "Notices", icon: <FaBell />, path: "/admin/notices" },
-      { name: "Payments", icon: <FaMoneyBill />, path: "/admin/payments" },
+      { name: "Manage Students", icon: <FaUserGraduate />, path: "/admin-students" },
+      { name: "Manage Faculty", icon: <FaChalkboardTeacher />, path: "/admin-faculty" },
+      { name: "Manage Courses", icon: <FaBook />, path: "/admin-courses" },
+      { name: "Schedule", icon: <FaCalendarAlt />, path: "/schedule" },
+      { name: "Notices", icon: <FaBell />, path: "/admin-notices" },
+      { name: "Payments", icon: <FaMoneyBill />, path: "/admin-payments" },
     ],
   };
 
