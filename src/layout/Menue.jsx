@@ -12,10 +12,10 @@ export const getMenus = (user, role) => {
     ];
   }
 
-  const baseMenu = [
-  user && role === "admin" ?  { name: "Dashboard", icon:  <FaTachometerAlt />, path: "/admin" }: { name: "Dashboard", icon: <FaTachometerAlt />, path: "/" }
+  const baseMenu =role && role === "student" || role && role === "teacher"?([
+  { name: "Dashboard", icon:  <FaTachometerAlt />, path: "/" }
     
-  ];
+  ]):([{ name: "Dashboard", icon:  <FaTachometerAlt />, path: "/admin" }])
   
   const roleMenus = {
     student: [
@@ -39,6 +39,7 @@ export const getMenus = (user, role) => {
     ],
     admin: [
       { name: "Manage Students", icon: <FaUserGraduate />, path: "/admin-students" },
+    
       { name: "Manage Users", icon: <User />, path: "/alluser" },
       { name: "Manage Faculty", icon: <FaChalkboardTeacher />, path: "/admin-faculty" },
       { name: "Manage Courses", icon: <FaBook />, path: "/admin-courses" },

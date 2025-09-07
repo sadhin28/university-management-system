@@ -16,7 +16,7 @@ export default function AuthForm() {
   const auth = getAuth(app);
   const location = useLocation()
     const navigate = useNavigate()
-    const from =role !=='admin'?location.state||'/':location.state||'/admin'
+    const from =location.state || "/"
   const handleSubmit = async () => {
     try {
       if (isRegister) {
@@ -38,7 +38,7 @@ export default function AuthForm() {
         updateUserProfile(name,photoURL)
           .then(() => {
 
-             result.user &&navigate(from)
+             result.user && role === "admin" ?'/':navigate(from)
             
           })
 
@@ -51,7 +51,7 @@ export default function AuthForm() {
         await login(email, password)
         .then(result => {
                result && toast.success(`${role} login successful`);
-                result.user && navigate(from)
+                result.user && role === "admin" ?'/admin':navigate(from)
             })
             .catch(error => {
                 toast.error(error.message)
@@ -69,7 +69,7 @@ export default function AuthForm() {
         signInWithPopup(auth, provider)
             .then(res => {
                 setuser(res.user)
-                res.user && navigate(from)
+               res.user && role === "admin" ?'/':navigate(from)
                 res.user  && toast.success(`Google login successful`);
             })
             .catch(error => {
@@ -77,8 +77,8 @@ export default function AuthForm() {
             })
     }
   return (
-    <div className="relative top-20 flex items-center justify-center  px-4 ">
-      <div className="border-2  border-[#097C7DFF] hover:shadow-2xl shadow-lg bg-gray-100/20 p-8 rounded-lg shadow-lg w-full max-w-lg">
+    <div className="relative top-16 flex items-center justify-center  px-1 ">
+      <div className="border-2  border-[#097C7DFF] hover:shadow-2xl shadow-lg bg-gray-100/20 p-8 rounded-2xl shadow-lg w-full max-w-6xl">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800 uppercase">
           {isRegister ? "Register" : "Login"}
         </h2>
@@ -167,14 +167,14 @@ export default function AuthForm() {
         </button>
 
         {/* Switch login/register */}
-        <p
+       { role && role ==='student' && <p
           className="mt-4 text-center text-sm text-[#097C7DFF] cursor-pointer "
           onClick={() => setIsRegister(!isRegister)}
         >
           {isRegister
             ? <p>Already have an account?  <span className="hover:underline hover:text-red-500">Login now</span></p>
-            : <p>Don't have an account? <span className="hover:underline hover:text-red-500">Register</span></p>}
-        </p>
+            :<p>Don't have an account? <span className="hover:underline hover:text-red-500">Register</span></p>}
+        </p>}
       </div>
     </div>
   );

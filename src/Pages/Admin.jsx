@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { UserPlus, BookOpen, Users, UserCog } from "lucide-react";
+import AuthForm from "./AuthForm";
 
 export default function Admin() {
   const [uid, setUid] = useState("");
@@ -26,15 +27,20 @@ export default function Admin() {
   };
 
   return (
-    <div className="min-h-screen  flex items-center justify-center px-4 py-12">
-      <div className="bg-gray-100/20 border-2  border-[#097C7DFF] hover:shadow-2xl rounded-2xl w-full max-w-3xl p-8">
+    <div className="md:flex grid gap-28 items-center justify-center px-4 py-12">
+      <div className="flex-1">
+        {
+            <AuthForm/>
+        }
+      </div>
+      <div className="flex-1 bg-gray-100/20 border-2  border-[#097C7DFF] hover:shadow-2xl rounded-2xl w-full max-w-3xl p-8">
         {/* Header */}
         <h1 className="md:text-3xl text-xl font-extrabold text-center text-gray-800 mb-8">
           🛠️ Admin Dashboard
         </h1>
 
         {/* Create Admin Form */}
-        <div className="mb-10">
+        <div className="mb-10 ">
           <h2 className="text-lg font-semibold text-gray-700 mb-2 flex items-center">
             <UserCog className="w-5 h-5 mr-2 text-blue-600" /> Create New Admin & Teacher
           </h2>

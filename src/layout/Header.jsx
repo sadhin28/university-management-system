@@ -4,12 +4,12 @@ import { AuthContext } from "../Provider/Authprovider";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext)
+  const { user ,role } = useContext(AuthContext)
 
   return (
     <div className=" sticky  top-0 backdrop-blur z-50">
       <div className="flex  bg-gradient-to-r from-[#8BB9B9FF]/80 to-[#031226FF]/70 to-[#839096FF]/80  justify-between items-center  shadow-lg px-6 py-3 text-black">
-       <div></div>
+       <div className="uppercase font-bold text-white text-xl">{role&& role}</div>
         {/* Right side */}
         <div className="flex items-center  gap-6">
           
