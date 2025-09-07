@@ -12,7 +12,7 @@ export const getMenus = (user, role) => {
   }
 
   const baseMenu = [
-    { name: "Dashboard", icon: <FaTachometerAlt />, path: "/" },
+  user && role === "admin" ?  { name: "Dashboard", icon:  <FaTachometerAlt />, path: "/admin" }: { name: "Dashboard", icon: <FaTachometerAlt />, path: "/" }
     
   ];
   

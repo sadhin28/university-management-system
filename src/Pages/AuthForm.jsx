@@ -16,7 +16,7 @@ export default function AuthForm() {
   const auth = getAuth(app);
   const location = useLocation()
     const navigate = useNavigate()
-    const from = location.state || '/'
+    const from =role !=='admin'?location.state||'/':location.state||'/admin'
   const handleSubmit = async () => {
     try {
       if (isRegister) {

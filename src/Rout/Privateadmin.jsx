@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/Authprovider";
 import { Navigate, useLocation } from "react-router-dom";
 import LoadingSpiner from "../components/LoadingSpiner";
-import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 
 const Privateadmin = ({ children }) => {
@@ -11,11 +10,8 @@ const Privateadmin = ({ children }) => {
     if (loading) {
         return <LoadingSpiner />
     }
-    if (role && role === 'admin') {
+    if (role && role !== 'admin') {
 
-        return children
-    }
-    else {
         {
             Swal.fire({
                 title: 'Sorry',
@@ -23,12 +19,15 @@ const Privateadmin = ({ children }) => {
                 icon: "error",
                 draggable: true
             });
-        }
+    } 
     }
+      else{
+         return children
 
+      }
     return (
         <div>
-            <Navigate to="/" state={location?.pathname} />
+            <Navigate to="/admin" state={location?.pathname} />
 
         </div>
     );

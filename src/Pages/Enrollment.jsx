@@ -1,21 +1,31 @@
-import { useParams, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useParams, useNavigate, useLoaderData } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/Authprovider";
 import { toast } from "react-toastify";
 
 export default function EnrollPage() {
   const {user}=useContext(AuthContext)
   const { id } = useParams();
+  const data = useLoaderData()
+  console.log(data)
   const navigate = useNavigate();
   const [studentName, setStudentName] = useState("");
   const [studentId, setStudentId] = useState("");
+  const [instructor,setinstructon]=useState("")
+  const [name,setCoursesname]=useState("")
+  const paymentStatus ="due"
+  useEffect(()=>{
+    setinstructon(data.instructor)
+    setCoursesname(data.name)
+  },[])
   const studentEmail = user?.email
-
+  
+  console.log()
   const handleEnroll = () => {
     fetch(`${import.meta.env.VITE_API}/course/my-enrolled/${id}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ studentId, studentName,studentEmail }),
+      body: JSON.stringify({ studentId, studentName,studentEmail,instructor,name,paymentStatus }),
     })
       .then((res) => res.json())
       .then((data) => {

@@ -58,23 +58,6 @@ const Sidebar = () => {
               </NavLink>
             </li>
           ))}
-         {role === 'admin' && <NavLink
-            to='/admin'
-            className={({ isActive }) =>
-              `flex items-center gap-3 px-4 py-2 rounded-md cursor-pointer transition-colors 
-                  ${isActive ? "bg-gray-800/50  font-semibold" : "hover:bg-green-800/50"}`
-            }
-
-
-          >
-            <span className="text-lg"><GrUserAdmin /></span>
-
-            {isOpen && (
-              <span className="whitespace-nowrap transition-opacity duration-300">
-                Admin
-              </span>
-            )}
-          </NavLink>}
           {
           user && <NavLink
               className={({ isActive }) =>

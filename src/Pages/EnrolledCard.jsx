@@ -5,10 +5,10 @@ export default function EnrollCard({ user, enroll, onDelete, viewcourse }) {
    <div>
       {<div>
       {
-        user?.email === enroll?.studentEmail && (<div className="max-w-md mx-auto shadow-lg rounded-2xl px-14 py-10 bg-gray-100/20 border">
-          <section className="flex flex-col gap-3">
+        user?.email === enroll?.studentEmail && (<div className="max-w-8xl mx-auto shadow-lg rounded-2xl  p-4 bg-gray-100/20 border">
+          <section className="flex flex-col gap-3 max-w-md mx-auto  ">
             {/* Student Info */}
-            <div>
+            <div className="">
               <h2 className="text-xl font-semibold">{enroll.studentName}</h2>
               <p className="text-sm text-gray-600">{enroll.studentEmail}</p>
               <p className="text-sm text-gray-500">Student ID: {enroll.studentId}</p>

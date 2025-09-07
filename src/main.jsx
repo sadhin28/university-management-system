@@ -84,6 +84,7 @@ const router = createBrowserRouter([
      {
       path:'/EnrolleCourse/:id',
       element:<Privateroute><Enrollment/></Privateroute>,
+       loader:({params})=>fetch(`${import.meta.env.VITE_API}/course/${params.id}`) 
       
      },
      {
@@ -114,7 +115,8 @@ const router = createBrowserRouter([
     },
     {
       path:"/my-enrolled",
-      element:<Privateroute><MyEnrolled/></Privateroute>
+      element:<Privateroute><MyEnrolled/></Privateroute>,
+  
     },
     {
       path:"/viewCourse/:id",
