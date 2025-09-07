@@ -39,6 +39,7 @@ import Payment from './Admin/Payment.jsx';
 import ManageStudent from './Admin/ManageStudent.jsx';
 import ManageFaculty from './Admin/ManageFaculty.jsx';
 import ManageCourses from './Admin/ManageCourses.jsx';
+import SchedulePage from './student/StudentSchedule.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -167,6 +168,10 @@ const router = createBrowserRouter([
       path:'/admin-courses',
       element:<Privateadmin><ManageCourses/></Privateadmin>
      },
+     {
+      path:"/studentChedule",
+      element:<Privateroute><SchedulePage/></Privateroute>
+     }
     ]
   },
 ]);

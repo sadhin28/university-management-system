@@ -173,7 +173,7 @@ export default function StudentDashboard() {
               </tr>
             </thead>
             <tbody>
-              {mergedData.map((c, i) => (
+              {mergedData?.map((c, i) => (
                 <tr key={c._id} className="hover:bg-gray-500/20">
                   <td className="p-3 border text-center">{i + 1}</td>
                   <td className="p-3 border">{c.courseName}</td>
