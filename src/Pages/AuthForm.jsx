@@ -38,7 +38,7 @@ export default function AuthForm() {
         updateUserProfile(name,photoURL)
           .then(() => {
 
-             result.user && role === "admin" ?'/':navigate(from)
+             result.user && navigate(from)
             
           })
 
@@ -51,7 +51,7 @@ export default function AuthForm() {
         await login(email, password)
         .then(result => {
                result && toast.success(`${role} login successful`);
-                result.user && role === "admin" ?'/admin':navigate(from)
+                result.user && navigate(from)
             })
             .catch(error => {
                 toast.error(error.message)
@@ -69,7 +69,7 @@ export default function AuthForm() {
         signInWithPopup(auth, provider)
             .then(res => {
                 setuser(res.user)
-               res.user && role === "admin" ?'/':navigate(from)
+               res.user && navigate(from)
                 res.user  && toast.success(`Google login successful`);
             })
             .catch(error => {
