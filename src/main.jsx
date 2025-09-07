@@ -11,7 +11,6 @@ import Dashboard from './Pages/Dashboard.jsx';
 import Students from './Pages/Students.jsx';
 import Courses from './Pages/Courses.jsx';
 import Faculty from './Pages/Faculty.jsx';
-import Schedule from './Pages/Schedule.jsx';
 import Settings from './Pages/Settings.jsx';
 import Errorpage from './Pages/Errorpage.jsx';
 import AddStudent from './Pages/AddStudent.jsx';
@@ -40,6 +39,7 @@ import ManageStudent from './Admin/ManageStudent.jsx';
 import ManageFaculty from './Admin/ManageFaculty.jsx';
 import ManageCourses from './Admin/ManageCourses.jsx';
 import SchedulePage from './student/StudentSchedule.jsx';
+import UsersPage from './Admin/Alluser.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -57,6 +57,10 @@ const router = createBrowserRouter([
        loader:()=>fetch(`${import.meta.env.VITE_API}/student`)
      },
      {
+       path:'/alluser',
+       element:<Privateadmin><UsersPage/></Privateadmin>
+     },
+     {
       path: "/courses",
       element:<Privateroute><Courses/></Privateroute>,
       loader:()=>fetch(`${import.meta.env.VITE_API}/course`)
@@ -65,10 +69,6 @@ const router = createBrowserRouter([
         path: "/faculty",
         element:<Privateroute><Faculty/></Privateroute>,
         loader:()=>fetch(`${import.meta.env.VITE_API}/faculty`)
-     },
-     {
-       path: "/schedule",
-       element:<Privateroute><Schedule/></Privateroute>
      },
      {
       path: "/settings",

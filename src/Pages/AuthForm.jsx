@@ -77,7 +77,7 @@ export default function AuthForm() {
             })
     }
   return (
-    <div className=" flex items-center justify-center min-h-screen px-4 ">
+    <div className="relative top-20 flex items-center justify-center  px-4 ">
       <div className="border-2  border-[#097C7DFF] hover:shadow-2xl shadow-lg bg-gray-100/20 p-8 rounded-lg shadow-lg w-full max-w-lg">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800 uppercase">
           {isRegister ? "Register" : "Login"}

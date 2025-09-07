@@ -2,6 +2,7 @@
 import { FaTachometerAlt, FaUserGraduate, FaBook, FaChalkboardTeacher, FaCalendarAlt, FaMoneyBill, FaBell, FaUsersCog } from "react-icons/fa";
 import { SiCoursera } from "react-icons/si";
 import { MdAssignment } from "react-icons/md";
+import { User } from "lucide-react";
 
 export const getMenus = (user, role) => {
   if (!user) {
@@ -38,6 +39,7 @@ export const getMenus = (user, role) => {
     ],
     admin: [
       { name: "Manage Students", icon: <FaUserGraduate />, path: "/admin-students" },
+      { name: "Manage Users", icon: <User />, path: "/alluser" },
       { name: "Manage Faculty", icon: <FaChalkboardTeacher />, path: "/admin-faculty" },
       { name: "Manage Courses", icon: <FaBook />, path: "/admin-courses" },
       { name: "Schedule", icon: <FaCalendarAlt />, path: "/studentChedule" },
