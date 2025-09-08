@@ -14,7 +14,28 @@ export default function SchedulePage() {
     time: "",
     room: "",
   });
-
+  
+  // New states for search & filter
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filterDept, setFilterDept] = useState("");
+  const [filterSemester, setFilterSemester] = useState("");
+  const [filterSection, setFilterSection] = useState("");
+   // Fetch all schedules
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API}/schedule`)
+      .then((res) => res.json())
+      .then((data) => setSchedules(data));
+  }, []);
+ 
+    // 🔹 Derived filtered schedules
+  const filteredSchedules = schedules.filter((s) => {
+    return (
+      (searchTerm === "" || s.course.toLowerCase().includes(searchTerm.toLowerCase())) &&
+      (filterDept === "" || s.dept === filterDept) &&
+      (filterSemester === "" || s.semester === filterSemester) &&
+      (filterSection === "" || s.section === filterSection)
+    );
+  }); 
   const departments = ["CSE", "EEE", "BBA", "Civil", "Textile"];
   const semesters = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"];
   const sections = ["A", "B", "C", "D"];
@@ -139,7 +160,8 @@ export default function SchedulePage() {
   return (
     <div className="p-6 max-w-5xl mx-auto">
       <h1 className="text-3xl font-bold text-center mb-6">📅 Student Schedule</h1>
-
+          {/* 🔹 Search + Filter Controls */}
+    
       {(role === "admin" || role === "teacher") && (
         <form onSubmit={handleAdd} className="grid gap-3 mb-6 p-4 border rounded-xl shadow">
           {[
@@ -155,7 +177,7 @@ export default function SchedulePage() {
               key={key}
               value={newSchedule[key]}
               onChange={(e) => setNewSchedule({ ...newSchedule, [key]: e.target.value })}
-              className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#159799]"
+              className="w-full p-2 mb-4 px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
               required
             >
               <option value="">{`Select ${label}`}</option>
@@ -165,9 +187,31 @@ export default function SchedulePage() {
           <button className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">➕ Add Schedule</button>
         </form>
       )}
-
+       {/* Filter section */}
+         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+        <input
+          type="text"
+          placeholder="🔍 Search by course"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full p-2 mb-4 px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
+        />
+        <select value={filterDept} onChange={(e) => setFilterDept(e.target.value)}className="w-full p-2 mb-4 px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]">
+          <option value="">All Departments</option>
+          {departments.map((d) => <option key={d} value={d}>{d}</option>)}
+        </select>
+        <select value={filterSemester} onChange={(e) => setFilterSemester(e.target.value)} className="w-full p-2 mb-4 px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]">
+          <option value="">All Semesters</option>
+          {semesters.map((s) => <option key={s} value={s}>{s}</option>)}
+        </select>
+        <select value={filterSection} onChange={(e) => setFilterSection(e.target.value)} className="w-full p-2 mb-4 px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]">
+          <option value="">All Sections</option>
+          {sections.map((s) => <option key={s} value={s}>{s}</option>)}
+        </select>
+      </div>
       <div className="grid gap-4">
-        {schedules.map(item => (
+
+        {filteredSchedules.map(item => (
           <div key={item._id} className="bg-white rounded-xl shadow-md p-4 flex justify-between items-center">
             <div>
               <h2 className="text-lg font-semibold">{item.course}</h2>

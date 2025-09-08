@@ -107,6 +107,7 @@ export default function Admin() {
             >
               <option value="teacher">Teacher</option>
               <option value="admin">Admin</option>
+              <option value="student">Student</option>
             </select>
             <button
               onClick={makeAdmin}
