@@ -50,7 +50,7 @@ const Authprovider = ({children}) => {
         }
     },[])
     //LogIn
-    const  login =(email,password)=>{
+    const login =(email,password)=>{
         setloading(true);
         return signInWithEmailAndPassword(auth,email,password)
     }

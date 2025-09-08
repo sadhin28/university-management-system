@@ -1,6 +1,6 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
-import { Link,} from "react-router-dom";
+import { Link, } from "react-router-dom";
 import { UserPlus, BookOpen, Users, UserCog } from "lucide-react";
 import Swal from "sweetalert2";
 
@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 export default function Admin() {
   const [uid, setUid] = useState("");
   const [role, setRole] = useState('')
- 
+
 
   // Create Admin API Call
   const makeAdmin = async () => {
@@ -28,7 +28,7 @@ export default function Admin() {
     }
   };
   //=================Make user start======================
-   const [form, setForm] = useState({
+  const [form, setForm] = useState({
     email: "",
     password: "",
     displayName: "",
@@ -38,21 +38,21 @@ export default function Admin() {
     e.preventDefault()
     const email = e.target.email.value
     const password = e.target.password.value
-    const displayName= e.target.name.value
+    const displayName = e.target.name.value
     setForm({
-    email,
-    password,
-    displayName,
-    role
-  })
-     fetch(`${import.meta.env.VITE_API}/create-user`, {
+      email,
+      password,
+      displayName,
+      role
+    })
+    fetch(`${import.meta.env.VITE_API}/create-user`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
     })
       .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
       .then(({ ok, data }) => {
-        console.log(data)
+
         if (ok) {
           Swal.fire({
             icon: "success",
@@ -117,16 +117,16 @@ export default function Admin() {
           </div>
           <div>
             {/* Create user */}
-          <h1 className="w-full my-3 border-2 border-black"></h1>
-          <h1 className="text-lg font-semibold text-gray-700 mb-2 flex items-center"><UserCog className="w-5 h-5 mr-2 text-blue-600" />Create New User</h1>
+            <h1 className="w-full my-3 border-2 border-black"></h1>
+            <h1 className="text-lg font-semibold text-gray-700 mb-2 flex items-center"><UserCog className="w-5 h-5 mr-2 text-blue-600" />Create New User</h1>
             <form className="" onSubmit={handleSubmit}>
-               <label
-                  htmlFor="name"
-                  className="block py-2 text-gray-700  text-sm font-medium"
-                >
-                 Select User Role
-                </label>
-              <select className=" w-full p-2  border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]" name="role" onChange={(e) => setRole(e.target.value)}  onClick={handleSubmit}>
+              <label
+                htmlFor="name"
+                className="block py-2 text-gray-700  text-sm font-medium"
+              >
+                Select User Role
+              </label>
+              <select className=" w-full p-2  border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]" name="role" onChange={(e) => setRole(e.target.value)} onClick={handleSubmit}>
                 <option value="student">Student</option>
                 <option value="teacher">Teacher</option>
                 <option value="admin">Admin</option>
@@ -143,7 +143,7 @@ export default function Admin() {
                   id="text"
 
                   name='name'
-                  className=" w-full p-2  border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]" 
+                  className=" w-full p-2  border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                   placeholder="Enter User Name"
                   required
                 />
@@ -160,7 +160,7 @@ export default function Admin() {
                   id="text"
 
                   name='email'
-                  className=" w-full p-2  border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]" 
+                  className=" w-full p-2  border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                   placeholder="Enter your Email"
                   required
                 />
@@ -175,7 +175,7 @@ export default function Admin() {
                 <input
                   type="password"
                   id="password"
-                  className=" w-full p-2  border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]" 
+                  className=" w-full p-2  border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                   name='password'
                   placeholder="Enter your password"
                   required

@@ -12,7 +12,7 @@ export default function StudentDashboard() {
   const [selectedMethod, setSelectedMethod] = useState("Free Payment"); // default method
   const studentEmail = user.email;
   const printRef = useRef();
-
+ 
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -49,7 +49,7 @@ export default function StudentDashboard() {
   const totalFee = totalCredits * 1500;
 
   // delete enrollment
-  const handleDelete = async (id) => {
+  const handleDelete = async (id,courseId) => {
     Swal.fire({
       title: "Are you sure you want to Drop This Course?",
       text: "You won't be able to revert this!",
@@ -60,8 +60,9 @@ export default function StudentDashboard() {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`${import.meta.env.VITE_API}/course/my-enrolled/${id}`, {
+        fetch(`${import.meta.env.VITE_API}/course/my-enrolled/${id}/${courseId}`, {
           method: "DELETE",
+          
         })
           .then((res) => res.json())
           .then((data) => {
@@ -190,7 +191,7 @@ export default function StudentDashboard() {
                       View
                     </button>
                     <button
-                      onClick={() => handleDelete(c._id)}
+                      onClick={() => handleDelete(c._id,c.courseId)}
                       className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700"
                     >
                       Drop

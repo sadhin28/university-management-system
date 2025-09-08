@@ -11,12 +11,9 @@ export const getMenus = (user, role) => {
       { name: "Login", icon: <FaUserGraduate />, path: "/login" },
     ];
   }
-
-  const baseMenu =role && role === "student" || role && role === "teacher"?([
-  { name: "Dashboard", icon:  <FaTachometerAlt />, path: "/" }
-    
-  ]):([{ name: "Dashboard", icon:  <FaTachometerAlt />, path: "/admin" }])
   
+
+  const baseMenu = role !=="admin"?[{ name: "Dashboard", icon:  <FaTachometerAlt />, path: "/" }]:[{ name: "Admin Dashboard", icon:  <FaTachometerAlt />, path: "/admin" }]
   const roleMenus = {
     student: [
       { name: "Profile", icon: <FaUserGraduate />, path: "/profile" },
@@ -38,11 +35,10 @@ export const getMenus = (user, role) => {
       { name: "Notices", icon: <FaBell />, path: "/notices" },
     ],
     admin: [
-      { name: "Manage Students", icon: <FaUserGraduate />, path: "/admin-students" },
-    
       { name: "Manage Users", icon: <User />, path: "/alluser" },
-      { name: "Manage Faculty", icon: <FaChalkboardTeacher />, path: "/admin-faculty" },
-      { name: "Manage Courses", icon: <FaBook />, path: "/admin-courses" },
+      { name: "Manage Students", icon: <FaUserGraduate />, path: "/students" },
+      { name: "Manage Faculty", icon: <FaChalkboardTeacher />, path: "/faculty" },
+      { name: "Manage Courses", icon: <FaBook />, path: "/courses" },
       { name: "Schedule", icon: <FaCalendarAlt />, path: "/studentChedule" },
       { name: "Notices", icon: <FaBell />, path: "/admin-notices" },
       { name: "Payments", icon: <FaMoneyBill />, path: "/admin-payments" },

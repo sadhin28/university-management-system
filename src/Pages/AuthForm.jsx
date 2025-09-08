@@ -48,8 +48,12 @@ export default function AuthForm() {
         user && navigate(from)
         
       } else {
-        await login(email, password)
-        .then(result => {
+        await 
+        login(email, password)
+        .then(async (result) => {
+              const user = result.user;
+               const tokenResult = await user.getIdTokenResult();
+               const role = tokenResult.claims.role || "student";
                result && toast.success(`${role} login successful`);
                 result.user && navigate(from)
             })
