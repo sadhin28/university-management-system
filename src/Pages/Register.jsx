@@ -59,17 +59,17 @@ const Register = () => {
   }
 
   return (
-    <div className=" bg-gradient-to-r from-[#8BB9B9FF]/80 to-[#031226FF]/70 to-[#839096FF]/80 grid md:grid-cols-2 p-5">
-      <div className="md:mt-20 lg:mt-0 ">
+    <div className=" bg-gradient-to-r from-[#8BB9B9FF]/80 to-[#031226FF]/70 to-[#839096FF]/80 ">
+      {/* <div className="md:mt-20 lg:mt-0 ">
         <Lottie animationData={registerLottieData}></Lottie>
-      </div>
-      <div className="flex items-center justify-center mt-5 mb-5">
+      </div> */}
+      <div className=" w-full flex items-center justify-center mt-5 mb-5">
         <div className="bg-gradient-to-b from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] w-full max-w-3xl p-8 rounded-lg shadow-md">
           <h2 className="text-2xl font-bold text-center text-white mb-6">
-            REGISTER
+              Create User
           </h2>
           <form onSubmit={handleSubmit}>
-            <div className="mb-6">
+            <div className="mb-2">
               <label
                 htmlFor="name"
                 className="block py-2 text-white text-sm font-medium"
@@ -86,7 +86,7 @@ const Register = () => {
                 required
               />
             </div>
-            <div className="mb-6">
+            <div className="mb-2">
               <label
                 htmlFor="email"
                 className="block text-sm font-medium text-white py-2"
@@ -100,23 +100,6 @@ const Register = () => {
                 name='email'
                 className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Enter your Email"
-                required
-              />
-            </div>
-            <div className="mb-6">
-              <label
-                htmlFor="photo Url"
-                className="block text-sm font-medium text-white py-2"
-              >
-                Photo Url
-              </label>
-              <input
-                type="text"
-                id="text"
-
-                name='photo'
-                className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Enter Photo url"
                 required
               />
             </div>
