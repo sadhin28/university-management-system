@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import Swal from "sweetalert2";
 import { getAuth } from "firebase/auth";
 import { AuthContext } from "../Provider/Authprovider";
-import AuthForm from "../Pages/AuthForm";
+
 
 export default function UsersPage() {
   const { role } = useContext(AuthContext); // admin | teacher | student
@@ -10,7 +10,6 @@ export default function UsersPage() {
   const [search, setSearch] = useState("");
   const [filterRole, setFilterRole] = useState("");
   const auth = getAuth();
-
   // Fetch users (only admin)
   useEffect(() => {
     const fetchUsers = async () => {

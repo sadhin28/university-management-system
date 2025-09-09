@@ -72,7 +72,7 @@ const router = createBrowserRouter([
       element:<Privateroute><Settings/></Privateroute>
      },
      {
-      path:'/addStudent',
+      path:'/addStudent/:uid',
       element:<Privateadmin><AddStudent/></Privateadmin>
      },
      {

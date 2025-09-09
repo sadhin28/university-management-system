@@ -1,51 +1,79 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-
+ import { getAuth } from "firebase/auth";
+import { AuthContext } from "../Provider/Authprovider";
 export default function AddStudent() {
-    const navigate = useNavigate()
-
-    const [form, setForm] = useState({
-        name: "",
+    const auth =getAuth()
+    const id =useParams().uid
+    const [students,setstudents]=useState([{
+        name:"",
         email: "",
         program: "",
         year: "",
         gpa: '',
         studentId: "",
-        imagePreview: null
-    },);
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setForm((prev) => ({ ...prev, [name]: value }));
-    };
+        imagePreview: null,
+        uid:'',
+        role:'student'
+    },])
 
-    const handleFileChange = (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
-
-        const reader = new FileReader();
-        reader.onloadend = () => {
-            setForm((prev) => ({
-                ...prev,
-                image: file,
-                imagePreview: reader.result,
-            }));
+    const navigate = useNavigate()
+   const {role}=useContext(AuthContext)
+    useEffect(() => {
+     
+        const fetchUsers = async () => {
+          if (role !== "admin") return;
+    
+          try {
+            const token = await auth.currentUser.getIdToken();
+            const res = await fetch(`${import.meta.env.VITE_API}/users`, {
+              headers: { Authorization: `Bearer ${token}` },
+            });
+            const data = await res.json();
+            setstudents(data.filter(data=>data.uid === id));
+          } catch (err) {
+            console.error(err);
+            Swal.fire("Error", "Failed to fetch users.", "error");
+          }
         };
-        reader.readAsDataURL(file);
-    };
+        fetchUsers();
+      }, []);
+   
+    // const handleChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setForm((prev) => ({ ...prev, [name]: value }));
+    // };
+
+    // const handleFileChange = (e) => {
+    //     const file = e.target.files[0];
+    //     if (!file) return;
+
+    //     const reader = new FileReader();
+    //     reader.onloadend = () => {
+    //         setForm((prev) => ({
+    //             ...prev,
+    //             image: file,
+    //             imagePreview: reader.result,
+    //         }));
+    //     };
+    //     reader.readAsDataURL(file);
+    // };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const StudentData = {
-            name: form.name,
-            email: form.email,
-            program: form.program,
-            year: `${form.year}`,
-            gpa: form.gpa,
-            studentId: form.studentId,
-            imagePreview: form.imagePreview
+            name: e.target.name.value,
+            email: e.target.email.value,
+            program: e.target.program.value,
+            year: e.target.year.value,
+            gpa: e.target.gpa.value,
+            studentId: e.target.studentId.value,
+            imagePreview:students[0].photoURL,
+            uid:students[0].uid,
+            role:students[0].role
         }
-
+      
         //post now
         fetch(`${import.meta.env.VITE_API}/student`, {
             method: 'POST',
@@ -90,8 +118,8 @@ export default function AddStudent() {
                             
                             type="text"
                             name="studentId"
-                            value={form.studentId}
-                            onChange={handleChange}
+                           
+                           
                             className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                             required
                         />
@@ -101,10 +129,11 @@ export default function AddStudent() {
                     <div className="flex flex-col">
                         <label>Name</label>
                         <input
+                            
                             type="text"
                             name="name"
-                            value={form.name}
-                            onChange={handleChange}
+                            value={students[0].name}
+                          
                             className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                             required
                         />
@@ -116,8 +145,8 @@ export default function AddStudent() {
                         <input
                             type="email"
                             name="email"
-                            value={form.email}
-                            onChange={handleChange}
+                            value={students[0].email}
+                         
                             className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                             required
                         />
@@ -128,9 +157,9 @@ export default function AddStudent() {
                         <label>Program</label>
                         <select
                              required
-                            value={form.program}
+                    
                             name="program"
-                            onChange={handleChange}
+                          
                             className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                         >
                             <option value="">Select Program</option>
@@ -147,9 +176,9 @@ export default function AddStudent() {
                         <label>Year</label>
                         <select
                             required
-                            value={form.year}
+                            
                             name="year"
-                            onChange={handleChange}
+                         
                             className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                         >
                             <option value="">Select Years</option>
@@ -167,29 +196,29 @@ export default function AddStudent() {
                             required
                             type="text"
                             name="gpa"
-                            value={form.gpa}
-                            onChange={handleChange}
+                           
+                        
                             className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                         />
                     </div>
 
                     {/* Image Upload */}
-                    <div className="col-span-2 flex flex-col">
+                    {/* <div className="col-span-2 flex flex-col">
                         <label>Profile Image</label>
                         <input
                             required
                             type="file"
                             accept="image/*"
-                            onChange={handleFileChange}
+                          
                             className="px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
                         />
-                    </div>
+                    </div> */}
 
                     {/* Image Preview */}
-                    {form.imagePreview && (
+                    {students[0].photoURL && (
                         <div className="col-span-2 flex justify-center">
                             <img
-                                src={form.imagePreview}
+                                src={students[0].photoURL}
                                 alt="Preview"
                                 className="w-32 h-32 object-contain rounded"
                             />
