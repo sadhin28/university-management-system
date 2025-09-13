@@ -2,9 +2,16 @@ import { useEffect, useState, useContext } from "react";
 import Swal from "sweetalert2";
 import { getAuth } from "firebase/auth";
 import { AuthContext } from "../Provider/Authprovider";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 export default function UsersPage() {
+  const studentsData = useLoaderData()
+  const [students, setStudent] = useState()
+ 
+  useEffect(() => {
+    setStudent(studentsData)
+  }, [])
   const { role } = useContext(AuthContext); // admin | teacher | student
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("");
@@ -32,6 +39,8 @@ export default function UsersPage() {
 
   // Delete user
   const handleDelete = async (uid, email) => {
+    const data = (students.find(data=>data.uid === uid))
+  
     const confirm = await Swal.fire({
       title: "Are you sure?",
       text: `Delete user ${email}?`,
@@ -44,6 +53,11 @@ export default function UsersPage() {
 
     if (confirm.isConfirmed) {
       try {
+       
+        { data.role === "student" && fetch(`${import.meta.env.VITE_API}/student/${data._id}`, {
+          method: 'DELETE'
+        })}
+        
         const token = await auth.currentUser.getIdToken();
         const res = await fetch(`${import.meta.env.VITE_API}/users/${uid}`, {
           method: "DELETE",
@@ -77,9 +91,9 @@ export default function UsersPage() {
 
   return (
     <div className="p-4 md:p-6 max-w-7xl mx-auto">
-    
+
       <h1 className="text-2xl md:text-3xl font-bold text-center mb-6">👥 Users Management</h1>
-      
+
       {/* Search & Filter */}
       <div className="flex flex-col md:flex-row gap-3 mb-6 items-center">
         <input
@@ -136,13 +150,18 @@ export default function UsersPage() {
                   <td className="border p-2">{user.name || "N/A"}</td>
                   <td className="border p-2 break-all">{user.email}</td>
                   <td className="border p-2">{user.role || "user"}</td>
-                  <td className="border p-2">
+                  <td className="border p-2 grid gap-2 md:grid-cols-2">
                     <button
                       onClick={() => handleDelete(user.uid, user.email)}
                       className="bg-red-500 text-white px-2 md:px-3 py-1 rounded hover:bg-red-600 text-xs md:text-sm"
                     >
                       🗑 Delete
                     </button>
+
+                    {role === 'admin' && <Link to={`/addStudent/${user.uid}`} className="bg-red-500 hover:bg-green-500 text-white px-2 md:px-3 py-1 rounded hover:bg-red-600 text-xs md:text-sm">
+                      Conform Admision
+                    </Link>}
+
                   </td>
                 </tr>
               ))}

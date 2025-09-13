@@ -55,7 +55,8 @@ const router = createBrowserRouter([
      },
      {
        path:'/alluser',
-       element:<Privateadmin><UsersPage/></Privateadmin>
+       element:<Privateadmin><UsersPage/></Privateadmin>,
+        loader:()=>fetch(`${import.meta.env.VITE_API}/student`)
      },
      {
       path: "/courses",
