@@ -97,7 +97,7 @@ const Students = () => {
             {/* Student Cards */}
             <div className="space-y-4">
                 {filteredStudents?.map((student) => (
-                    <Link to={`/SDetails/${student.uid}`}>
+                    <Link className='grid' to={`/SDetails/${student.uid}`}>
                         <div key={student._id} className="md:flex justify-between hover:shadow-lg items-center p-4 border-2 border-[#097C7DFF] rounded-lg bg-gray-100/20 shadow-sm">
                             <div className="md:flex items-center  gap-4">
                                 <div className='w-20 h-20 rounded-full mx-auto'>

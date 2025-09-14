@@ -132,7 +132,8 @@ const router = createBrowserRouter([
     },
      {
       path:'/login',
-      element:<AuthForm/>
+      element:<AuthForm/>,
+       loader:()=>fetch(`${import.meta.env.VITE_API}/student`)
      },  
      {
       path:'/results',

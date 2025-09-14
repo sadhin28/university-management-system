@@ -8,8 +8,8 @@ const auth = getAuth(app)
 const Authprovider = ({children}) => {
    const [user,setuser]=useState(null)
    const [loading,setloading]=useState(true)
-     const [role, setRole] = useState("student");
-   
+   const [role, setRole] = useState("student");
+   const [userData,setUserData]=useState([])
     //Create user
     const CreateNewUser=(email,password)=>{
         setloading(true);
@@ -75,7 +75,8 @@ const Authprovider = ({children}) => {
     passReset,
     login,
     CreateNewUser,
-    Logout
+    Logout,
+    setUserData
 
 
    }

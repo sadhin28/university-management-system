@@ -1,5 +1,5 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
@@ -17,17 +17,17 @@ const Login = () => {
     const handleChange = (event) => {
         setTakeemail(event.target.value);
     }
-
+    
     const from = location.state || '/'
     const { setuser, login,  } = useContext(AuthContext)
 
     const handleSubmit = (e) => {
 
         e.preventDefault()
-
+        
         const email = e.target.email.value
         const password = e.target.password.value
-
+        
         login(email, password)
             .then(result => {
 
