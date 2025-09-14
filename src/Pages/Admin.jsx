@@ -193,18 +193,8 @@ export default function Admin() {
         </div>
 
         {/* Navigation Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <Link
-            to="/addStudent"
-            className="flex flex-col items-center bg-blue-50 border rounded-xl p-6 shadow hover:shadow-lg transition"
-          >
-            <Users className="w-10 h-10 text-blue-600 mb-3" />
-            <h3 className="font-semibold text-gray-800">Add Student</h3>
-            <p className="text-sm text-gray-500 text-center">
-              Manage student records easily.
-            </p>
-          </Link>
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+         
           <Link
             to="/addCourse"
             className="flex flex-col items-center bg-green-50 border rounded-xl p-6 shadow hover:shadow-lg transition"
