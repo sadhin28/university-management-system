@@ -37,6 +37,7 @@ import Notices from './Pages/Notices.jsx';
 import Payment from './Admin/Payment.jsx';
 import SchedulePage from './student/StudentSchedule.jsx';
 import UsersPage from './Admin/Alluser.jsx';
+import ViewNotice from './Pages/ViewNotice.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -158,6 +159,10 @@ const router = createBrowserRouter([
      {
       path:"/studentChedule",
       element:<Privateroute><SchedulePage/></Privateroute>
+     },
+     {
+      path:"/ViewNotice/:id",
+      element:<Privateroute><ViewNotice/></Privateroute>
      }
     ]
   },

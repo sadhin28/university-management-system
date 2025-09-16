@@ -10,6 +10,7 @@ const Authprovider = ({children}) => {
    const [loading,setloading]=useState(true)
    const [role, setRole] = useState("student");
    const [userData,setUserData]=useState([])
+     const [unseenCount, setUnseenCount] = useState(0);
     //Create user
     const CreateNewUser=(email,password)=>{
         setloading(true);
@@ -76,7 +77,9 @@ const Authprovider = ({children}) => {
     login,
     CreateNewUser,
     Logout,
-    setUserData
+    setUserData,
+    setUnseenCount,
+    unseenCount
 
 
    }
