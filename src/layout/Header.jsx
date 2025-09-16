@@ -13,6 +13,7 @@ const Navbar = () => {
         {/* Right side */}
         <div className="flex items-center  gap-6">
           
+          {role === "student"?<Link to="notices">
             <div className="relative">
         <FaBell className="text-2xl cursor-pointer" />
         {unseenCount > 0 && (
@@ -20,7 +21,15 @@ const Navbar = () => {
             {unseenCount}
           </span>
         )}
-      </div>
+      </div></Link>:<Link to="/admin-notices">
+            <div className="relative">
+        <FaBell className="text-2xl cursor-pointer" />
+        {unseenCount > 0 && (
+          <span className="absolute -top-1 -right-1 bg-red-600 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">
+            {unseenCount}
+          </span>
+        )}
+      </div></Link>}
 
           <Link to= '/profile'>
            {

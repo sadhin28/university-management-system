@@ -5,7 +5,7 @@ import jsPDF from "jspdf";
 import { AuthContext } from "../Provider/Authprovider";
 
 export default function ViewNotice() {
-  const { user } = useContext(AuthContext);
+  const { user,role } = useContext(AuthContext);
   const { id } = useParams();
   const [notice, setNotice] = useState(null);
   const API = "http://localhost:5000/notice";
@@ -48,7 +48,7 @@ export default function ViewNotice() {
         Download PDF
       </button>
       <br />
-      <Link to="/admin-notices" className="text-blue-600 hover:underline">← Back to Notices</Link>
+     {role === 'student'?<Link to="/notices" className="text-blue-600 hover:underline">← Back to Notices</Link>: <Link to="/admin-notices" className="text-blue-600 hover:underline">← Back to Notices</Link>}
     </div>
   );
 }

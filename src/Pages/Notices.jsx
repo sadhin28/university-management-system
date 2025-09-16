@@ -80,7 +80,7 @@ export default function Notices() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
+    <div className="max-w-6xl mx-auto p-6">
       <h2 className="text-2xl font-bold text-center mb-6">📢 University Notice Board</h2>
 
       {(role === "admin" || role === "teacher") && (
@@ -102,19 +102,21 @@ export default function Notices() {
           {notices.length === 0 && <p>No notices available</p>}
           {notices.map(n => (
             
-           <Link to={`/ViewNotice/${n._id}`} className="grid">
+           
              <div key={n._id} onClick={()=>handleNoticeClick(n._id)}
                  className={`bg-gray-100/20 hover:shadow-2xl p-4 rounded shadow-md cursor-pointer ${!n.seen?"border-l-4 border-red-500 bg-white":"bg-gray-100"}`}>
               <h4 className="font-bold ">{n.title}</h4>
               <p className="">{n.message}</p>
               <small className="block ">By {n.postedBy.name} ({n.postedBy.role})</small>
               <small className="block  text-sm">{new Date(n.createdAt).toLocaleString("eng",{dateStyle:"medium",timeStyle:"short"})}</small>
-              {(role==="admin" || (role==="teacher" && n.postedBy.id===user.uid)) && (
+             <div className="flex items-center justify-between">
+                 {(role==="admin" || (role==="teacher" && n.postedBy.id===user.uid)) && (
                 <button onClick={()=>handleDelete(n._id)} className="mt-2 bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm">Delete</button>
               )}
-              
+              <Link key={n._id} to={`/ViewNotice/${n._id}`} className="mt-2 bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm">View Notice</Link>
+             </div>
             </div>
-           </Link>
+           
             
           ))}
         </div>
