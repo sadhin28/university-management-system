@@ -8,7 +8,7 @@ export default function ViewNotice() {
   const { user,role } = useContext(AuthContext);
   const { id } = useParams();
   const [notice, setNotice] = useState(null);
-  const API = "http://localhost:5000/notice";
+  const API = `${import.meta.env.VITE_API}/notice`;
 
   const fetchNotice = async () => {
     const res = await fetch(`${API}?userId=${user.uid}`);

@@ -104,7 +104,7 @@ export default function Notices() {
             
            
              <div key={n._id} onClick={()=>handleNoticeClick(n._id)}
-                 className={`bg-gray-100/20 hover:shadow-2xl p-4 rounded shadow-md cursor-pointer ${!n.seen?"border-l-4 border-red-500 bg-white":"bg-gray-100"}`}>
+                 className={`bg-gray-100/20 hover:shadow-2xl p-4 rounded-2xl shadow-md cursor-pointer ${!n.seen?"border-l-4 border-red-500 bg-white":"bg-gray-100"}`}>
               <h4 className="font-bold ">{n.title}</h4>
               <p className="">{n.message}</p>
               <small className="block ">By {n.postedBy.name} ({n.postedBy.role})</small>
