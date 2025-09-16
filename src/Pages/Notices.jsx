@@ -86,9 +86,9 @@ export default function Notices() {
       {(role === "admin" || role === "teacher") && (
         <form onSubmit={handleCreate} className="bg-gray-100/20 hover:shadow-2xl shadow-lg rounded-2xl p-6 mb-6 border">
           <h3 className="text-xl font-semibold mb-4">Create Notice</h3>
-          <input type="text" placeholder="Title" value={title} onChange={e=>setTitle(e.target.value)} required className="w-full border rounded p-2 mb-3 focus:outline-blue-500"/>
-          <textarea placeholder="Message" value={message} onChange={e=>setMessage(e.target.value)} required className="w-full border rounded p-2 mb-3 focus:outline-blue-500"/>
-          <select value={audience} onChange={e=>setAudience(e.target.value)} className="w-full border rounded p-2 mb-4">
+          <input type="text" placeholder="Title" value={title} onChange={e=>setTitle(e.target.value)} required className=" mb-3 w-full p-2  border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"/>
+          <textarea placeholder="Message" value={message} onChange={e=>setMessage(e.target.value)} required className=" mb-3 w-full p-2  border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"/>
+          <select value={audience} onChange={e=>setAudience(e.target.value)} className="w-full p-2  border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799] mb-4">
             <option value="all">For All</option>
             <option value="students">For Students</option>
             <option value="teachers">For Teachers</option>
