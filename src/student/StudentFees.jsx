@@ -1,37 +1,32 @@
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Provider/Authprovider";
 
 export default function StudentFees() {
-  // Dummy payment transactions
-  const payments = [
-    {
-      id: "TXN001",
-      date: "2025-01-10",
-      amount: 5000,
-      method: "bKash",
-      status: "Completed",
-    },
-    {
-      id: "TXN002",
-      date: "2025-02-15",
-      amount: 3000,
-      method: "Bank Transfer",
-      status: "Completed",
-    },
-    {
-      id: "TXN003",
-      date: "2025-03-05",
-      amount: 2000,
-      method: "Cash",
-      status: "Pending",
-    },
-  ];
-
+  const {user}=useContext(AuthContext)
+  const [payments,setPayment]=useState([])
+  const [student,setStudent]=useState([])
+  const data =(student.find((data)=>data.email === user.email ))
+  console.log(data)
+  useEffect(()=>{
+    fetch(`${import.meta.env.VITE_API}/payments/${user.uid}`)
+    .then(res=>res.json())
+    .then(data=>{
+        setPayment(data)
+    })
+    fetch(`${import.meta.env.VITE_API}/student`)
+    .then(res=>res.json())
+    .then(data=>{
+        setStudent(data)
+    })
+  },[])
+  
   // Calculate total paid
   const totalPaid = payments
-    .filter((p) => p.status === "Completed")
+    .filter((p) => p.status !== "Completed")
     .reduce((sum, p) => sum + p.amount, 0);
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className="max-w-8xl mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4 text-center">
         Student Payment Transactions
       </h1>
@@ -39,13 +34,13 @@ export default function StudentFees() {
       {/* Student Info */}
       <div className="mb-6 border p-4 rounded shadow-sm bg-gray-50">
         <p>
-          <span className="font-semibold">Student Name:</span> Shadin Ahmed
+          <span className="font-semibold">Student Name:</span> {data?.name}
         </p>
         <p>
-          <span className="font-semibold">Student ID:</span> 2025001
+          <span className="font-semibold">Student Uid:</span> {data?.studentId}
         </p>
         <p>
-          <span className="font-semibold">Department:</span> Computer Science
+          <span className="font-semibold">Department:</span> {data?.program}
         </p>
       </div>
 
@@ -58,7 +53,7 @@ export default function StudentFees() {
               <th className="border px-4 py-2">Date</th>
               <th className="border px-4 py-2">Amount</th>
               <th className="border px-4 py-2">Method</th>
-              <th className="border px-4 py-2">Status</th>
+              
             </tr>
           </thead>
           <tbody>
@@ -68,15 +63,6 @@ export default function StudentFees() {
                 <td className="border px-4 py-2">{pay.date}</td>
                 <td className="border px-4 py-2">{pay.amount} BDT</td>
                 <td className="border px-4 py-2">{pay.method}</td>
-                <td
-                  className={`border px-4 py-2 font-medium ${
-                    pay.status === "Completed"
-                      ? "text-green-600"
-                      : "text-yellow-600"
-                  }`}
-                >
-                  {pay.status}
-                </td>
               </tr>
             ))}
           </tbody>

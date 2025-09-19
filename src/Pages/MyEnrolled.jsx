@@ -86,7 +86,7 @@ export default function StudentDashboard() {
     const newTransaction = {
       id: Date.now(),
       date: new Date().toLocaleString(),
-      userID:user.uid,
+      studentId:user.uid,
       amount: totalFee,
       method: selectedMethod,
       transactionId:
@@ -97,7 +97,7 @@ export default function StudentDashboard() {
 
     setTransactions([...transactions, newTransaction]);
     setPaymentPaid(true);
-      await fetch("http://localhost:5000/payments", {
+      await fetch(`${import.meta.env.VITE_API}/payments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newTransaction),
