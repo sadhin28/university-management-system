@@ -80,7 +80,7 @@ export default function StudentDashboard() {
   };
 
   // handle payment (Free or bKash)
-  const handlePayment = () => {
+  const handlePayment =async ()  => {
     if (!mergedData.length) return alert("No courses to pay for.");
 
     const newTransaction = {
@@ -96,7 +96,11 @@ export default function StudentDashboard() {
 
     setTransactions([...transactions, newTransaction]);
     setPaymentPaid(true);
-
+      await fetch("http://localhost:5000/payments", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newTransaction),
+    });
     Swal.fire({
       title: "Payment Successful!",
       text: `Paid via ${selectedMethod}`,
