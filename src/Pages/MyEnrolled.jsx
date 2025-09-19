@@ -82,10 +82,11 @@ export default function StudentDashboard() {
   // handle payment (Free or bKash)
   const handlePayment =async ()  => {
     if (!mergedData.length) return alert("No courses to pay for.");
-
+     
     const newTransaction = {
       id: Date.now(),
       date: new Date().toLocaleString(),
+      userID:user.uid,
       amount: totalFee,
       method: selectedMethod,
       transactionId:
