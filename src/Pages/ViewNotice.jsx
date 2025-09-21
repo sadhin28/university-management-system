@@ -44,7 +44,7 @@ export default function ViewNotice() {
       <small className="block mb-2">By {notice.postedBy.name} ({notice.postedBy.role})</small>
       <small className="block  mb-4">{new Date(notice.createdAt).toLocaleString("eng",{dateStyle:"medium",timeStyle:"short"})}</small>
       
-      <button onClick={downloadPDF} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded mb-4">
+      <button onClick={downloadPDF} className="bg-blue-600 hover:shadow-2xl hover:bg-blue-700 text-white px-4 py-2 rounded mb-4">
         Download PDF
       </button>
       <br />
