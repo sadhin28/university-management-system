@@ -111,7 +111,7 @@ export default function Notices() {
               <small className="block  text-sm">{new Date(n.createdAt).toLocaleString("eng",{dateStyle:"medium",timeStyle:"short"})}</small>
              <div className="flex items-center justify-between">
                  {(role==="admin" || (role==="teacher" && n.postedBy.id===user.uid)) && (
-                <button onClick={()=>handleDelete(n._id)} className="mt-2 bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm">Delete</button>
+                <button onClick={()=>handleDelete(n._id)} className="mt-2 bg-red-600 hover:bg-red-800 text-white px-3 py-1 rounded text-sm">Delete</button>
               )}
               <Link key={n._id} to={`/ViewNotice/${n._id}`} className="mt-2 bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm">View Notice</Link>
              </div>
