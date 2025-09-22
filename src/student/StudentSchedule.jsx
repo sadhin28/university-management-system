@@ -184,7 +184,7 @@ export default function SchedulePage() {
               {options.map((opt) => <option key={opt}>{opt}</option>)}
             </select>
           ))}
-          <button className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">➕ Add Schedule</button>
+          <button className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-4 py-2 rounded-lg w-full items-center gap-2 md:text-xl text-xs">➕ Add Schedule</button>
         </form>
       )}
        {/* Filter section */}
