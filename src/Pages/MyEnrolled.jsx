@@ -245,39 +245,6 @@ export default function StudentDashboard() {
           </p>
         </div>
       )}
-
-      {/* Transaction History */}
-      <div className="max-w-4xl mx-auto mt-8">
-        <h2 className="text-2xl font-semibold mb-4">💰 Transaction History</h2>
-        {transactions.length === 0 ? (
-          <p className="text-gray-500">No transactions yet.</p>
-        ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse bg-white shadow-md rounded-xl overflow-hidden">
-              <thead className="bg-gray-100">
-                <tr>
-                  <th className="p-3 border">#</th>
-                  <th className="p-3 border">Date</th>
-                  <th className="p-3 border">Amount</th>
-                  <th className="p-3 border">Method</th>
-                  <th className="p-3 border">Transaction ID</th>
-                </tr>
-              </thead>
-              <tbody>
-                {transactions.map((t, i) => (
-                  <tr key={t.id} className="hover:bg-gray-50">
-                    <td className="p-3 border text-center">{i + 1}</td>
-                    <td className="p-3 border">{t.date}</td>
-                    <td className="p-3 border text-center">{t.amount} Tk</td>
-                    <td className="p-3 border text-center">{t.method}</td>
-                    <td className="p-3 border text-center">{t.transactionId}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
-      </div>
     </div>
   );
 }
