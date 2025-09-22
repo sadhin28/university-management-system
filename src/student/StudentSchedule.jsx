@@ -222,7 +222,7 @@ export default function SchedulePage() {
             {(role === "admin" || role === "teacher") && (
               <div className="flex gap-2">
                 <button onClick={() => handleUpdate(item)} className="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-yellow-600">✏️ Update</button>
-                <button onClick={() => handleDelete(item._id, item.course)} className="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600">🗑 Delete</button>
+                <button onClick={() => handleDelete(item._id, item.course)} className="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-800">🗑 Delete</button>
               </div>
             )}
           </div>

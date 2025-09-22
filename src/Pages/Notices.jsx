@@ -93,7 +93,7 @@ export default function Notices() {
             <option value="students">For Students</option>
             <option value="teachers">For Teachers</option>
           </select>
-          <button type="submit" className="bg-blue-600 hover:bg-green-700 text-white px-4 py-2 rounded">Publish</button>
+          <button type="submit" className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-4 py-2 rounded-lg w-full items-center gap-2 md:text-xl text-xs">Publish</button>
         </form>
       )}
 
