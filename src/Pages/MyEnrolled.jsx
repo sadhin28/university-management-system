@@ -134,20 +134,20 @@ export default function StudentDashboard() {
             Payment Due: {paymentPaid ? 0 : totalFee} Tk
           </p>
         </div>
-        <div className="flex gap-3 items-center">
+        <div className="grid grid-cols-3 gap-2">
           {!paymentPaid && (
             <>
               <select
                 value={selectedMethod}
                 onChange={(e) => setSelectedMethod(e.target.value)}
-                className="w-full p-2 mb-4 px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
+                className=" p-2 px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
               >
                 <option  value="Free Payment">Free Payment</option>
                 <option value="bKash">bKash</option>
               </select>
               <button
                 onClick={handlePayment}
-                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                className="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
               >
                 Pay Now
               </button>
@@ -155,7 +155,7 @@ export default function StudentDashboard() {
           )}
           <button
             onClick={handleDownloadPDF}
-            className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700"
+            className=" p-2 px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF]  focus:outline-none focus:ring-2 focus:ring-[#159799]"
           >
             Download PDF
           </button>
