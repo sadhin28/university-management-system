@@ -122,7 +122,7 @@ export default function Faculty() {
                                 {/* Research Area */}
                                 <div>
                                     <p className="text-sm font-medium">Research Area</p>
-                                    <p className="text-sm text-gray-500">{faculty?.researchArea}</p>
+                                    <p className="text-sm ">{faculty?.researchArea}</p>
                                 </div>
 
                                 {/* Courses */}
