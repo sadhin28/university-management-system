@@ -21,7 +21,6 @@ export const getMenus = (user, role) => {
       { name: "My Enrolled Course", icon: <SiCoursera />, path: "/my-enrolled" },
       { name: "Schedule", icon: <FaCalendarAlt />, path: "/studentChedule" },
       { name: "Faculty", icon: <FaChalkboardTeacher />, path: "/faculty" },
-      { name: "Results", icon: <FaBook />, path: "/results" },
       { name: "Fees", icon: <FaMoneyBill />, path: "/fees" },
       { name: "Notices", icon: <FaBell />, path: "/notices" },
     ],
@@ -31,7 +30,6 @@ export const getMenus = (user, role) => {
       { name: "Manage Students", icon: <FaUsersCog />, path: "/studentChedule" },
       { name: "Schedule", icon: <FaCalendarAlt />, path: "/schedule" },
       { name: "Assignments", icon: <MdAssignment />, path: "/assignments" },
-      { name: "Results", icon: <FaBook />, path: "/results" },
       { name: "Notices", icon: <FaBell />, path: "/notices" },
     ],
     admin: [
