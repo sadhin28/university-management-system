@@ -110,7 +110,7 @@ export default function Faculty() {
                                         <span>{faculty?.email}</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <MapPin className="w-4 h-4 text-gray-400" />
+                                        <MapPin className="w-4 h-4 " />
                                         <span>{faculty?.office}</span>
                                     </div>
                                     <div className="flex items-center gap-2">
