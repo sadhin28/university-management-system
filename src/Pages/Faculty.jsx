@@ -104,9 +104,9 @@ export default function Faculty() {
                             {/* Card Body */}
                             <div className="p-6 space-y-4">
                                 {/* Info */}
-                                <div className="space-y-3 text-sm text-gray-600">
+                                <div className="space-y-3 text-sm ">
                                     <div className="flex items-center gap-2">
-                                        <Mail className="w-4 h-4 text-gray-400" />
+                                        <Mail className="w-4 h-4 " />
                                         <span>{faculty?.email}</span>
                                     </div>
                                     <div className="flex items-center gap-2">
