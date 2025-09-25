@@ -122,7 +122,7 @@ export default function UsersPage() {
       ) : (
         <div className="overflow-x-auto shadow-md rounded-lg">
           <table className="min-w-full border-collapse border border-gray-300 text-sm md:text-base">
-            <thead className="bg-gray-200">
+            <thead className="bg-blue-600">
               <tr className="text-center">
                 <th className="border p-2">Photo</th>
                 <th className="border p-2">UID</th>
@@ -153,7 +153,7 @@ export default function UsersPage() {
                   <td className="border p-2 grid gap-2 md:grid-cols-2">
                     <button
                       onClick={() => handleDelete(user.uid, user.email)}
-                      className="bg-red-500 text-white px-2 md:px-3 py-1 rounded hover:bg-red-600 text-xs md:text-sm"
+                      className="bg-red-500 text-white px-2 md:px-3 py-1 rounded hover:bg-red-800 text-xs md:text-sm"
                     >
                       🗑 Delete
                     </button>
