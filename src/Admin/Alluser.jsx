@@ -134,7 +134,7 @@ export default function UsersPage() {
             </thead>
             <tbody>
               {filteredUsers.map(user => (
-                <tr key={user.uid} className="text-center hover:bg-gray-50">
+                <tr key={user.uid} className="text-center hover:bg-gray-100/20">
                   <td className="border p-2">
                     {user.photoURL ? (
                       <img
