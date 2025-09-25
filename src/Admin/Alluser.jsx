@@ -158,7 +158,7 @@ export default function UsersPage() {
                       🗑 Delete
                     </button>
 
-                    {role === 'admin' && <Link to={`/addStudent/${user.uid}`} className="bg-red-500 hover:bg-green-500 text-white px-2 md:px-3 py-1 rounded hover:bg-red-600 text-xs md:text-sm">
+                    {role === 'admin' && <Link to={`/addStudent/${user.uid}`} className="bg-green-500 hover:bg-green-700 text-white px-2 md:px-3 py-1 rounded text-xs md:text-sm">
                       Conform Admision
                     </Link>}
 
