@@ -120,7 +120,7 @@ export default function UsersPage() {
       {filteredUsers.length === 0 ? (
         <p className="text-center text-gray-500">No users found.</p>
       ) : (
-        <div className="overflow-x-auto shadow-md rounded-lg">
+        <div className="hover:shadow-2xl overflow-x-auto shadow-md rounded-lg">
           <table className="min-w-full border-collapse border border-gray-300 text-sm md:text-base">
             <thead className="bg-blue-600">
               <tr className="text-center">
@@ -134,7 +134,7 @@ export default function UsersPage() {
             </thead>
             <tbody>
               {filteredUsers.map(user => (
-                <tr key={user.uid} className="text-center hover:bg-gray-100/20">
+                <tr key={user.uid} className="text-center hover:bg-gray-100/20 ">
                   <td className="border p-2">
                     {user.photoURL ? (
                       <img
