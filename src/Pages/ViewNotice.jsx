@@ -146,7 +146,7 @@ export default function ViewNotice() {
               : "bg-green-600 hover:bg-green-700"
           } text-white px-5 py-2 rounded transition-all`}
         >
-          {loading ? "Translating..." : "Toggle Language"}
+          {loading ? "Translating..." : "Bangla Language"}
         </button>
       </div>
 
