@@ -2,12 +2,14 @@ import {
   FaBook,
   FaTimes,
   FaBars,
+  FaUniversity,
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/Authprovider";
 import { TbLogin, TbLogout } from "react-icons/tb";
 import { getMenus } from "./Menue";
+import { BirdIcon, BookDashed } from "lucide-react";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false); // default closed
@@ -40,7 +42,7 @@ const Sidebar = () => {
       {/* Top Bar with toggle button */}
       <div className="flex items-center justify-between px-4 py-4">
         <div className="flex items-center gap-3 text-xl font-bold">
-          <FaBook size={24} />
+          <FaUniversity size={24} />
           {isOpen && <span className="whitespace-nowrap">City University</span>}
         </div>
         <button onClick={() => setIsOpen(!isOpen)} className="text-lg">
