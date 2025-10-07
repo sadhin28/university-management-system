@@ -142,8 +142,8 @@ export default function ViewNotice() {
           disabled={loading}
           className={`${
             loading
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-green-600 hover:bg-green-700"
+              ? "bg-purple-400 cursor-not-allowed"
+              : "bg-amber-600 hover:bg-amber-700"
           } text-white px-5 py-2 rounded transition-all`}
         >
           {loading ? "Translating..." : "Bangla Language"}
