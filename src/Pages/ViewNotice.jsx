@@ -155,7 +155,7 @@ export default function ViewNotice() {
           ← Back to Notices
         </Link>
       ) : (
-        <Link to="/admin-notices" className="text-blue-600 hover:underline">
+        <Link to="/admin-notices" className="text-purple-800 hover:underline">
           ← Back to Notices
         </Link>
       )}
