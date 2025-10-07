@@ -132,7 +132,7 @@ export default function ViewNotice() {
       <div className="flex gap-4 mb-4">
         <button
           onClick={downloadPDF}
-          className="bg-blue-600 hover:shadow-lg hover:bg-blue-700 text-white px-5 py-2 rounded transition-all"
+          className="bg-purple-600 hover:shadow-lg hover:bg-purple-700 text-white px-5 py-2 rounded transition-all"
         >
           Download PDF
         </button>
