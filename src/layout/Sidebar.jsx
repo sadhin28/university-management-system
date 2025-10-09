@@ -45,7 +45,7 @@ const Sidebar = () => {
           <FaUniversity size={24} />
           {isOpen && <span className="whitespace-nowrap">City University</span>}
         </div>
-        <button onClick={() => setIsOpen(!isOpen)} className="text-lg">
+        <button onClick={() => setIsOpen(!isOpen)} className="text-lg hover:text-green-300">
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
