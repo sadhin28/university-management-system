@@ -60,7 +60,7 @@ const Sidebar = () => {
                 title={menu.name}
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-4 py-2 rounded-md cursor-pointer transition-colors 
-                  ${isActive ? "bg-gray-800/50 font-semibold" : "hover:bg-green-800/50"}`
+                  ${isActive ? "bg-gray-800/50 font-semibold" : "hover:bg-red-800/50"}`
                 }
               >
                 <span className="text-lg">{menu.icon}</span>
