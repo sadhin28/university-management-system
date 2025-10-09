@@ -143,7 +143,7 @@ export default function ViewNotice() {
           className={`${
             loading
               ? "bg-purple-400 cursor-not-allowed"
-              : "bg-amber-600 hover:bg-amber-700"
+              : "bg-amber-600 hover:bg-purple-700"
           } text-white px-5 py-2 rounded transition-all`}
         >
           {loading ? "Translating..." : "Translet to Bangla"}
