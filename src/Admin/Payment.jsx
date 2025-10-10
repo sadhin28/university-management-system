@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function Payment() {
 
-  const [payments,setPayment]=useState([])
-  console.log(payments)
- 
+  const [payments,setPayment]=useState([]) 
   useEffect(()=>{
     fetch(`${import.meta.env.VITE_API}/payments`)
     .then(res=>res.json())
@@ -37,6 +35,7 @@ export default function Payment() {
           </thead>
           <tbody>
             {payments.map((pay, idx) => (
+              
               <tr key={idx}>
                 <td className="border px-4 py-2">{pay.id}</td>
                 <td className="border px-4 py-2">{pay.date}</td>

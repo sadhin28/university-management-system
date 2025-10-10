@@ -12,7 +12,7 @@ export default function StudentDashboard() {
   const [selectedMethod, setSelectedMethod] = useState("Free Payment"); // default method
   const studentEmail = user.email;
   const printRef = useRef();
-  console.log(transactions)
+
   useEffect(() => {
     const fetchData = async () => {
       try {

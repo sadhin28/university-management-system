@@ -6,7 +6,7 @@ export default function StudentFees() {
   const [payments,setPayment]=useState([])
   const [student,setStudent]=useState([])
   const data =(student.find((data)=>data.email === user.email ))
-  console.log(data)
+
   useEffect(()=>{
     fetch(`${import.meta.env.VITE_API}/payments/${user.uid}`)
     .then(res=>res.json())
