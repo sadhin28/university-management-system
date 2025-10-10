@@ -5,6 +5,7 @@ import { AuthContext } from "../Provider/Authprovider";
 import Swal from "sweetalert2";
 export default function Courses() {
   const {role}=useContext(AuthContext)
+
   const [searchQuery, setSearchQuery] = useState("");
     const Course = useLoaderData()
   const [sampleCourse,setsampleCourse]=useState(Course)
@@ -151,14 +152,14 @@ export default function Courses() {
 
                 {/* Actions */}
                 <div className=" flex gap-10 justify-between  ">
-                 {role === 'admin' || role === "teacher" ?<Link to={`/EnrolleCourse/${course._id}`}
-                   className="font-bold border-2  p-3 bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white   rounded-lg text-center flex-1  items-center   text-xs">
-                   Enrolle Course
-                  </Link>:<Link to={`/EnrolleCourse/${course._id}`}
+                 {role === 'student' && <Link to={`/EnrolleCourse/${course._id}`}
                    className="font-bold border-2  p-3 bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white   rounded-lg text-center flex-1  items-center   text-xs">
                    Enrolle Course
                   </Link>}
                   {role === 'admin'&& <button onClick={()=>DeleteCourse(course._id)} className="font-bold border-2 p-3 bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white   rounded-lg text-center flex-1  items-center   text-xs">
+                    Delete Course
+                  </button>}
+                  {role === 'teacher'&& <button onClick={()=>DeleteCourse(course._id)} className="font-bold border-2 p-3 bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white   rounded-lg text-center flex-1  items-center   text-xs">
                     Delete Course
                   </button>}
                 </div>

@@ -26,7 +26,8 @@ export const getMenus = (user, role) => {
     ],
     teacher: [
       { name: "Profile", icon: <FaUserGraduate />, path: "/profile" },
-       { name: "Faculty", icon: <FaChalkboardTeacher />, path: "/faculty" },
+      { name: "Faculty", icon: <FaChalkboardTeacher />, path: "/faculty" },
+      { name: "Manage Courses", icon: <FaBook />, path: "/courses" },
       { name: "Schedule", icon: <FaCalendarAlt />, path: "/studentChedule" },
       { name: "Assignments", icon: <MdAssignment />, path: "/assignments" },
       { name: "Notices", icon: <FaBell />, path: "/notices" },
