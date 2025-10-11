@@ -38,6 +38,7 @@ import Payment from './Admin/Payment.jsx';
 import SchedulePage from './student/StudentSchedule.jsx';
 import UsersPage from './Admin/Alluser.jsx';
 import ViewNotice from './Pages/ViewNotice.jsx';
+import Assignment from './Pages/Assignment.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -163,6 +164,10 @@ const router = createBrowserRouter([
      {
       path:"/ViewNotice/:id",
       element:<Privateroute><ViewNotice/></Privateroute>
+     },
+     {
+      path:"/assignments",
+      element:<Privateroute><Assignment/></Privateroute>
      }
     ]
   },
