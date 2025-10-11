@@ -122,7 +122,7 @@ export default function UsersPage() {
       ) : (
         <div className="hover:shadow-2xl overflow-x-auto shadow-md rounded-lg">
           <table className="min-w-full border-collapse border border-gray-300 text-sm md:text-base">
-            <thead className="bg-blue-600">
+            <thead className=" bg-gradient-to-b from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF]">
               <tr className="text-center">
                 <th className="border p-2">Photo</th>
                 <th className="border p-2">UID</th>
