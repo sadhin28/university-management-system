@@ -18,7 +18,8 @@ export const getMenus = (user, role) => {
     student: [
       { name: "Profile", icon: <FaUserGraduate />, path: "/profile" },
       { name: "Courses", icon: <FaBook />, path: "/courses" },
-      { name: "My Enrolled Course", icon: <SiCoursera />, path: "/my-enrolled" },
+      { name: "Enrolled Course", icon: <SiCoursera />, path: "/my-enrolled" },
+      { name: "Assignments", icon: <MdAssignment />, path: "/assignments" },
       { name: "Schedule", icon: <FaCalendarAlt />, path: "/studentChedule" },
       { name: "Faculty", icon: <FaChalkboardTeacher />, path: "/faculty" },
       { name: "Fees", icon: <FaMoneyBill />, path: "/fees" },
@@ -28,8 +29,8 @@ export const getMenus = (user, role) => {
       { name: "Profile", icon: <FaUserGraduate />, path: "/profile" },
       { name: "Faculty", icon: <FaChalkboardTeacher />, path: "/faculty" },
       { name: "Manage Courses", icon: <FaBook />, path: "/courses" },
-      { name: "Schedule", icon: <FaCalendarAlt />, path: "/studentChedule" },
       { name: "Assignments", icon: <MdAssignment />, path: "/assignments" },
+      { name: "Schedule", icon: <FaCalendarAlt />, path: "/studentChedule" },
       { name: "Notices", icon: <FaBell />, path: "/notices" },
     ],
     admin: [
