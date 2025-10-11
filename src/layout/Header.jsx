@@ -21,7 +21,7 @@ const Navbar = () => {
             {unseenCount}
           </span>
         )}
-      </div></Link>:<Link to="/admin-notices">
+      </div></Link>:<Link to="/notices">
             <div className="relative">
         <FaBell className="text-2xl cursor-pointer" />
         {unseenCount > 0 && (
