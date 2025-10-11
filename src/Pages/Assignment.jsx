@@ -131,7 +131,7 @@ const AssignmentPanel = () => {
   }, [search, filterDept, assignments]);
 
   return (
-    <div className="p-6 max-w-8xl mx-auto  rounded-2xl shadow-lg">
+    <div className="p-6 max-w-8xl mx-auto  rounded-2xl ">
       <h2 className="text-2xl font-bold text-center mb-6">
         📚 Assignment Management Panel
       </h2>
@@ -230,7 +230,7 @@ const AssignmentPanel = () => {
           {filteredAssignments.map((assignment) => (
             <div
               key={assignment._id}
-              className="p-4 border border-gray-200 rounded-lg shadow-sm bg-gray-50 flex justify-between items-start"
+              className="p-4 border border-gray-200 rounded-lg shadow-sm bg-gray-200/50 gap-2 grid md:flex justify-between items-start"
             >
               <div>
                 <h4 className="font-semibold text-lg text-gray-800">
@@ -253,7 +253,7 @@ const AssignmentPanel = () => {
               {role === "teacher" && (
                 <button
                   onClick={() => handleDelete(assignment._id)}
-                  className="text-red-500 hover:text-red-700 text-sm font-medium"
+                  className="text--500 border-2 border-blue-500 p-1  hover:bg-green-700 hover:text-white rounded-xl  text-sm font-medium"
                 >
                   🗑️ Delete
                 </button>
