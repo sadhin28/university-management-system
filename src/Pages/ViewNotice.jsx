@@ -116,7 +116,7 @@ export default function ViewNotice() {
     return <p className="text-center mt-10">Loading...</p>;
 
   return (
-    <div className="mx-6 max-w-7xl mt-4 mb-4 mx-auto min-h-screen p-6 bg-gray-100/20 shadow rounded-lg">
+    <div className=" mx-5  mt-4 mb-4 mx-auto min-h-screen p-6 bg-gray-100/20 shadow rounded-lg">
       <h2 className="text-3xl font-bold mb-4">{translatedNotice.title}</h2>
       <p className="mb-4">{translatedNotice.message}</p>
       <small className="block mb-2">
@@ -132,7 +132,7 @@ export default function ViewNotice() {
       <div className="flex gap-4 mb-4">
         <button
           onClick={downloadPDF}
-          className="bg-pink-600 hover:shadow-lg hover:bg-purple-700 text-white px-5 py-2 rounded transition-all"
+          className="bg-pink-600  hover:shadow-lg hover:bg-purple-700 text-white px-2 py-2 rounded transition-all"
         >
           Download PDF
         </button>
@@ -144,7 +144,7 @@ export default function ViewNotice() {
             loading
               ? "bg-purple-400 cursor-not-allowed"
               : "bg-amber-600 hover:bg-purple-700"
-          } text-white px-5 py-2 rounded transition-all`}
+          } text-white px-2 py-2 rounded transition-all`}
         >
           {loading ? "Translating..." : "Translet to Bangla"}
         </button>
