@@ -116,7 +116,7 @@ export default function ViewNotice() {
     return <p className="text-center mt-10">Loading...</p>;
 
   return (
-    <div className=" mx-5  mt-4 mb-4 mx-auto min-h-screen p-6 bg-gray-100/20 shadow rounded-lg">
+    <div className=" mt-4 mb-4 px-4  min-h-screen p-6 bg-gray-100/20 shadow rounded-lg w-11/12 mx-auto">
       <h2 className="text-3xl font-bold mb-4">{translatedNotice.title}</h2>
       <p className="mb-4">{translatedNotice.message}</p>
       <small className="block mb-2">
