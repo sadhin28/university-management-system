@@ -8,18 +8,25 @@ const Profile = () => {
 
   const handleShowPhoto = () => {
     Swal.fire({
-      imageUrl: user?.photoURL || "https://www.w3schools.com/howto/img_avatar.png",
+      title: `<span style="color:#fff; font-weight:bold; font-size:1.5rem;">${user?.displayName || "Profile Picture"}</span>`,
+      html: `<img src="${user?.photoURL || "https://via.placeholder.com/300"}" 
+              alt="${user?.displayName}'s profile" 
+              style="width:300px; height:300px; border-radius:50%; border:5px solid #159799; object-fit:cover; box-shadow:0 5px 15px rgba(0,0,0,0.3);" />`,
       showCloseButton: true,
       showConfirmButton: false,
-      moveable: true,
-      background: "#3B4042FF",
+      background: 'linear-gradient(135deg, #1D5A5AFF, #031226FF, #0881B5FF)',
       width: 400,
-      padding: "1rem",
-      imageWidth: 400,
-      imageHeight: 300,
+      padding: '30px',
       customClass: {
-        popup: "rounded-xl shadow-xl",
+        popup: 'rounded-2xl shadow-2xl animate__animated animate__fadeInDown',
+        closeButton: 'hover:text-red-500 transition-colors duration-300'
       },
+      didOpen: () => {
+        const closeBtn = Swal.getCloseButton();
+        if (closeBtn) {
+          closeBtn.style.fontSize = '1.5rem';
+        }
+      }
     });
   };
 
@@ -36,12 +43,12 @@ const Profile = () => {
 
       {/* Profile Card */}
       <div className="container mx-auto mt-8">
-        <div className="max-w-md mx-auto border-4 border-[#2C3D4D] shadow-md hover:shadow-lg rounded-lg overflow-hidden">
+        <div className="max-w-md mx-auto border-4 border-[#2C3D4D] shadow-md hover:shadow-xl rounded-lg overflow-hidden transition-shadow duration-300">
           <div className="flex justify-center items-center p-6">
             <img
               src={user?.photoURL || "https://via.placeholder.com/150"}
               alt={`${user?.displayName}'s profile`}
-              className="w-24 h-24 rounded-full object-cover border-4 border-[#2C3D4D] shadow-md cursor-pointer hover:scale-105 transition-transform duration-300"
+              className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-4 border-[#2C3D4D] shadow-md cursor-pointer hover:scale-110 transition-transform duration-300"
               onClick={handleShowPhoto}
             />
           </div>
@@ -62,7 +69,7 @@ const Profile = () => {
 
       {/* Features */}
       <div className="container mx-auto mt-10">
-        <div className="hover:shadow-xl shadow-md rounded-lg p-6 mx-2 mx-auto">
+        <div className="hover:shadow-xl shadow-md rounded-lg p-6 mx-2 mx-auto transition-shadow duration-300">
           <h3 className="text-2xl font-bold text-gray-800 text-center mb-6">Exciting New Features</h3>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
