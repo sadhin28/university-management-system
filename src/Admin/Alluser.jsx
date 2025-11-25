@@ -154,6 +154,7 @@ export default function UsersPage() {
                       />
                     ) : (
                       <img
+                        alt="deom img"
                         src="https://www.w3schools.com/howto/img_avatar.png" 
                         className="w-8 h-8 md:w-10 md:h-10 rounded-full mx-auto"                    
                         />

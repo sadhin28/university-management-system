@@ -33,7 +33,7 @@ const Navbar = () => {
 
           <Link to= '/profile'>
            {
-            user ? <img className="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold cursor-pointer" src={user.photoURL} alt="" /> : <h1 className="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold cursor-pointer">User</h1>
+            user ? <img className="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold cursor-pointer" src={user.photoURL} alt="" /> : <img className="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold cursor-pointer" src="https://www.w3schools.com/howto/img_avatar.png" alt="demo" />
 
           }
           </Link>
