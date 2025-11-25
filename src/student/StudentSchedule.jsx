@@ -159,8 +159,8 @@ export default function SchedulePage() {
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-6">📅 Student Schedule</h1>
-          {/* 🔹 Search + Filter Controls */}
+      <h1 className="text-3xl font-bold text-center mb-6">Student Schedule</h1>
+          {/* Search + Filter Controls */}
     
       {(role === "admin" || role === "teacher") && (
         <form onSubmit={handleAdd} className="grid gap-3 mb-6 p-4 border rounded-xl shadow">
