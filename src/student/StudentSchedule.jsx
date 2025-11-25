@@ -158,7 +158,7 @@ export default function SchedulePage() {
   };
 
   return (
-    <div className="p-6 max-w-5xl mx-auto">
+    <div className="p-6 max-w-7xl mx-auto">
       <h1 className="text-3xl font-bold text-center mb-6">📅 Student Schedule</h1>
           {/* 🔹 Search + Filter Controls */}
     
@@ -212,7 +212,7 @@ export default function SchedulePage() {
       <div className="grid gap-4">
 
         {filteredSchedules.map(item => (
-          <div key={item._id} className="bg-gray-100/40 border shadow-sm hover:shadow-2xl  rounded-xl shadow-md p-4 flex justify-between items-center">
+          <div key={item._id} className="bg-gray-100/40 border  hover:shadow-2xl  rounded-xl shadow-md p-4 flex justify-between items-center">
             <div>
               <h2 className="text-lg font-semibold">{item.course}</h2>
               <p className="text-gray-600">{item.day} • {item.time}</p>
