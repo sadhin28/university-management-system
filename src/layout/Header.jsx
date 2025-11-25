@@ -15,7 +15,7 @@ const Navbar = () => {
           
           {role === "student"?<Link to="notices">
             <div className="relative">
-        <FaBell className="text-2xl text-white hover:text-gray-800 cursor-pointer" />
+        <FaRegBell className="text-2xl text-white hover:text-gray-800 cursor-pointer" />
         {unseenCount > 0 && (
           <span className="absolute -top-1 -right-1 bg-red-600 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">
             {unseenCount}
