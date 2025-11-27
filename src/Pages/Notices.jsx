@@ -81,7 +81,7 @@ export default function Notices() {
 
   return (
     <div className="max-w-7xl mx-auto p-6">
-      <h2 className="text-2xl font-bold text-center mb-6">📢 University Notice Board</h2>
+      <h2 className="text-2xl font-bold text-white text-center mb-6">University Notice Board</h2>
 
       {(role === "admin" || role === "teacher") && (
         <form onSubmit={handleCreate} className="bg-gray-100/20 hover:shadow-2xl shadow-lg rounded-2xl p-6 mb-6 border">
