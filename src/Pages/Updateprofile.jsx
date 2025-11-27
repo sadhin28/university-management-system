@@ -63,7 +63,7 @@ const UpdateProfile = () => {
             <input
               type="file"
               accept="image/*"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#159799]"
+              className="w-full px-4 py-2 border rounded-lg bg-gradient-to-r from-[#D9E4E4FF] to-[#AAB9CDFF] to-[#E4F3F9FF] focus:outline-none focus:ring-2 focus:ring-[#159799]"
               name="photo"
               required
             />
