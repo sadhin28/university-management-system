@@ -59,7 +59,7 @@ const Profile = () => {
           <div className="flex justify-center pb-6">
             <Link
               to="/update-profile"
-              className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-6 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs hover:scale-105 transition-transform duration-300"
+              className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white px-6 py-2 rounded-lg flex items-center gap-2 md:text-xl text-xs hover:scale-105 transition-transform duration-300 border-2 border-transparent hover:border-white hover:bg-none"
             >
               Update Your Profile
             </Link>

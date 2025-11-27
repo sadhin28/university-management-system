@@ -86,7 +86,7 @@ const UpdateProfile = () => {
             <button
               type="submit"
               disabled={loading}
-              className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-3 rounded-lg items-center gap-2 md:text-xl w-full"
+              className="bg-gradient-to-r hover:border-2 from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-3 rounded-lg items-center gap-2 md:text-xl w-full hover:bg-none"
             >
               {loading ? "Updating..." : "Update Information"}
             </button>
