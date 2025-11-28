@@ -197,9 +197,9 @@ export default function Admin() {
          
           <Link
             to="/addCourse"
-            className="flex flex-col items-center bg-green-50 border rounded-xl p-6 shadow hover:shadow-lg transition"
+            className=" flex flex-col items-center bg-green-50 border rounded-xl p-6 shadow hover:shadow-lg transition hover:bg-green-100 hover:border-green-500"
           >
-            <BookOpen className="w-10 h-10 text-green-600 mb-3" />
+            <BookOpen className="hover:bg-none  w-10 h-10 text-green-600 mb-3" />
             <h3 className="font-semibold text-gray-800">Add Course</h3>
             <p className="text-sm text-gray-500 text-center">
               Create and assign new courses.
