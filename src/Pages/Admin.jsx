@@ -111,7 +111,7 @@ export default function Admin() {
             </select>
             <button
               onClick={makeAdmin}
-              className="hover:bg-none  hover:shadow-2xl w-full bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-3 rounded-lg  items-center gap-2 md:text-xl "
+              className="hover:bg-none hover:border-2  hover:shadow-2xl w-full bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-3 rounded-lg  items-center gap-2 md:text-xl "
             >
               Create
             </button>
@@ -184,7 +184,7 @@ export default function Admin() {
               </div>
               <button
                 type="submit"
-                className="hover:shadow-2xl w-full bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-3 rounded-lg  items-center gap-2 md:text-xl "
+                className="hover:bg-none hover:border-2  hover:shadow-2xl w-full bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-3 rounded-lg  items-center gap-2 md:text-xl "
               >
                 Create New User
               </button>
