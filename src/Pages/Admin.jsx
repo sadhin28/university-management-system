@@ -83,7 +83,7 @@ export default function Admin() {
       <div className="flex-1 bg-gray-100/20 border-2  border-[#097C7DFF] hover:shadow-2xl rounded-2xl w-full max-w-8xl p-8">
         {/* Header */}
         <h1 className="md:text-3xl text-xl font-extrabold text-center text-gray-800 mb-8">
-          🛠️ Admin Dashboard
+          Admin Dashboard
         </h1>
 
         {/* Create Admin Form */}
