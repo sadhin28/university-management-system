@@ -18,6 +18,7 @@ const Login = () => {
         setTakeemail(event.target.value);
     }
     
+
     const from = location.state || '/'
     const { setuser, login,  } = useContext(AuthContext)
 
