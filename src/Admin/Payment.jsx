@@ -43,7 +43,7 @@ export default function Payment() {
             {payments.map((pay, idx) => (
               
               <tr className="hover:bg-blue-300 bg-gray-100" key={idx}>
-                <td className="border px-4 py-2">{pay.id}</td>
+                <td className="border px-4 py-2 ">{pay.id}</td>
                 <td className="border px-4 py-2">{pay.date}</td>
                 <td className="border px-4 py-2">{pay.amount} BDT</td>
                 <td className="border px-4 py-2">{pay.method}</td>
