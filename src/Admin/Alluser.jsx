@@ -171,7 +171,7 @@ export default function UsersPage() {
                   >
                     <button
                       onClick={() => handleDelete(user.uid, user.email)}
-                      className={`bg-red-500 text-white px-2 md:px-3 py-1 rounded hover:bg-red-800 text-xs md:text-sm ${
+                      className={`hover:bg-gray-700 bg-gradient-to-b from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] hover:border-2 hover:bg-none text-white px-2 md:px-3 py-1 rounded  text-xs md:text-sm ${
                         user.role !== "student" ? "w-full" : ""
                       }`}
                     >
@@ -181,7 +181,7 @@ export default function UsersPage() {
                     {user.role === "student" && (
                       <Link
                         to={`/addStudent/${user.uid}`}
-                        className="bg-green-500 hover:bg-green-700 text-white px-2 md:px-3 py-1 rounded text-xs md:text-sm"
+                        className="bg-green-500 hover:text-white hover:bg-green-700  px-2 md:px-3 py-1 rounded text-xs md:text-sm"
                       >
                         Conform Admission
                       </Link>
