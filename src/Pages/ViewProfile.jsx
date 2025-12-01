@@ -1,9 +1,32 @@
 import { ArrowLeft, GraduationCap, Mail, MapPin, Phone } from "lucide-react";
 import { Link, useLoaderData, } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ViewProfile = () => {
      const faculty = useLoaderData()
-    
+     const handleShowPhoto = () => {
+    Swal.fire({
+      title: `<span style="color:#fff; font-weight:bold; font-size:1.5rem;">${faculty?.name || "Profile Picture"}</span>`,
+      html: `<img src="${faculty?.image || "https://via.placeholder.com/300"}" 
+              alt="${faculty?.name}'s profile" 
+              style="width:300px; height:300px; border-radius:50%; border:5px solid #159799; object-fit:cover; box-shadow:0 5px 15px rgba(0,0,0,0.3);" />`,
+      showCloseButton: true,
+      showConfirmButton: false,
+      background: 'linear-gradient(135deg, #1D5A5AFF, #031226FF, #0881B5FF)',
+      width: 400,
+      padding: '30px',
+      customClass: {
+        popup: 'rounded-2xl shadow-2xl animate__animated animate__fadeInDown',
+        closeButton: 'hover:text-red-500 transition-colors duration-300'
+      },
+      didOpen: () => {
+        const closeBtn = Swal.getCloseButton();
+        if (closeBtn) {
+          closeBtn.style.fontSize = '1.5rem';
+        }
+      }
+    });
+  };
   
   if (!faculty) {
     return (
@@ -31,6 +54,7 @@ const ViewProfile = () => {
               src={faculty?.image}
               alt={faculty?.name}
               className="w-24 h-24 rounded-full border-3 border-white shadow-md object-cover"
+              onClick={handleShowPhoto}
             />
           </div>
         </div>

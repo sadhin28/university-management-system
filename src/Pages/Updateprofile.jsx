@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/Authprovider";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const UpdateProfile = () => {
   const navigate = useNavigate();
