@@ -221,7 +221,7 @@ export default function SchedulePage() {
             </div>
             {(role === "admin" || role === "teacher") && (
               <div className="flex gap-2">
-                <button onClick={() => handleUpdate(item)} className="bg-gradient-to-r from-[#1f5e5e] to-[#AAB9CDFF] to-[#307793] text-white  focus:outline-none focus:ring-2 focus:ring-[#159799] hover:border-2 hover:bg-none px-3 py-1 rounded-lg ">✏️ Update</button>
+                <button onClick={() => handleUpdate(item)} className="bg-gradient-to-r from-[#1f5e5e] to-[#507cb7] to-[#307793] text-white  focus:outline-none focus:ring-2 focus:ring-[#159799] hover:border-2 hover:bg-none px-3 py-1 rounded-lg ">✏️ Update</button>
                 <button onClick={() => handleDelete(item._id, item.course)} className="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-800">🗑 Delete</button>
               </div>
             )}
