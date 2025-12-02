@@ -143,11 +143,11 @@ export default function Faculty() {
                                 </div>
 
                                 {/* Actions */}
-                                <div className="flex  gap-2 pt-2">
+                                <div className="flex h-30  gap-2 pt-2">
                                     {role  === 'admin'&& <Link onClick={()=>DeleteFacultyMember(faculty._id)} className="font-bold  px-3   hover:border-2 hover:bg-none bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white  py-2 rounded-lg flex-1 text-center gap-2 md:text-xl text-xs">
                                         Delete 
                                     </Link>}
-                                    <Link to={`/ViewProfile/${faculty._id}`} className="font-bold  px-3  py-2 border-2  bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white  rounded-lg flex-1 text-center gap-2 md:text-xl text-xs">
+                                    <Link to={`/ViewProfile/${faculty._id}`} className="font-bold hover:border-2 hover:bg-none px-3  py-2   bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white  rounded-lg flex-1 text-center gap-2 md:text-xl text-xs">
                                         View Profile
                                     </Link>
                                 </div>
