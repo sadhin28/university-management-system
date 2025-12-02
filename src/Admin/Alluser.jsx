@@ -114,7 +114,7 @@ export default function UsersPage() {
         <select
           value={filterRole}
           onChange={(e) => setFilterRole(e.target.value)}
-          className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#159799] w-full flex-1"
+          className="px-4 py-2 border  rounded-lg focus:outline-none focus:ring-2 focus:ring-[#159799] w-full flex-1"
         >
           <option value="">All Roles</option>
           <option value="admin">Admin</option>
