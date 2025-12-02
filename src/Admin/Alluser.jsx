@@ -181,7 +181,7 @@ export default function UsersPage() {
                     {user.role === "student" && (
                       <Link
                         to={`/addStudent/${user.uid}`}
-                        className="bg-green-500 hover:text-white hover:bg-green-700  px-2 md:px-3 py-1 rounded text-xs md:text-sm"
+                        className="bg-green-500 hover:text-white text-white hover:bg-green-700  px-2 md:px-3 py-1 rounded text-xs md:text-sm"
                       >
                         Conform Admission
                       </Link>
