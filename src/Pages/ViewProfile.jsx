@@ -42,13 +42,13 @@ const ViewProfile = () => {
         {/* Back Button */}
         <Link
           to="/faculty"
-          className=" top-16  left-4 flex items-center gap-2 px-3 py-1.5 bg-blue-600/20 text-white  shadow hover:bg-blue-700/30 transition"
+          className=" top-16  left-4 flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white  shadow hover:bg-blue-700/30 transition"
         >
           <ArrowLeft className="w-4 h-4" /> Back
         </Link>
 
         {/* Header */}
-        <div className="h-28 bg-gradient-to-r from-blue-600/30 to-purple-500/20 relative">
+        <div className="h-28 bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] relative">
           <div className="absolute -bottom-12 left-1/2 -translate-x-1/2">
             <img
               src={faculty?.image}
