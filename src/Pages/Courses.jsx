@@ -46,7 +46,7 @@ export default function Courses() {
                 }
             });
  }
-
+ 
   return (
     <div className="min-h-screen  p-6">
       <div className="max-w-8xl mx-auto space-y-6">
@@ -134,9 +134,12 @@ export default function Courses() {
                 <div>
                   <div className="flex justify-between text-sm mb-1">
                     <span>Enrollment</span>
-                    <span>
+                    {
+                      <span>
                       {Math.round((course.enrolled / course.capacity) * 100)}%
                     </span>
+                    }
+                   
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
