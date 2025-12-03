@@ -135,7 +135,7 @@ export default function Courses() {
                   <div className="flex justify-between text-sm mb-1">
                     <span>Enrollment</span>
                     {
-                      <span>
+                    <span>
                       {Math.round((course.enrolled / course.capacity) * 100)}%
                     </span>
                     }
@@ -143,7 +143,7 @@ export default function Courses() {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className="h-2 rounded-full bg-indigo-500"
+                      className="h-2 rounded-full bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF]"
                       style={{
                         width: `${
                           (course.enrolled / course.capacity) * 100
