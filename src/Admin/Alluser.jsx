@@ -128,7 +128,7 @@ export default function UsersPage() {
         <p className="text-center text-gray-500">No users found.</p>
       ) : (
         <div className="hover:shadow-2xl overflow-x-auto shadow-md rounded-lg">
-          <table className="min-w-full border-collapse border border-gray-300 text-sm md:text-base">
+          <table className="min-w-full border-collapse border border-gray-400 text-sm md:text-base">
             <thead className="bg-gradient-to-b from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF]">
               <tr className="text-center">
                 <th className="border p-2">Photo</th>
