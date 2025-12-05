@@ -152,7 +152,7 @@ export default function AuthForm() {
         {/* Submit */}
         <button
           onClick={handleSubmit}
-          className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-2 rounded-lg  items-center gap-2 md:text-xl  w-full font-bold"
+          className="hover:border hover:bg-none bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-2 rounded-lg  items-center gap-2 md:text-xl  w-full font-bold"
         >
           {isRegister ? "Register" : "Login"}
         </button>
