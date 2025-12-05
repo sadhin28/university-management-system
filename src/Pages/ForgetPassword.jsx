@@ -49,7 +49,7 @@ const ForgetPassword = () => {
                 </div>
 
                 <div className="form-control mt-6">
-                    <button className="bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-3 rounded-lg  items-center gap-2 md:text-xl  w-full">
+                    <button className="hover:border hover:bg-none bg-gradient-to-r from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF] text-white p-3 rounded-lg  items-center gap-2 md:text-xl  w-full">
                         Send Reset Link
                     </button>
                 </div>
