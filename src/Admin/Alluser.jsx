@@ -97,7 +97,7 @@ export default function UsersPage() {
 
   return (
     <div className="p-4 md:p-6 max-w-7xl mx-auto">
-      <h1 className="text-2xl md:text-3xl font-bold text-center mb-6">
+      <h1 className="text-2xl text-white md:text-3xl font-bold text-center mb-6">
         Manage User
       </h1>
 
