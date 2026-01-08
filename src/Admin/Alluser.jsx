@@ -171,7 +171,7 @@ export default function UsersPage() {
                   >
                     <button
                       onClick={() => handleDelete(user.uid, user.email)}
-                      className={`hover:bg-gray-700 bg-gradient-to-b from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF]  hover:bg-none text-white px-2 md:px-3 py-1 rounded  text-xs md:text-sm ${
+                      className={`hover:bg-red-700 bg-gradient-to-b from-[#1D5A5AFF] to-[#031226FF] to-[#0881B5FF]  hover:bg-none text-white px-2 md:px-3 py-1 rounded  text-xs md:text-sm ${
                         user.role !== "student" ? "w-full" : ""
                       }`}
                     >
