@@ -40,7 +40,7 @@ const Students = () => {
             <div className="text-center mb-6  md:text-xl">
                 <div>
                     <h1 className="text-3xl text-white font-bold">Students</h1>
-                    <p className="text-gray-500">Manage All student enrollments and records</p>
+                    <p className="text-gray-700">Manage All student enrollments and records</p>
                 </div>
             </div>
 
