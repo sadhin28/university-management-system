@@ -18,7 +18,6 @@ import Addcourse from './Pages/Addcourse.jsx';
 import Manage from './Pages/Manage.jsx';
 import Addfaculty from './Pages/Addfaculty.jsx';
 import Contact from './Pages/Contact.jsx';
-import ViewProfile from './Pages/ViewProfile.jsx';
 import Authprovider from './Provider/Authprovider.jsx';
 import Privateroute from './Rout/Privateroute.jsx';
 import { ToastContainer } from 'react-toastify';
@@ -39,6 +38,7 @@ import SchedulePage from './student/StudentSchedule.jsx';
 import UsersPage from './Admin/Alluser.jsx';
 import ViewNotice from './Pages/ViewNotice.jsx';
 import AssignmentPanel from './Pages/Assignment.jsx';
+import ViewProfile from './Pages/ViewProfile.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
